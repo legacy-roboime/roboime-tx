@@ -15,20 +15,10 @@ References and Libraries needed
 -------------------------------
 1. USB CDC DEVICE: distributed by STM
 2. STM32F4-Discovery libraries by Tilen Majerle (available at http://stm32f4-discovery.com)
-2.1 TM_STM32F4_disco
-2.2 TM_STM32F4_usb_vcp 
-2.3 TM_STM32F4_nrf24l01
-2.4 TM_STM32F4_spi
-2.5 TM_STM32F4_delay
-2.6 TM_STM32F4_usart
- 
-
-
-
-ay   
-
-
-
-
-
+- TM_STM32F4_disco
+- TM_STM32F4_usb_vcp 
+- TM_STM32F4_nrf24l01
+- TM_STM32F4_spi
+- TM_STM32F4_delay
+- TM_STM32F4_usart
 

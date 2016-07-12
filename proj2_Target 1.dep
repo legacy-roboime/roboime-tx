@@ -1,597 +1,0 @@
-Dependencies for Project 'proj2', Target 'Target 1': (DO NOT MODIFY !)
-F (.\defines.h)(0x54409814)()
-F (.\main.c)(0x5447C3E4)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (defines.h)(0x54409814)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\..\STM32F4_libs\tm_stm32f4_nrf24l01.h)(0x542310D1)
-I (..\..\STM32F4_libs\tm_stm32f4_spi.h)(0x5422C81F)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\tm_stm32f4_disco.h)(0x53FE36A2)
-I (..\..\STM32F4_libs\tm_stm32f4_delay.h)(0x53FE36A2)
-I (..\..\STM32F4_libs\tm_stm32f4_usart.h)(0x53FE36A2)
-I (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346E304)
-F (..\..\STM32F4_libs\tm_stm32f4_disco.c)(0x53FE36A2)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_disco.o --omf_browse .\tm_stm32f4_disco.crf --depend .\tm_stm32f4_disco.d)
-I (..\..\STM32F4_libs\tm_stm32f4_disco.h)(0x53FE36A2)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-F (..\..\STM32F4_libs\tm_stm32f4_disco.h)(0x53FE36A2)()
-F (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.c)(0x540E0E48)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_usb_vcp.o --omf_browse .\tm_stm32f4_usb_vcp.crf --depend .\tm_stm32f4_usb_vcp.d)
-I (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_usr.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)()
-F (..\..\STM32F4_libs\tm_stm32f4_nrf24l01.c)(0x5443E56C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_nrf24l01.o --omf_browse .\tm_stm32f4_nrf24l01.crf --depend .\tm_stm32f4_nrf24l01.d)
-I (..\..\STM32F4_libs\tm_stm32f4_nrf24l01.h)(0x542310D1)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\..\STM32F4_libs\tm_stm32f4_spi.h)(0x5422C81F)
-I (..\proj2\defines.h)(0x54409814)
-F (..\..\STM32F4_libs\tm_stm32f4_nrf24l01.h)(0x542310D1)()
-F (..\..\STM32F4_libs\tm_stm32f4_spi.c)(0x5422C83C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_spi.o --omf_browse .\tm_stm32f4_spi.crf --depend .\tm_stm32f4_spi.d)
-I (..\..\STM32F4_libs\tm_stm32f4_spi.h)(0x5422C81F)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-F (..\..\STM32F4_libs\tm_stm32f4_spi.h)(0x5422C81F)()
-F (..\..\STM32F4_libs\tm_stm32f4_delay.c)(0x53FE36A2)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_delay.o --omf_browse .\tm_stm32f4_delay.crf --depend .\tm_stm32f4_delay.d)
-I (..\..\STM32F4_libs\tm_stm32f4_delay.h)(0x53FE36A2)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-F (..\..\STM32F4_libs\tm_stm32f4_delay.h)(0x53FE36A2)()
-F (..\..\STM32F4_libs\tm_stm32f4_usart.c)(0x53FE36A2)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\tm_stm32f4_usart.o --omf_browse .\tm_stm32f4_usart.crf --depend .\tm_stm32f4_usart.d)
-I (..\..\STM32F4_libs\tm_stm32f4_usart.h)(0x53FE36A2)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-F (..\..\STM32F4_libs\tm_stm32f4_usart.h)(0x53FE36A2)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.c)(0x541482EE)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usb_bsp.o --omf_browse .\usb_bsp.crf --depend .\usb_bsp.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_core.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usb_core.o --omf_browse .\usb_core.crf --depend .\usb_core.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usb_dcd.o --omf_browse .\usb_dcd.crf --depend .\usb_dcd.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_dcd_int.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usb_dcd_int.o --omf_browse .\usb_dcd_int.crf --depend .\usb_dcd_int.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd_int.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usb_dcd_int.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_cdc_core.o --omf_browse .\usbd_cdc_core.crf --depend .\usbd_cdc_core.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_req.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.c)(0x540CFB50)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_cdc_vcp.o --omf_browse .\usbd_cdc_vcp.crf --depend .\usbd_cdc_vcp.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_core.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_core.o --omf_browse .\usbd_core.crf --depend .\usbd_core.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_req.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd_int.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_bsp.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.c)(0x543F3CEE)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_desc.o --omf_browse .\usbd_desc.crf --depend .\usbd_desc.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_req.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_ioreq.o --omf_browse .\usbd_ioreq.crf --depend .\usbd_ioreq.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_req.c)(0x5407B0AA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_req.o --omf_browse .\usbd_req.crf --depend .\usbd_req.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_req.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_req.h)(0x5407B0AA)()
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_usr.c)(0x540CF962)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\usbd_usr.o --omf_browse .\usbd_usr.crf --depend .\usbd_usr.d)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_usr.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_dcd.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_core.h)(0x540A906C)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_conf.h)(0x540A9758)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (..\proj2\defines.h)(0x54409814)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_regs.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usb_defines.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_def.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_conf.h)(0x540CFA8A)
-I (..\..\STM32F4_libs\tm_stm32f4_usb_vcp.h)(0x540E0E4C)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_core.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_ioreq.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_desc.h)(0x5407B0AA)
-I (..\..\STM32F4_libs\usb_cdc_device\usbd_cdc_vcp.h)(0x5407B0AA)
-F (..\..\STM32F4_libs\usb_cdc_device\usbd_usr.h)(0x5407B0AA)()
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\misc.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\misc.o --omf_browse .\misc.crf --depend .\misc.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-F (RTE\Device\STM32F407VG\RTE_Device.h)(0x535FE6E4)()
-F (RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s)(0x529F55D2)(--cpu Cortex-M4.fp -g --apcs=interwork -I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc--list .\startup_stm32f40_41xxx.lst --xref -o .\startup_stm32f40_41xxx.o --depend .\startup_stm32f40_41xxx.d)
-F (RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)()
-F (RTE\Device\STM32F407VG\system_stm32f4xx.c)(0x541BC966)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\system_stm32f4xx.o --omf_browse .\system_stm32f4xx.crf --depend .\system_stm32f4xx.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_exti.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\stm32f4xx_exti.o --omf_browse .\stm32f4xx_exti.crf --depend .\stm32f4xx_exti.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_gpio.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\stm32f4xx_gpio.o --omf_browse .\stm32f4xx_gpio.crf --depend .\stm32f4xx_gpio.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rcc.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\stm32f4xx_rcc.o --omf_browse .\stm32f4xx_rcc.crf --depend .\stm32f4xx_rcc.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_spi.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\stm32f4xx_spi.o --omf_browse .\stm32f4xx_spi.crf --depend .\stm32f4xx_spi.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_usart.c)(0x52B44796)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\proj2 -I..\..\STM32F4_libs -I..\..\STM32F4_libs\usb_cdc_device-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE"-I "C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DHSE_VALUE="8000000" -DSTM32F407VG -DTM_DISCO_STM32F4_DISCOVERY-o .\stm32f4xx_usart.o --omf_browse .\stm32f4xx_usart.crf --depend .\stm32f4xx_usart.d)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F55D2)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346E304)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F55D2)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E665F8)
-I (C:\Users\Victor Horta\Documents\uVisionProjects\proj2\RTE\RTE_Components.h)(0x543217A3)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B44796)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B44796)

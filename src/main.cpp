@@ -1,9 +1,10 @@
 /*
  * NOVO:
+ * testa quantos pacotes consegue enviar sem travar, NÃO USA USB
+ * RECENTE:
  * Em vez de se basear em 3 funções diferentes, usa apenas um comando de SPI::CMD()
  * Foi resolvido o problema de esporadicamente repetir o 4º caracter no 5º
  * Para isso, foi alterada a verificação de SPI_I2S_FLAGS antes de setar CS em SPI::CMD()
- * RECENTE:
  * Nesse projeto mantém-se a configuração de SPI divida em duas partes:
  * 		uma parte fica no construtor da classe SPI e faz a inicialização do SCK,MOSI e MISO
  * 		a outra parte fica no construtor da classe NRF, e inicializa o CSN
@@ -47,7 +48,8 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 **===========================================================================
 */
 
-uint8_t USB_get_and_send(NRF* radio_ptr);
+//envia sempre os mesmos pacotes
+uint8_t send(NRF* radio_ptr);
 
 int main(void)
 {
@@ -77,11 +79,15 @@ int main(void)
   //inicialização do USB
   USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 
+  uint64_t packets_sent=0;
   /* Infinite loop */
   while (1)
   {
-			if(USB_get_and_send(&radio)){
+			if(send(&radio)){
+					packets_sent++;
 					STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
+					Delay_ms(27);
+					//for (uint64_t i=0;i<0xfffff;i++);
 			}
 			else{
 					STM_EVAL_LEDToggle(LED5);//VERMELHO:indicador de falha
@@ -89,11 +95,20 @@ int main(void)
   }
 }
 
-uint8_t USB_get_and_send(NRF* radio_ptr){
-	  uint8_t  symbol;
+uint8_t send(NRF* radio_ptr){
+	  uint8_t symbol;
 	  uint8_t i;
-	  uint8_t  buffer[]={0,0,0,0,0};
-	  while (1)
+	  uint8_t  buffer[]={'a',43,43,43,43};
+
+	  	 //TODO REMOVER PARA VOLTAR A EXECUTAR O LOOP
+		if(radio_ptr->SEND(buffer)){
+				return 1;//indicador de sucesso
+		}
+		else{
+				return 0;//indicador de falha
+		}
+
+	  while (0)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
 	  {
 		if(VCP_get_char(&symbol))//se RECEBE um char a partir do computador
 		{

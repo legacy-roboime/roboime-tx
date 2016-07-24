@@ -86,7 +86,7 @@ int main(void)
 			if(send(&radio)){
 					packets_sent++;
 					STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
-					Delay_ms(10);
+					Delay_ms(05);
 					//for (uint64_t i=0;i<0xfffff;i++);
 			}
 			else{

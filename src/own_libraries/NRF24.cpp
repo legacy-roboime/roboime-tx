@@ -295,17 +295,22 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 //data: ponteiro para os bytes a serem transmitidos; size: número de bytes a enviar
 //retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
 uint8_t NRF::RECEIVE(uint8_t* data){
-	ASSERT_CE(SET);
+	//start_listen();//TODO: SHOULD I REMOVE THIS?
+	//passa aqui
 
-	while(!DATA_READY()){
-		STM_EVAL_LEDToggle(LED3);//TODO REMOVER APÓS DEBUG
-		Delay_ms(250);//TODO REMOVER APÓS DEBUG
-	}
-
+	while(!DATA_READY());
 	//espera até receber algo
 
-	ASSERT_CE(RESET);
 	READ_RX_FIFO(data);
+
+	uint8_t status;
+	R_REGISTER(0x07,1,&status);
+	STD_ITER_DELAY
+
+	//reseta a IRQ, conforme a product specification
+	status |= RX_DR_MASK;
+	W_REGISTER(0x07,1,&status);
+	STD_ITER_DELAY
 
 	return 1;
 }

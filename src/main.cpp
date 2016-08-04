@@ -17,9 +17,9 @@
 /* Includes */
 #include "main.h"
 
-#include "own_libraries/NRF24.h"
-#include "own_libraries/CONFIG.h"
-#include "own_libraries/SPI_interface.h"
+#include "NRF24.h"
+#include "CONFIG.h"
+#include "SPI_interface.h"
 
 uint32_t TimingDelay;
 
@@ -53,7 +53,7 @@ uint8_t send(NRF* radio_ptr);
 
 int main(void)
 {
-	SysTick_Config(SystemCoreClock/1000);
+	SysTick_Config(SystemCoreClock/1000000);
   /**
   *  IMPORTANT NOTE!
   *  The symbol VECT_TAB_SRAM needs to be defined when building the project

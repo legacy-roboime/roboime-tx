@@ -7,7 +7,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
-#include "CONFIG.h"
+#include "own_libraries/CONFIG.h"
 
 #ifndef SPI_INTERFACE_H_
 #define SPI_INTERFACE_H_

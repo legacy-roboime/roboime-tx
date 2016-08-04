@@ -5,7 +5,7 @@
  *      Author: Renan
  */
 #include "stm32f4xx.h" //para incluir stdint.h
-#include "REGISTER.h"
+#include "own_libraries/REGISTER.h"
 
 REGISTER::REGISTER(){//CONSTRUTOR, incializa o REGISTER
 	size = 0;

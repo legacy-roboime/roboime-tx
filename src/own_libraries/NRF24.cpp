@@ -7,8 +7,8 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
-#include "CONFIG.h"
-#include "NRF24.h"
+#include "own_libraries/CONFIG.h"
+#include "own_libraries/NRF24.h"
 
 NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,SPI_TypeDef* NRF_SPI,GPIO_TypeDef* NRF_CS_GPIO,uint16_t NRF_CS_Pin,
 		GPIO_TypeDef* SCK_GPIO,uint16_t SCK_Pin,

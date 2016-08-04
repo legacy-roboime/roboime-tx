@@ -4,8 +4,8 @@
  *  Created on: Mar 27, 2016
  *      Author: Renan
  */
-#include "CONFIG.h"
-#include "NRF24.h"
+#include "own_libraries/CONFIG.h"
+#include "own_libraries/NRF24.h"
 
 void NRF_REGISTER_MAP::REFRESH(){
 	uint8_t i=0;

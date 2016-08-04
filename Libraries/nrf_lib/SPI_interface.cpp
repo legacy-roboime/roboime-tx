@@ -7,8 +7,8 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
-#include "own_libraries/SPI_interface.h"
-#include "own_libraries/CONFIG.h" //para usar SPI_Clock_Cmd() e GPIO_Clock_Cmd()
+#include "SPI_interface.h"
+#include "CONFIG.h" //para usar SPI_Clock_Cmd() e GPIO_Clock_Cmd()
 
 //TODO: resolver a incompatibilidade de velocidades do NRF e do SPI
 SPI::SPI(SPI_TypeDef* SPI,GPIO_TypeDef* CS_GPIO,uint16_t CS_Pin){

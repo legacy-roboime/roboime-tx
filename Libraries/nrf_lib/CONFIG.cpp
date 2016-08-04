@@ -35,16 +35,12 @@ extern "C"{
 		 TimingDelay_Decrement();
 	}
 }//fim do extern "C" {}
-void Delay_us(uint32_t _time_us){
-  TimingDelay = _time_us;
-  while(TimingDelay != 0);
-}
 
-void Delay_ms(uint32_t _time_ms)
+void Delay_ms(uint32_t time)
 {
-  int time_us;
-  time_us = _time_ms*1000;
-  Delay_us(time_us);
+    TimingDelay = time;
+
+  while(TimingDelay != 0);
 }
 
 void Delay_s(unsigned char s)

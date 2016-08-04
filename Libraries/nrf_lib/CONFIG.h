@@ -12,8 +12,7 @@
 #define CONFIG_H_
 
 void TimingDelay_Decrement(void);
-void Delay_us(uint32_t _time_us);
-void Delay_ms(uint32_t _time_ms);
+void Delay_ms(uint32_t time);
 void Delay_s(unsigned char s);
 
 int GPIO_Clock_Cmd(GPIO_TypeDef* GPIOx, FunctionalState STATE);

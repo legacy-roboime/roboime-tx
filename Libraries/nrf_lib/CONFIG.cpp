@@ -7,7 +7,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
-#include "own_libraries/CONFIG.h"
+#include "CONFIG.h"
 
 static __IO uint32_t TimingDelay;//número de us que faltam
 
@@ -36,17 +36,17 @@ extern "C"{
 	}
 }//fim do extern "C" {}
 
-void Delay_micro_s(uint32_t time)
+void Delay_us(uint32_t time_us)
 {
-  TimingDelay = time;
+  TimingDelay = time_us;
   while(TimingDelay != 0);
 }
 
-void Delay_ms(uint32_t time)
+void Delay_ms(uint32_t time_ms)
 {
   uint32_t us;
-  us=time*1000;
-  Delay_micro_s(us);
+  us=time_ms*1000;
+  Delay_us(us);
   /*TimingDelay = time;
   while(TimingDelay != 0);*/
 }

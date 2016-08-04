@@ -4,12 +4,12 @@
  *  Created on: Nov 16, 2015
  *      Author: lenovoi7
  */
-
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
+#include "own_libraries/CONFIG.h"
 
-static __IO uint32_t TimingDelay;//número de ms que faltam
+static __IO uint32_t TimingDelay;//número de us que faltam
 
 void TimingDelay_Decrement(void)
 {
@@ -36,16 +36,23 @@ extern "C"{
 	}
 }//fim do extern "C" {}
 
+void Delay_micro_s(uint32_t time)
+{
+  TimingDelay = time;
+  while(TimingDelay != 0);
+}
+
 void Delay_ms(uint32_t time)
 {
-    TimingDelay = time;
-
-  while(TimingDelay != 0);
+  uint32_t us;
+  us=time*1000;
+  Delay_micro_s(us);
+  /*TimingDelay = time;
+  while(TimingDelay != 0);*/
 }
 
 void Delay_s(unsigned char s)
 {
-
   uint32_t ms;
   ms=s*1000;
   Delay_ms(ms);

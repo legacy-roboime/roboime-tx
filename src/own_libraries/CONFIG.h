@@ -15,6 +15,7 @@
 #define STD_ITER_DELAY for (int i=0;i<0xee2;i++);
 
 void TimingDelay_Decrement(void);
+void Delay_us(uint32_t time);
 void Delay_ms(uint32_t time);
 void Delay_s(unsigned char s);
 

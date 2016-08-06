@@ -14487,11 +14487,11 @@ uint8_t NRF::TRANSMITTED(void){
  8004f6e:	2117      	movs	r1, #23
  8004f70:	6878      	ldr	r0, [r7, #4]
  8004f72:	47a0      	blx	r4
-	for (int i=0;i<0x1dc4;i++);
+	for (int i=0;i<0x2fa;i++);
  8004f74:	2300      	movs	r3, #0
  8004f76:	617b      	str	r3, [r7, #20]
  8004f78:	697b      	ldr	r3, [r7, #20]
- 8004f7a:	f641 52c3 	movw	r2, #7619	; 0x1dc3
+ 8004f7a:	f240 22f9 	movw	r2, #761	; 0x2f9
  8004f7e:	4293      	cmp	r3, r2
  8004f80:	dc03      	bgt.n	8004f8a <_ZN3NRF11TRANSMITTEDEv+0x32>
  8004f82:	697b      	ldr	r3, [r7, #20]
@@ -14515,11 +14515,11 @@ uint8_t NRF::TRANSMITTED(void){
  8004fa2:	2107      	movs	r1, #7
  8004fa4:	6878      	ldr	r0, [r7, #4]
  8004fa6:	47a0      	blx	r4
-	for (int i=0;i<0x1dc4;i++);
+	for (int i=0;i<0x2fa;i++);
  8004fa8:	2300      	movs	r3, #0
  8004faa:	613b      	str	r3, [r7, #16]
  8004fac:	693b      	ldr	r3, [r7, #16]
- 8004fae:	f641 52c3 	movw	r2, #7619	; 0x1dc3
+ 8004fae:	f240 22f9 	movw	r2, #761	; 0x2f9
  8004fb2:	4293      	cmp	r3, r2
  8004fb4:	dc03      	bgt.n	8004fbe <_ZN3NRF11TRANSMITTEDEv+0x66>
  8004fb6:	693b      	ldr	r3, [r7, #16]
@@ -14571,11 +14571,11 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
  8004ff8:	68b9      	ldr	r1, [r7, #8]
  8004ffa:	4618      	mov	r0, r3
  8004ffc:	f7ff fa76 	bl	80044ec <_ZN3SPI12W_TX_PAYLOADEPhh>
-	for (int i=0;i<0x1dc4;i++);
+	for (int i=0;i<0x2fa;i++);
  8005000:	2300      	movs	r3, #0
  8005002:	617b      	str	r3, [r7, #20]
  8005004:	697b      	ldr	r3, [r7, #20]
- 8005006:	f641 52c3 	movw	r2, #7619	; 0x1dc3
+ 8005006:	f240 22f9 	movw	r2, #761	; 0x2f9
  800500a:	4293      	cmp	r3, r2
  800500c:	dc03      	bgt.n	8005016 <_ZN3NRF4SENDEPhh+0x32>
  800500e:	697b      	ldr	r3, [r7, #20]
@@ -14588,11 +14588,11 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
  8005016:	2101      	movs	r1, #1
  8005018:	68f8      	ldr	r0, [r7, #12]
  800501a:	f7ff fdd5 	bl	8004bc8 <_ZN3NRF9ASSERT_CEEi>
-	for (int i=0;i<0x1dc4;i++);//minimum pulse width = 10us
+	for (int i=0;i<0x2fa;i++);//minimum pulse width = 10us, here we use 20us
  800501e:	2300      	movs	r3, #0
  8005020:	613b      	str	r3, [r7, #16]
  8005022:	693b      	ldr	r3, [r7, #16]
- 8005024:	f641 52c3 	movw	r2, #7619	; 0x1dc3
+ 8005024:	f240 22f9 	movw	r2, #761	; 0x2f9
  8005028:	4293      	cmp	r3, r2
  800502a:	dc03      	bgt.n	8005034 <_ZN3NRF4SENDEPhh+0x50>
  800502c:	693b      	ldr	r3, [r7, #16]

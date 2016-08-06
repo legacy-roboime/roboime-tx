@@ -378,9 +378,9 @@ Discarded input sections
  .text._ZN3NRF11stop_listenEv
                 0x00000000       0x18 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF7RECEIVEEPh
-                0x00000000       0x90 Libraries\nrf_lib\NRF24.o
+                0x00000000       0x88 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF12READ_RX_FIFOEPh
-                0x00000000       0xd0 Libraries\nrf_lib\NRF24.o
+                0x00000000       0xc0 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF20GET_PIPE_FOR_READINGEv
                 0x00000000       0x24 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF12RX_configureEv

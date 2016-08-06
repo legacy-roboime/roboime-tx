@@ -12,7 +12,6 @@
 #include "SPI_interface.h"
 #include "CONFIG.h"
 
-
 #ifndef NRF24_H_
 #define NRF24_H_
 
@@ -154,17 +153,24 @@ class NRF : private SPI, public NRF_REGISTER_MAP {
 private:
 	GPIO_TypeDef* NRF_CE_GPIO;	//usar como default: GPIOA
 	uint16_t NRF_CE_Pin;		//usar como default: GPIO_Pin_3
+	GPIO_TypeDef* NRF_IRQ_GPIO;
+	uint16_t NRF_IRQ_Pin;
 
 //métodos
 public:
 	//CONSTRUTOR
 	NRF(GPIO_TypeDef* CE_GPIO = GPIOA,uint16_t CE_Pin = GPIO_Pin_3,
+		GPIO_TypeDef* IRQ_GPIO= GPIOC,uint16_t IRQ_Pin= GPIO_Pin_5,
 		SPI_TypeDef* SPI = SPI1,
-		GPIO_TypeDef* CS_GPIO = GPIOA,uint16_t CS_Pin = GPIO_Pin_4,
-		GPIO_TypeDef* SCK_GPIO = GPIOA,uint16_t SCK_Pin = GPIO_Pin_5,
+		GPIO_TypeDef* CS_GPIO 	= GPIOA,uint16_t CS_Pin  = GPIO_Pin_4,
+		GPIO_TypeDef* SCK_GPIO 	= GPIOA,uint16_t SCK_Pin = GPIO_Pin_5,
 		GPIO_TypeDef* MISO_GPIO = GPIOA,uint16_t MISO_Pin=GPIO_Pin_6,
 		GPIO_TypeDef* MOSI_GPIO = GPIOA,uint16_t MOSI_Pin=GPIO_Pin_7);
 	void begin();
+	uint16_t IRQ_Pin(){return NRF_IRQ_Pin;};
+	GPIO_TypeDef* IRQ_GPIO(){return NRF_IRQ_GPIO;};
+	void start_listen();
+	void stop_listen();
 	uint8_t RECEIVE(uint8_t* data);
 	uint8_t SEND(uint8_t* data, uint8_t size = 5);
 	void RX_configure(config_Struct* pointer);

@@ -7,33 +7,74 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
+#include "CONFIG.h"
 #include "NRF24.h"
 
-NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,SPI_TypeDef* NRF_SPI,GPIO_TypeDef* NRF_CS_GPIO,uint16_t NRF_CS_Pin,
+NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,
+		GPIO_TypeDef* IRQ_GPIO,uint16_t IRQ_Pin,
+		SPI_TypeDef* NRF_SPI,GPIO_TypeDef* NRF_CS_GPIO,uint16_t NRF_CS_Pin,
 		GPIO_TypeDef* SCK_GPIO,uint16_t SCK_Pin,
 		GPIO_TypeDef* MISO_GPIO,uint16_t MISO_Pin,
 		GPIO_TypeDef* MOSI_GPIO,uint16_t MOSI_Pin):
 	SPI(NRF_SPI,NRF_CS_GPIO,NRF_CS_Pin), NRF_REGISTER_MAP(){
 	NRF_CE_GPIO = CE_GPIO;
 	NRF_CE_Pin 	= CE_Pin;
+	NRF_IRQ_GPIO= IRQ_GPIO;
+	NRF_IRQ_Pin = IRQ_Pin;
 
 	//ENABLE the clock of NRF_CE_GPIO
 	GPIO_Clock_Cmd(NRF_CE_GPIO,ENABLE);
 
 	//CE GPIO configuration
 	GPIO_InitTypeDef GPIO_CE_initstruct;
-	GPIO_CE_initstruct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_CE_initstruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_CE_initstruct.GPIO_Pin = NRF_CE_Pin;
-	GPIO_CE_initstruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_CE_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_CE_initstruct.GPIO_Mode	= GPIO_Mode_OUT;
+	GPIO_CE_initstruct.GPIO_OType	= GPIO_OType_PP;
+	GPIO_CE_initstruct.GPIO_Pin 	= NRF_CE_Pin;
+	GPIO_CE_initstruct.GPIO_PuPd 	= GPIO_PuPd_NOPULL;
+	GPIO_CE_initstruct.GPIO_Speed	= GPIO_Speed_50MHz;
 	GPIO_Init(NRF_CE_GPIO, &GPIO_CE_initstruct);
+
+	/*
+	 * faz a inicialização do pino de IRQ
+	 * configura como input, habilita a interrupção,
+	 * conecta ao EXTI
+	 */
+
+	//enables the SYSCFG clock
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG,ENABLE);
+
+	GPIO_Clock_Cmd(NRF_IRQ_GPIO,ENABLE);
+	GPIO_InitTypeDef GPIO_IRQ_initstruct;
+	GPIO_IRQ_initstruct.GPIO_Pin	= NRF_IRQ_Pin;
+	GPIO_IRQ_initstruct.GPIO_Mode	= GPIO_Mode_IN;
+	GPIO_IRQ_initstruct.GPIO_OType	= GPIO_OType_PP;
+	GPIO_IRQ_initstruct.GPIO_PuPd	= GPIO_PuPd_UP;
+	GPIO_IRQ_initstruct.GPIO_Speed	= GPIO_Speed_50MHz;
+	GPIO_Init(NRF_IRQ_GPIO,&GPIO_IRQ_initstruct);
+
+	//TODO: experimentar inicializar o clock do SYSCFG depois do clock do IRQ_GPIO
+
+	EXTI_InitTypeDef EXTI_cfg;
+	EXTI_cfg.EXTI_Line		= EXTI_Line(NRF_IRQ_Pin);
+	EXTI_cfg.EXTI_LineCmd	= ENABLE;
+	EXTI_cfg.EXTI_Mode		= EXTI_Mode_Interrupt;
+	EXTI_cfg.EXTI_Trigger	= EXTI_Trigger_Falling;
+	EXTI_Init(&EXTI_cfg);
+
+	NVIC_InitTypeDef NVIC_cfg;
+	NVIC_cfg.NVIC_IRQChannel					= EXTIx_IRQn(NRF_IRQ_Pin);
+	NVIC_cfg.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_cfg.NVIC_IRQChannelPreemptionPriority	= 0x0f;	//lower priority, can be preempted
+	NVIC_cfg.NVIC_IRQChannelSubPriority			= 0x0f;	//lower priority, can be preempted
+	NVIC_Init(&NVIC_cfg);
+
+	SYSCFG_EXTILineConfig(EXTI_PortSource(NRF_IRQ_GPIO),EXTI_PinSource(NRF_IRQ_Pin));
 
 	//MOSI, MISO, SCK GPIO configuration
 	GPIO_InitTypeDef GPIO_SPI_Pins_initstruct;
-	GPIO_SPI_Pins_initstruct.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_SPI_Pins_initstruct.GPIO_Mode	= GPIO_Mode_AF;
 	GPIO_SPI_Pins_initstruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_SPI_Pins_initstruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_SPI_Pins_initstruct.GPIO_PuPd	= GPIO_PuPd_NOPULL;
 	GPIO_SPI_Pins_initstruct.GPIO_Speed = GPIO_Speed_50MHz;
 
 	GPIO_Clock_Cmd(SCK_GPIO, ENABLE);
@@ -73,24 +114,24 @@ void NRF::begin(){
 	ASSERT_CS(SET);
 	ASSERT_CE(RESET);
 
-	//TODO: REMOVER APÓS DEBUGAR
-	uint8_t string1[]={0xa,0xb,0xc,0xd,0xe};
-	uint8_t string2[]={0,0,0,0,0};
-//	W_REGISTER(0x10,5,string1);
-//	Delay_ms(1);
-	R_REGISTER(0x10,5,string2);
-	Delay_ms(1);
-
 	//lê CONFIG
 	uint8_t config;
+
 	R_REGISTER(0x00,1, &config);
 
 	//faz PWR_UP=1
 	config = 0b00000010;
+
 	//grava o novo valor de CONFIG
 	W_REGISTER(0x00,1,&config);
-	Delay_ms(2);//tempo de startup
+	Delay_ms(1);
 
+	//Renault: escreveu 1 em 3 flags  que precisam ser  limpas no início
+	uint8_t status = 0b01110000;
+	W_REGISTER(0x07,1,&status);
+	for (i=0;i<0xffff;i++);
+
+	Delay_ms(2);//tempo de startup
 	return;
 }
 
@@ -126,6 +167,7 @@ void NRF::EN_AA_setup(uint8_t ENAA_Px){
 
 	W_REGISTER(0x01,1,&en_aa);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -135,6 +177,7 @@ void NRF::EN_RXADDR_setup(uint8_t ERX_Px){
 
 	W_REGISTER(0x02,1,&en_pipes);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -145,6 +188,7 @@ void NRF::SETUP_AW_setup(uint8_t AW){
 
 	W_REGISTER(0x03,1,&address_width);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -155,6 +199,7 @@ void NRF::SETUP_RETR_setup(uint8_t setup_retries){
 
 	W_REGISTER(0x04,1,&ARconfig);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -164,6 +209,7 @@ void NRF::RF_CH_setup(uint8_t channel){
 
 	W_REGISTER(0x05,1,&rf_ch);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -173,6 +219,7 @@ void NRF::RF_SETUP_setup(uint8_t configuration){
 
 	W_REGISTER(0x06,1,&rf_setup);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -186,6 +233,7 @@ void NRF::RX_ADDR_Px_setup(uint8_t RX_Pipe,uint8_t* pointer){
 		//TODO:melhorar a portabilidade, adicionar constantes com o endereço de cada registrador
 		W_REGISTER(0x0a+RX_Pipe,1,pointer);
 		Delay_ms(1);
+	
 	}
 	return;
 }//WORKED!
@@ -206,6 +254,7 @@ void NRF::RX_ADDR_P0_setup(uint8_t* pointer){
 	//TODO:melhorar a portabilidade, adicionar constantes com o endereço de cada registrador
 	W_REGISTER(0x0a,size,pointer);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -225,6 +274,7 @@ void NRF::RX_ADDR_P1_setup(uint8_t* pointer){
 	//TODO:melhorar a portabilidade, adicionar constantes com o endereço de cada registrador
 	W_REGISTER(0x0b,size,pointer);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
@@ -235,20 +285,21 @@ void NRF::RX_PW_Px_setup(uint8_t RX_Pipe, uint8_t payload_width){
 	//TODO:melhorar a portabilidade, adicionar constantes com o endereço de cada registrador
 	W_REGISTER(0x11+RX_Pipe,1,&pw);
 	Delay_ms(1);
+	
 	return;
 }//WORKED!
 
 //retorna 1 se o NRF24 recebeu alguma coisa, retorna 0 se ainda não recebeu nada
 uint8_t NRF::DATA_READY(void){
-	uint8_t rx_empty;
+	uint8_t rx_empty=0;
+
 	R_REGISTER(0x17,1,&rx_empty);
-	Delay_ms(1);
 	rx_empty &= RX_EMPTY_MASK;
 
 	//TODO: contornar o problema de não conseguir resetar flag RX_DR
 /*	uint8_t rx_dr;
 	R_REGISTER(0x07,1,&rx_dr);
-	Delay_ms(1);
+	for (i=0;i<0xffff;i++);
 	rx_dr &= RX_DR_MASK;*/
 
 //	if(rx_dr || !rx_empty){
@@ -263,12 +314,12 @@ uint8_t NRF::DATA_READY(void){
 uint8_t NRF::TRANSMITTED(void){
 	uint8_t tx_empty;
 	R_REGISTER(0x17,1,&tx_empty);
-	Delay_ms(1);
+	for (int i=0;i<0xffff;i++);
 	tx_empty &= TX_EMPTY_MASK;
 
 	uint8_t tx_ds;
 	R_REGISTER(0x07,1,&tx_ds);
-	Delay_ms(1);
+	for (int i=0;i<0xffff;i++);
 	tx_ds &= TX_DS_MASK;
 
 	if(tx_ds || !tx_empty)
@@ -281,14 +332,24 @@ uint8_t NRF::TRANSMITTED(void){
 //retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
 uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 	W_TX_PAYLOAD(data,size);
-	Delay_ms(1);
+	for (int i=0;i<0xffff;i++);
 
 	//pulse on CE to start transmission
 	ASSERT_CE(SET);
-	Delay_ms(1);//minimum pulse width = 10us
+	for (int i=0;i<0xffff;i++);//minimum pulse width = 10us
 	ASSERT_CE(RESET);
 
 	return TRANSMITTED();
+}
+
+void NRF::start_listen(){
+	ASSERT_CE(SET);
+	return;
+}
+
+void NRF::stop_listen(){
+	ASSERT_CE(RESET);
+	return;
 }
 
 //data: ponteiro para os bytes a serem transmitidos; size: número de bytes a enviar
@@ -324,10 +385,21 @@ void NRF::READ_RX_FIFO(uint8_t* pointer){
 	//lê o RX_PW_Px correspondente àquela pipe
 	uint8_t payload_length;
 	R_REGISTER(0x11+RX_Pipe,1,&payload_length);
-	Delay_ms(1);
+	STD_ITER_DELAY
 
 	CMD(0x61,payload_length,0x00,pointer);//comando R_RX_PLD
-	Delay_ms(1);
+	STD_ITER_DELAY
+
+	//TODO: importar modificação para o RX_unif_functions
+	//reseta a flag RX_DR para que IRQ possa subir de novo
+	uint8_t status;
+	R_REGISTER(0x07,1,&status);
+	STD_ITER_DELAY
+
+	status |= RX_DR_MASK;
+	W_REGISTER(0x07,1,&status);//Write 1 to clear RX_DR bit.
+
+	STD_ITER_DELAY
 	return;
 }
 
@@ -454,6 +526,7 @@ void NRF::TX_configure(config_Struct* pointer){
 void NRF::TX_ADDR_setup(uint8_t* pointer){
 	W_REGISTER(0x10,5,pointer);
 	Delay_ms(1);
+	
 	return;
 }
 
@@ -464,6 +537,7 @@ void NRF::RESET_ALL_REGISTERS(){
 	for(i=0x00;i<=0x19;i++){
 		W_REGISTER(current_register->get_address(),current_register->get_size(),current_register->content);
 		Delay_ms(1);
+	
 		current_register++;
 	}
 

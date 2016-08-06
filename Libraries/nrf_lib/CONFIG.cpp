@@ -186,3 +186,150 @@ uint8_t GPIO_AF_SPIx(SPI_TypeDef* SPIx){
 		return GPIO_AF_SPI6;
 	}
 }
+
+IRQn_Type EXTIx_IRQn(uint16_t GPIO_Pin){
+
+	if(!IS_GPIO_PIN(GPIO_Pin)){
+		return UsageFault_IRQn;
+	}
+
+	if(GPIO_Pin == GPIO_Pin_0){
+		return EXTI0_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_1){
+		return EXTI1_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_2){
+		return EXTI2_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_3){
+		return EXTI3_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_4){
+		return EXTI4_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_5){
+		return EXTI9_5_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_6){
+		return EXTI9_5_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_7){
+		return EXTI9_5_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_8){
+		return EXTI9_5_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_9){
+		return EXTI9_5_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_10){
+		return EXTI15_10_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_11){
+		return EXTI15_10_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_12){
+		return EXTI15_10_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_13){
+		return EXTI15_10_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_14){
+		return EXTI15_10_IRQn;
+	}else if(GPIO_Pin == GPIO_Pin_15){
+		return EXTI15_10_IRQn;
+	}
+}
+
+uint32_t EXTI_Line(uint16_t GPIO_Pin){
+	if(!IS_GPIO_PIN(GPIO_Pin)){
+		return 0x00;
+	}
+
+	if(GPIO_Pin == GPIO_Pin_0){
+		return EXTI_Line0;
+	}else if(GPIO_Pin == GPIO_Pin_1){
+		return EXTI_Line1;
+	}else if(GPIO_Pin == GPIO_Pin_2){
+		return EXTI_Line2;
+	}else if(GPIO_Pin == GPIO_Pin_3){
+		return EXTI_Line3;
+	}else if(GPIO_Pin == GPIO_Pin_4){
+		return EXTI_Line4;
+	}else if(GPIO_Pin == GPIO_Pin_5){
+		return EXTI_Line5;
+	}else if(GPIO_Pin == GPIO_Pin_6){
+		return EXTI_Line6;
+	}else if(GPIO_Pin == GPIO_Pin_7){
+		return EXTI_Line7;
+	}else if(GPIO_Pin == GPIO_Pin_8){
+		return EXTI_Line8;
+	}else if(GPIO_Pin == GPIO_Pin_9){
+		return EXTI_Line9;
+	}else if(GPIO_Pin == GPIO_Pin_10){
+		return EXTI_Line10;
+	}else if(GPIO_Pin == GPIO_Pin_11){
+		return EXTI_Line11;
+	}else if(GPIO_Pin == GPIO_Pin_12){
+		return EXTI_Line12;
+	}else if(GPIO_Pin == GPIO_Pin_13){
+		return EXTI_Line13;
+	}else if(GPIO_Pin == GPIO_Pin_14){
+		return EXTI_Line14;
+	}else if(GPIO_Pin == GPIO_Pin_15){
+		return EXTI_Line15;
+	}
+}
+
+uint8_t EXTI_PortSource(GPIO_TypeDef* GPIOx){
+	if(!IS_GPIO_ALL_PERIPH(GPIOx)){
+		return 0xff;
+	}
+
+	if(GPIOx == GPIOA){
+		return EXTI_PortSourceGPIOA;
+	}else if(GPIOx == GPIOB){
+		return EXTI_PortSourceGPIOB;
+	}else if(GPIOx == GPIOC){
+		return EXTI_PortSourceGPIOC;
+	}else if(GPIOx == GPIOD){
+		return EXTI_PortSourceGPIOD;
+	}else if(GPIOx == GPIOE){
+		return EXTI_PortSourceGPIOE;
+	}else if(GPIOx == GPIOF){
+		return EXTI_PortSourceGPIOF;
+	}else if(GPIOx == GPIOG){
+		return EXTI_PortSourceGPIOG;
+	}else if(GPIOx == GPIOH){
+		return EXTI_PortSourceGPIOH;
+	}else if(GPIOx == GPIOI){
+		return EXTI_PortSourceGPIOI;
+	}
+}
+
+uint8_t EXTI_PinSource(uint16_t GPIO_Pin){
+	if(!IS_GPIO_PIN(GPIO_Pin)){
+		return 0xff;
+	}
+
+	if(GPIO_Pin == GPIO_Pin_0){
+		return EXTI_PinSource0;
+	}else if(GPIO_Pin == GPIO_Pin_1){
+		return EXTI_PinSource1;
+	}else if(GPIO_Pin == GPIO_Pin_2){
+		return EXTI_PinSource2;
+	}else if(GPIO_Pin == GPIO_Pin_3){
+		return EXTI_PinSource3;
+	}else if(GPIO_Pin == GPIO_Pin_4){
+		return EXTI_PinSource4;
+	}else if(GPIO_Pin == GPIO_Pin_5){
+		return EXTI_PinSource5;
+	}else if(GPIO_Pin == GPIO_Pin_6){
+		return EXTI_PinSource6;
+	}else if(GPIO_Pin == GPIO_Pin_7){
+		return EXTI_PinSource7;
+	}else if(GPIO_Pin == GPIO_Pin_8){
+		return EXTI_PinSource8;
+	}else if(GPIO_Pin == GPIO_Pin_9){
+		return EXTI_PinSource9;
+	}else if(GPIO_Pin == GPIO_Pin_10){
+		return EXTI_PinSource10;
+	}else if(GPIO_Pin == GPIO_Pin_11){
+		return EXTI_PinSource11;
+	}else if(GPIO_Pin == GPIO_Pin_12){
+		return EXTI_PinSource12;
+	}else if(GPIO_Pin == GPIO_Pin_13){
+		return EXTI_PinSource13;
+	}else if(GPIO_Pin == GPIO_Pin_14){
+		return EXTI_PinSource14;
+	}else if(GPIO_Pin == GPIO_Pin_15){
+		return EXTI_PinSource15;
+	}
+}

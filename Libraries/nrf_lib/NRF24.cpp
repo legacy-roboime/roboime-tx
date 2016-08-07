@@ -359,6 +359,13 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 	return TRANSMITTED();
 }
 
+void NRF::W_ACK_PAYLOAD(uint8_t pipe,uint8_t* pointer,uint8_t number){
+	if(pipe>5)
+		return;
+	return SPI::W_ACK_PAYLOAD(pipe,pointer,number);
+
+}
+
 void NRF::start_listen(){
 	ASSERT_CE(SET);
 	return;

@@ -236,6 +236,17 @@ void SPI::ACTIVATE(void){//activate, para usar R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_
 	return;
 }//doesn't work
 
+/*
+ * @param pipe: the pipe to send the ACK
+ * @param pointer: pointer to the bytes to send
+ * @param number; number of bytes to send
+ */
+void SPI::W_ACK_PAYLOAD(uint8_t pipe,uint8_t* pointer,uint8_t number){
+	uint8_t w_ack_cmd = pipe;
+	w_ack_cmd |=((0b10101)<<3);
+	CMD(w_ack_cmd,number,pointer,0x00);
+}
+
 uint8_t SPI::NOP(void){
 	return CMD(0xff,0,0x00,0x00);//NOP command, no data bytes, only sends back the content of STATUS register
 }

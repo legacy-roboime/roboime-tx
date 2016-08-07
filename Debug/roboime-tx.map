@@ -374,7 +374,7 @@ Discarded input sections
  .text._ZN3NRF12stdbyI_to_RXEh
                 0x00000000       0x5c Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF10DATA_READYEv
-                0x00000000       0x40 Libraries\nrf_lib\NRF24.o
+                0x00000000       0x78 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF13W_ACK_PAYLOADEhPhh
                 0x00000000       0x34 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF12start_listenEv
@@ -390,7 +390,7 @@ Discarded input sections
  .text._ZN3NRF12RX_configureEv
                 0x00000000       0x64 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF12RX_configureEP13config_Struct
-                0x00000000       0xfc Libraries\nrf_lib\NRF24.o
+                0x00000000      0x140 Libraries\nrf_lib\NRF24.o
  .text._ZN3NRF19RESET_ALL_REGISTERSEv
                 0x00000000       0x5c Libraries\nrf_lib\NRF24.o
  .text          0x00000000        0x0 Libraries\nrf_lib\CONFIG.o
@@ -3217,7 +3217,7 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib
                 0x00000990       0x22 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(roboime-tx.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x14a56
+.debug_info     0x00000000    0x14a8b
  .debug_info    0x00000000      0x5d6 src\system_stm32f4xx.o
  .debug_info    0x000005d6      0x122 src\stm32f4xx_it.o
  .debug_info    0x000006f8       0x88 src\startup_stm32f40xx.o
@@ -3238,16 +3238,16 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
  .debug_info    0x0000dce2      0xa64 Libraries\nrf_lib\SPI_interface.o
  .debug_info    0x0000e746      0x2a0 Libraries\nrf_lib\REGISTER.o
  .debug_info    0x0000e9e6      0x499 Libraries\nrf_lib\NRF_REGISTER_MAP.o
- .debug_info    0x0000ee7f     0x1c7f Libraries\nrf_lib\NRF24.o
- .debug_info    0x00010afe      0x8dc Libraries\nrf_lib\CONFIG.o
- .debug_info    0x000113da      0x278 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
- .debug_info    0x00011652      0xb13 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_info    0x00012165      0xc8d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_info    0x00012df2      0x621 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_info    0x00013413      0x35b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
- .debug_info    0x0001376e      0x745 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_info    0x00013eb3      0x649 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
- .debug_info    0x000144fc      0x55a Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_info    0x0000ee7f     0x1cb4 Libraries\nrf_lib\NRF24.o
+ .debug_info    0x00010b33      0x8dc Libraries\nrf_lib\CONFIG.o
+ .debug_info    0x0001140f      0x278 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
+ .debug_info    0x00011687      0xb13 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_info    0x0001219a      0xc8d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_info    0x00012e27      0x621 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_info    0x00013448      0x35b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_info    0x000137a3      0x745 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_info    0x00013ee8      0x649 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_info    0x00014531      0x55a Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
 .debug_abbrev   0x00000000     0x36b0
  .debug_abbrev  0x00000000      0x13a src\system_stm32f4xx.o
@@ -3375,7 +3375,7 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
  .debug_ranges  0x00000ce0       0x90 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
  .debug_ranges  0x00000d70       0x30 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_line     0x00000000     0x6553
+.debug_line     0x00000000     0x6568
  .debug_line    0x00000000      0x1ff src\system_stm32f4xx.o
  .debug_line    0x000001ff      0x1d6 src\stm32f4xx_it.o
  .debug_line    0x000003d5       0x7a src\startup_stm32f40xx.o
@@ -3396,18 +3396,18 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
  .debug_line    0x00003727      0x33e Libraries\nrf_lib\SPI_interface.o
  .debug_line    0x00003a65      0x1c2 Libraries\nrf_lib\REGISTER.o
  .debug_line    0x00003c27      0x2ad Libraries\nrf_lib\NRF_REGISTER_MAP.o
- .debug_line    0x00003ed4      0x69c Libraries\nrf_lib\NRF24.o
- .debug_line    0x00004570      0x40f Libraries\nrf_lib\CONFIG.o
- .debug_line    0x0000497f      0x214 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
- .debug_line    0x00004b93      0x46b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_line    0x00004ffe      0x5b3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_line    0x000055b1      0x35b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_line    0x0000590c      0x29c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
- .debug_line    0x00005ba8      0x425 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_line    0x00005fcd      0x34d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
- .debug_line    0x0000631a      0x239 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_line    0x00003ed4      0x6b1 Libraries\nrf_lib\NRF24.o
+ .debug_line    0x00004585      0x40f Libraries\nrf_lib\CONFIG.o
+ .debug_line    0x00004994      0x214 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
+ .debug_line    0x00004ba8      0x46b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_line    0x00005013      0x5b3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_line    0x000055c6      0x35b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_line    0x00005921      0x29c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_line    0x00005bbd      0x425 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_line    0x00005fe2      0x34d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_line    0x0000632f      0x239 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_str      0x00000000     0x5998
+.debug_str      0x00000000     0x599e
  .debug_str     0x00000000      0x38e src\system_stm32f4xx.o
                                 0x40b (size before relaxing)
  .debug_str     0x0000038e       0x96 src\stm32f4xx_it.o
@@ -3446,25 +3446,25 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
                                 0x2fe (size before relaxing)
  .debug_str     0x00003a65      0x214 Libraries\nrf_lib\NRF_REGISTER_MAP.o
                                 0x4fe (size before relaxing)
- .debug_str     0x00003c79      0x9d5 Libraries\nrf_lib\NRF24.o
-                               0x14fe (size before relaxing)
- .debug_str     0x0000464e      0x21b Libraries\nrf_lib\CONFIG.o
+ .debug_str     0x00003c79      0x9db Libraries\nrf_lib\NRF24.o
+                               0x1504 (size before relaxing)
+ .debug_str     0x00004654      0x21b Libraries\nrf_lib\CONFIG.o
                                 0xc79 (size before relaxing)
- .debug_str     0x00004869      0x169 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
+ .debug_str     0x0000486f      0x169 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
                                 0x36d (size before relaxing)
- .debug_str     0x000049d2      0x295 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_str     0x000049d8      0x295 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
                                 0x703 (size before relaxing)
- .debug_str     0x00004c67      0x56b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_str     0x00004c6d      0x56b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
                                 0x8f2 (size before relaxing)
- .debug_str     0x000051d2      0x159 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_str     0x000051d8      0x159 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
                                 0x51c (size before relaxing)
- .debug_str     0x0000532b       0xf3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_str     0x00005331       0xf3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
                                 0x3d2 (size before relaxing)
- .debug_str     0x0000541e      0x254 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_str     0x00005424      0x254 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
                                 0x5bb (size before relaxing)
- .debug_str     0x00005672      0x220 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_str     0x00005678      0x220 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
                                 0x4cc (size before relaxing)
- .debug_str     0x00005892      0x106 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_str     0x00005898      0x106 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
                                 0x447 (size before relaxing)
 
 .comment        0x00000000       0x7e
@@ -3499,7 +3499,7 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
  .comment       0x0000007e       0x7f Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
  .comment       0x0000007e       0x7f Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_frame    0x00000000     0x4020
+.debug_frame    0x00000000     0x4024
  .debug_frame   0x00000000       0x7c src\system_stm32f4xx.o
  .debug_frame   0x0000007c       0xf0 src\stm32f4xx_it.o
  .debug_frame   0x0000016c      0x124 src\main.o
@@ -3519,27 +3519,27 @@ OUTPUT(roboime-tx.elf elf32-littlearm)
  .debug_frame   0x00001c98      0x1e8 Libraries\nrf_lib\SPI_interface.o
  .debug_frame   0x00001e80       0xd8 Libraries\nrf_lib\REGISTER.o
  .debug_frame   0x00001f58       0x60 Libraries\nrf_lib\NRF_REGISTER_MAP.o
- .debug_frame   0x00001fb8      0x534 Libraries\nrf_lib\NRF24.o
- .debug_frame   0x000024ec      0x218 Libraries\nrf_lib\CONFIG.o
- .debug_frame   0x00002704       0xf4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
- .debug_frame   0x000027f8      0x3f4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_frame   0x00002bec      0x6fc Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_frame   0x000032e8      0x23c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_frame   0x00003524      0x148 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
- .debug_frame   0x0000366c      0x308 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_frame   0x00003974      0x2ac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
- .debug_frame   0x00003c20       0xd8 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
- .debug_frame   0x00003cf8       0x40 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a(pure.o)
- .debug_frame   0x00003d38       0xb0 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a(eh_terminate.o)
- .debug_frame   0x00003de8       0x28 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-abort.o)
- .debug_frame   0x00003e10       0x2c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00003e3c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x00003e5c       0xcc c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-signal.o)
- .debug_frame   0x00003f28       0x3c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-signalr.o)
- .debug_frame   0x00003f64       0x5c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-reent.o)
- .debug_frame   0x00003fc0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(getpid.o)
- .debug_frame   0x00003fe0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(kill.o)
- .debug_frame   0x00004000       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+ .debug_frame   0x00001fb8      0x538 Libraries\nrf_lib\NRF24.o
+ .debug_frame   0x000024f0      0x218 Libraries\nrf_lib\CONFIG.o
+ .debug_frame   0x00002708       0xf4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.o
+ .debug_frame   0x000027fc      0x3f4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_frame   0x00002bf0      0x6fc Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_frame   0x000032ec      0x23c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_frame   0x00003528      0x148 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_frame   0x00003670      0x308 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_frame   0x00003978      0x2ac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_frame   0x00003c24       0xd8 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_frame   0x00003cfc       0x40 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a(pure.o)
+ .debug_frame   0x00003d3c       0xb0 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a(eh_terminate.o)
+ .debug_frame   0x00003dec       0x28 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-abort.o)
+ .debug_frame   0x00003e14       0x2c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00003e40       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00003e60       0xcc c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-signal.o)
+ .debug_frame   0x00003f2c       0x3c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-signalr.o)
+ .debug_frame   0x00003f68       0x5c c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x00003fc4       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(getpid.o)
+ .debug_frame   0x00003fe4       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(kill.o)
+ .debug_frame   0x00004004       0x20 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
 
 .stab           0x00000000       0x3c
  .stab          0x00000000       0x24 c:/program files (x86)/atollic/truestudio for arm 5.5.1/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a(getpid.o)

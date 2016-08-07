@@ -105,8 +105,8 @@ uint8_t send(NRF* radio_ptr){
 		if(radio_ptr->SEND(buffer)){
 				return 1;//indicador de sucesso
 				//TODO: include verificação de chegada de mensagem; imprimir ack payload
-				while(radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
-				VCP_send_buffer(ack_payload,5);
+//				while(radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
+//				VCP_send_buffer(ack_payload,5);
 		}
 		else{
 				return 0;//indicador de falha

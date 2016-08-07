@@ -23,25 +23,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   9 .ARM.attributes 00000030  00000000  00000000  0002019c  2**0
                   CONTENTS, READONLY
- 10 .debug_info   00014a56  00000000  00000000  000201cc  2**0
+ 10 .debug_info   00014a8b  00000000  00000000  000201cc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 000036b0  00000000  00000000  00034c22  2**0
+ 11 .debug_abbrev 000036b0  00000000  00000000  00034c57  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 00000f78  00000000  00000000  000382d8  2**3
+ 12 .debug_aranges 00000f78  00000000  00000000  00038308  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000da0  00000000  00000000  00039250  2**3
+ 13 .debug_ranges 00000da0  00000000  00000000  00039280  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   00006553  00000000  00000000  00039ff0  2**0
+ 14 .debug_line   00006568  00000000  00000000  0003a020  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    00005998  00000000  00000000  00040543  2**0
+ 15 .debug_str    0000599e  00000000  00000000  00040588  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007e  00000000  00000000  00045edb  2**0
+ 16 .comment      0000007e  00000000  00000000  00045f26  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  00004020  00000000  00000000  00045f5c  2**2
+ 17 .debug_frame  00004024  00000000  00000000  00045fa4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 18 .stab         0000003c  00000000  00000000  00049f7c  2**2
+ 18 .stab         0000003c  00000000  00000000  00049fc8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 19 .stabstr      000000ac  00000000  00000000  00049fb8  2**0
+ 19 .stabstr      000000ac  00000000  00000000  0004a004  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -876,8 +876,8 @@ uint8_t send(NRF* radio_ptr){
  80005ae:	2301      	movs	r3, #1
  80005b0:	e000      	b.n	80005b4 <_Z4sendP3NRF+0x48>
 				//TODO: include verificação de chegada de mensagem; imprimir ack payload
-				while(radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
-				VCP_send_buffer(ack_payload,5);
+//				while(radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
+//				VCP_send_buffer(ack_payload,5);
 		}
 		else{
 				return 0;//indicador de falha
@@ -14681,8 +14681,12 @@ uint8_t NRF::TRANSMITTED(void){
  80050a2:	b087      	sub	sp, #28
  80050a4:	af00      	add	r7, sp, #0
  80050a6:	6078      	str	r0, [r7, #4]
-	uint8_t tx_empty;
-	R_REGISTER(0x17,1,&tx_empty);
+	uint8_t tx_ds;
+#ifdef USE_AUTOACK
+	do{
+#endif
+
+		R_REGISTER(0x17,1,&tx_empty);
  80050a8:	687b      	ldr	r3, [r7, #4]
  80050aa:	681b      	ldr	r3, [r3, #0]
  80050ac:	3304      	adds	r3, #4
@@ -14692,7 +14696,7 @@ uint8_t NRF::TRANSMITTED(void){
  80050b6:	2117      	movs	r1, #23
  80050b8:	6878      	ldr	r0, [r7, #4]
  80050ba:	47a0      	blx	r4
-	for (int i=0;i<0x1dc4;i++);
+		for (int i=0;i<0x1dc4;i++);
  80050bc:	2300      	movs	r3, #0
  80050be:	617b      	str	r3, [r7, #20]
  80050c0:	697b      	ldr	r3, [r7, #20]
@@ -14703,14 +14707,13 @@ uint8_t NRF::TRANSMITTED(void){
  80050cc:	3301      	adds	r3, #1
  80050ce:	617b      	str	r3, [r7, #20]
  80050d0:	e7f6      	b.n	80050c0 <_ZN3NRF11TRANSMITTEDEv+0x20>
-	tx_empty &= TX_EMPTY_MASK;
+		tx_empty &= TX_EMPTY_MASK;
  80050d2:	7bfb      	ldrb	r3, [r7, #15]
  80050d4:	f003 0310 	and.w	r3, r3, #16
  80050d8:	b2db      	uxtb	r3, r3
  80050da:	73fb      	strb	r3, [r7, #15]
 
-	uint8_t tx_ds;
-	R_REGISTER(0x07,1,&tx_ds);
+		R_REGISTER(0x07,1,&tx_ds);
  80050dc:	687b      	ldr	r3, [r7, #4]
  80050de:	681b      	ldr	r3, [r3, #0]
  80050e0:	3304      	adds	r3, #4
@@ -14720,7 +14723,7 @@ uint8_t NRF::TRANSMITTED(void){
  80050ea:	2107      	movs	r1, #7
  80050ec:	6878      	ldr	r0, [r7, #4]
  80050ee:	47a0      	blx	r4
-	for (int i=0;i<0x1dc4;i++);
+		for (int i=0;i<0x1dc4;i++);
  80050f0:	2300      	movs	r3, #0
  80050f2:	613b      	str	r3, [r7, #16]
  80050f4:	693b      	ldr	r3, [r7, #16]
@@ -14731,25 +14734,41 @@ uint8_t NRF::TRANSMITTED(void){
  8005100:	3301      	adds	r3, #1
  8005102:	613b      	str	r3, [r7, #16]
  8005104:	e7f6      	b.n	80050f4 <_ZN3NRF11TRANSMITTEDEv+0x54>
-	tx_ds &= TX_DS_MASK;
+		tx_ds &= TX_DS_MASK;
  8005106:	7bbb      	ldrb	r3, [r7, #14]
  8005108:	f003 0320 	and.w	r3, r3, #32
  800510c:	b2db      	uxtb	r3, r3
  800510e:	73bb      	strb	r3, [r7, #14]
 
-	if(tx_ds || !tx_empty)
+		//if(tx_ds || !tx_empty)
+		if(tx_ds)
  8005110:	7bbb      	ldrb	r3, [r7, #14]
  8005112:	2b00      	cmp	r3, #0
- 8005114:	d102      	bne.n	800511c <_ZN3NRF11TRANSMITTEDEv+0x7c>
- 8005116:	7bfb      	ldrb	r3, [r7, #15]
- 8005118:	2b00      	cmp	r3, #0
- 800511a:	d101      	bne.n	8005120 <_ZN3NRF11TRANSMITTEDEv+0x80>
-		return 1;
- 800511c:	2301      	movs	r3, #1
- 800511e:	e000      	b.n	8005122 <_ZN3NRF11TRANSMITTEDEv+0x82>
-	else
-		return 0;
- 8005120:	2300      	movs	r3, #0
+ 8005114:	d001      	beq.n	800511a <_ZN3NRF11TRANSMITTEDEv+0x7a>
+			return 1;
+ 8005116:	2301      	movs	r3, #1
+ 8005118:	e003      	b.n	8005122 <_ZN3NRF11TRANSMITTEDEv+0x82>
+#ifndef USE_AUTOACK
+		else
+			return 0;
+#endif
+#ifdef USE_AUTOACK
+	}while(!tx_ds);
+ 800511a:	7bbb      	ldrb	r3, [r7, #14]
+ 800511c:	2b00      	cmp	r3, #0
+ 800511e:	d100      	bne.n	8005122 <_ZN3NRF11TRANSMITTEDEv+0x82>
+//retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
+uint8_t NRF::TRANSMITTED(void){
+	uint8_t tx_empty;
+	uint8_t tx_ds;
+#ifdef USE_AUTOACK
+	do{
+ 8005120:	e7c2      	b.n	80050a8 <_ZN3NRF11TRANSMITTEDEv+0x8>
+			return 0;
+#endif
+#ifdef USE_AUTOACK
+	}while(!tx_ds);
+#endif
 }
  8005122:	4618      	mov	r0, r3
  8005124:	371c      	adds	r7, #28

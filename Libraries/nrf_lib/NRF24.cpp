@@ -544,7 +544,7 @@ void NRF::TX_configure(){
 		configuration.ERX_Px=ERX_P0;
 		configuration.RETR_ARC_and_ARD=RETR_ARC_15_RETRANSMIT|RETR_ARD_wait_4000_us;//até 15 tentativas, 1 a cada 4ms
 		configuration.RX_ADDR_P0=configuration.TX_ADDR;//para permitir AutoACK
-		configuration.FEATURE=FEATURE_EN_ACK_PAY|FEATURE_EN_DPL|FEATURE_EN_DYN_ACK;
+		configuration.FEATURE=FEATURE_EN_ACK_PAY|FEATURE_EN_DPL;
 		configuration.DYNPD  =DYNPD_DPL_P0;
 	#else //se o AUTOACK NÃO estiver sendo usado
 		configuration.ENAA_Px=ENAA_Disable_All_Pipes;

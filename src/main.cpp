@@ -51,6 +51,13 @@ __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 //envia sempre os mesmos pacotes
 uint8_t send(NRF* radio_ptr);
 
+//lidam com as interrupções geradas pelo nRF24
+void RX_DR_Handler();
+void TX_DS_Handler();
+void MAX_RT_Handler();
+
+NRF* radio_ptr;
+
 int main(void)
 {
 	SysTick_Config(SystemCoreClock/1000000);
@@ -70,6 +77,7 @@ int main(void)
   STM_EVAL_LEDInit(LED6);
 
   NRF radio;//inicializa o NRF com os pinos default, deixa em POWER_UP
+  radio_ptr=&radio;
 
   radio.REFRESH();//TODO remover após debug
 
@@ -94,6 +102,75 @@ int main(void)
   }
 }
 
+void EXTI9_5_IRQHandler(){
+	STM_EVAL_LEDOn(LED4);//VERDE: indica IRQ=low
+
+	uint8_t status=0;
+	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
+	for (int i=0;i<0x1dc4;i++);
+
+	if(status & RX_DR_MASK){
+		RX_DR_Handler();
+	}
+
+	if(status & TX_DS_MASK){
+		TX_DS_Handler();
+	}
+	if(status & MAX_RT_MASK){
+		MAX_RT_Handler();
+	}
+
+	STM_EVAL_LEDOff(LED4);
+	return;
+}
+
+void RX_DR_Handler(){
+	uint8_t payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	uint8_t status=0;
+	uint8_t rx_fifo_not_empty=0;
+
+	do{
+		radio_ptr->READ_RX_FIFO(payload);
+		VCP_send_buffer(payload,5);
+
+		radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
+		for (int i=0;i<0x1dc4;i++);
+		status |= RX_DR_MASK;
+		radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag RX_DR
+		for (int i=0;i<0x1dc4;i++);
+
+		radio_ptr->R_REGISTER(FIFO_STATUS_ADDRESS,1,&rx_fifo_not_empty);
+		for (int i=0;i<0x1dc4;i++);
+		rx_fifo_not_empty &= RX_EMPTY_MASK;
+	}while(rx_fifo_not_empty);
+
+	return;
+}
+
+void TX_DS_Handler(){
+	uint8_t status=0;
+
+	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
+	for (int i=0;i<0x1dc4;i++);
+	status |= TX_DS_MASK;
+	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag TX_DS
+	for (int i=0;i<0x1dc4;i++);
+
+	return;
+}
+
+void MAX_RT_Handler(){
+	uint8_t status=0;
+
+	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
+	for (int i=0;i<0x1dc4;i++);
+	status |= MAX_RT_MASK;
+	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag MAX_RT
+	for (int i=0;i<0x1dc4;i++);
+
+	return;
+}
+
 uint8_t send(NRF* radio_ptr){
 	  uint8_t symbol;
 	  uint8_t i;
@@ -102,19 +179,19 @@ uint8_t send(NRF* radio_ptr){
 	  uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 	  	 //TODO REMOVER PARA VOLTAR A EXECUTAR O LOOP
-		if(radio_ptr->SEND(buffer)){
+/*		if(radio_ptr->SEND(buffer)){
 #ifdef USE_AUTOACK
-/*				//TODO: include verificação de chegada de mensagem; imprimir ack payload
+				//TODO: include verificação de chegada de mensagem; imprimir ack payload
 				while(!radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
-				VCP_send_buffer(ack_payload,5);*/
+				VCP_send_buffer(ack_payload,5);
 #endif
 				return 1;//indicador de sucesso
 		}
 		else{
 				return 0;//indicador de falha
-		}
+		}*/
 
-	  while (0)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
+	  while (1)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
 	  {
 		if(VCP_get_char(&symbol))//se RECEBE um char a partir do computador
 		{

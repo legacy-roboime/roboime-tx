@@ -127,7 +127,7 @@ void NRF::begin(){
 	Delay_ms(1);
 
 	//Renault: escreveu 1 em 3 flags  que precisam ser  limpas no início (RX_DR,TX_DS,MAX_RT)
-	uint8_t status = 0b01110000;
+	uint8_t status = RX_DR_MASK|TX_DS_MASK|MAX_RT_MASK;
 	W_REGISTER(0x07,1,&status);
 
 	Delay_ms(2);//tempo de startup
@@ -329,30 +329,23 @@ uint8_t NRF::DATA_READY(void){
 uint8_t NRF::TRANSMITTED(void){
 	uint8_t tx_empty;
 	uint8_t tx_ds;
-#ifdef USE_AUTOACK
-	do{
-#endif
 
-		R_REGISTER(0x17,1,&tx_empty);
-		for (int i=0;i<0x1dc4;i++);
-		tx_empty &= TX_EMPTY_MASK;
+	R_REGISTER(0x17,1,&tx_empty);
+	for (int i=0;i<0x1dc4;i++);
+	tx_empty &= TX_EMPTY_MASK;
 
-		R_REGISTER(0x07,1,&tx_ds);
-		for (int i=0;i<0x1dc4;i++);
-		tx_ds &= TX_DS_MASK;
+	R_REGISTER(0x07,1,&tx_ds);
+	for (int i=0;i<0x1dc4;i++);
+	tx_ds &= TX_DS_MASK;
 
-		//if(tx_ds || !tx_empty)
-		if(tx_ds)
-			return 1;
-#ifndef USE_AUTOACK
-		else
-			return 0;
-#endif
-#ifdef USE_AUTOACK
-	}while(!tx_ds);
-#endif
+	//if(tx_ds || !tx_empty)
+	if(tx_ds)
+		return 1;
+	else
+		return 0;
 }
 
+//tenta a transmissão
 //data: ponteiro para os bytes a serem transmitidos; size: número de bytes a enviar
 //retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
 uint8_t NRF::SEND(uint8_t* data, uint8_t size){

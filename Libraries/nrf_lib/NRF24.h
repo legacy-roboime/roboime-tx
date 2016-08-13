@@ -132,7 +132,36 @@ typedef enum{
 #define TX_EMPTY_MASK	0b00010000
 #define RX_DR_MASK 		0b01000000
 #define TX_DS_MASK		0b00100000
+#define MAX_RT_MASK		0b00010000
 #define RX_P_NO_MASK	0b00001110
+
+//registers adresses
+#define CONFIG_ADDRESS		0x00
+#define EN_AA_ADDRESS		0x01
+#define EN_RXADDR_ADDRESS	0x02
+#define SETUP_AW_ADDRESS	0x03
+#define SETUP_RETR_ADDRESS	0x04
+#define RF_CH_ADDRESS		0x05
+#define RF_SETUP_ADDRESS	0x06
+#define STATUS_ADDRESS		0x07
+#define OBSERVE_TX_ADDRESS	0x08
+#define CD_ADDRESS			0x09
+#define RX_ADDR_P0_ADDRESS	0x0a
+#define RX_ADDR_P1_ADDRESS	0x0b
+#define RX_ADDR_P2_ADDRESS	0x0c
+#define RX_ADDR_P3_ADDRESS	0x0d
+#define RX_ADDR_P4_ADDRESS	0x0e
+#define RX_ADDR_P5_ADDRESS	0x0f
+#define TX_ADDR_ADDRESS		0x10
+#define RX_PW_P0_ADDRESS	0x11
+#define RX_PW_P1_ADDRESS	0x12
+#define RX_PW_P2_ADDRESS	0x13
+#define RX_PW_P3_ADDRESS	0x14
+#define RX_PW_P4_ADDRESS	0x15
+#define RX_PW_P5_ADDRESS	0x16
+#define FIFO_STATUS_ADDRESS	0x17
+#define DYNPD_ADDRESS		0x1c
+#define FEATURE_ADDRESS		0x1d
 
 //faz toda a configuração do TX mode e do RX mode
 typedef struct{
@@ -192,6 +221,9 @@ public:
 	void W_ACK_PAYLOAD(uint8_t pipe,uint8_t* pointer,uint8_t number);
 	void FLUSH_TX();
 	void FLUSH_RX();
+	int W_REGISTER(uint8_t adress, uint8_t size,uint8_t* value) {return SPI::W_REGISTER(adress, size,value); };//WORKED! but SPI seems too much fast to NRF
+	int R_REGISTER(uint8_t adress, uint8_t size,uint8_t* pointer) {return SPI::R_REGISTER(adress, size, pointer); };//WORKED!
+	void READ_RX_FIFO(uint8_t* pointer);
 	void RX_configure(config_Struct* pointer);
 	void TX_configure(config_Struct* pointer);
 	void RX_configure();
@@ -199,8 +231,6 @@ public:
 
 private:
 	//métodos
-	int W_REGISTER(uint8_t adress, uint8_t size,uint8_t* value) {return SPI::W_REGISTER(adress, size,value); };//WORKED! but SPI seems too much fast to NRF
-	int R_REGISTER(uint8_t adress, uint8_t size,uint8_t* pointer) {return SPI::R_REGISTER(adress, size, pointer); };//WORKED!
 	void RESET_ALL_REGISTERS(void);//WORKED!  but fails with read-only registers
 	void ASSERT_CE(int STATE);
 	void stdbyI_to_TX(uint8_t channel);
@@ -220,7 +250,6 @@ private:
 	void DYNPD_setup(uint8_t DYNPD);
 	uint8_t DATA_READY(void);//WORKED!
 	uint8_t TRANSMITTED(void);
-	void READ_RX_FIFO(uint8_t* pointer);
 	uint8_t GET_PIPE_FOR_READING(void);
 };
 

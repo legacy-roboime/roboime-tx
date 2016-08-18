@@ -56,6 +56,13 @@ void RX_DR_Handler();
 void TX_DS_Handler();
 void MAX_RT_Handler();
 
+void reset_MAX_RT();//reseta a flag MAX_RT
+void print_nRF();	//imprime no terminal todos os registradores do nRF24
+void u8_to_binary(uint8_t number,uint8_t* ptr);	//representa number como um binário de 8 algarismos
+void u8_to_hex(uint8_t number,uint8_t* hex);	//representa number como um hexa de 2 algarismos
+uint8_t dectohex(uint8_t u);//converte um uint8_t entre 0 e 9 para o char que o representa em hexadecimal
+
+
 NRF* radio_ptr;
 
 int main(void)
@@ -87,10 +94,23 @@ int main(void)
   //inicialização do USB
   USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 
+  Delay_s(20);
+  STM_EVAL_LEDOn(LED3);
+  STM_EVAL_LEDOn(LED4);
+  STM_EVAL_LEDOn(LED5);
+  STM_EVAL_LEDOn(LED6);
+  Delay_s(1);
+  STM_EVAL_LEDOff(LED3);
+  STM_EVAL_LEDOff(LED4);
+  STM_EVAL_LEDOff(LED5);
+  STM_EVAL_LEDOff(LED6);
+
+  uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   uint64_t packets_sent=0;
   /* Infinite loop */
   while (1)
   {
+	  	  	reset_MAX_RT();//always resets MAX_RT;
 			if(send(&radio)){
 					packets_sent++;
 					STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
@@ -99,9 +119,18 @@ int main(void)
 			else{
 					STM_EVAL_LEDToggle(LED5);//VERMELHO:indicador de falha
 			}
+
+			print_nRF();
+#ifdef USE_AUTOACK
+				//TODO: include verificação de chegada de mensagem; imprimir ack payload
+				if(radio_ptr->RECEIVE(ack_payload))//verifica se chegou algo na RX-fifo
+					VCP_send_buffer(ack_payload,5);
+#endif
+				print_nRF();
   }
 }
 
+/*
 void EXTI9_5_IRQHandler(){
 	STM_EVAL_LEDOn(LED4);//VERDE: indica IRQ=low
 
@@ -170,28 +199,24 @@ void MAX_RT_Handler(){
 
 	return;
 }
+*/
 
 uint8_t send(NRF* radio_ptr){
 	  uint8_t symbol;
 	  uint8_t i;
 	  uint8_t  buffer[]={'a',43,43,43,43};
 
-	  uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-
-	  	 //TODO REMOVER PARA VOLTAR A EXECUTAR O LOOP
-/*		if(radio_ptr->SEND(buffer)){
-#ifdef USE_AUTOACK
-				//TODO: include verificação de chegada de mensagem; imprimir ack payload
-				while(!radio_ptr->RECEIVE(ack_payload));//espera até que tenha chegado algo na RX-fifo
-				VCP_send_buffer(ack_payload,5);
-#endif
+	  	//TODO REMOVER PARA VOLTAR A EXECUTAR O LOOP
+		if(radio_ptr->SEND(buffer)){
 				return 1;//indicador de sucesso
 		}
 		else{
 				return 0;//indicador de falha
-		}*/
+		}
 
-	  while (1)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+	  while (0)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
 	  {
 		if(VCP_get_char(&symbol))//se RECEBE um char a partir do computador
 		{
@@ -219,6 +244,91 @@ uint8_t send(NRF* radio_ptr){
 			}
 		}
 	  }
+}
+
+//reseta a flag MAX_RT
+void reset_MAX_RT(){
+	uint8_t status;
+	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
+	STD_ITER_DELAY
+
+	status |= MAX_RT_MASK;
+	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);
+	STD_ITER_DELAY
+	return;
+}
+
+//imprime no terminal todos os registradores do nRF24
+void print_nRF(){
+	radio_ptr->REFRESH();//a partir de agora, ptr aponta para os valores atualizados dos registradores
+
+	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
+
+	uint8_t i,j,reg_size=0;
+	REGISTER* current_register = &(radio_ptr->CONFIG);
+	uint8_t hex_addr[]={'0','0'};
+	uint8_t binary_content[]={'0','0','0','0','0','0','0','0'};
+	for(i=0x00;i<=0x19;i++){
+		//R_REGISTER(current_register->get_address(), current_register->get_size(),current_register->content);
+		VCP_put_char('0');VCP_put_char('x');
+		u8_to_hex(current_register->get_address(),hex_addr);
+		VCP_send_buffer(hex_addr,2);//imprime o endereço
+		VCP_put_char('\t');
+		u8_to_binary((current_register->content)[0],binary_content);
+		reg_size=current_register->get_size();
+		VCP_send_buffer(binary_content,8);
+		VCP_put_char('\n');VCP_put_char('\r');
+
+		if(reg_size>1){//imprime os demais bytes de um registrador, caso eles tenham mais de 1 byte
+			for(j=1;j<reg_size;j++){
+				VCP_put_char('\t');
+				u8_to_binary((current_register->content)[j],binary_content);
+				VCP_send_buffer(binary_content,8);
+				VCP_put_char('\n');VCP_put_char('\r');
+			}
+		}
+
+		current_register++;
+	}
+
+	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
+
+	return;
+}
+
+//representa os bits de number em ptr
+void u8_to_binary(uint8_t number,uint8_t* ptr){
+	for(int i=7;i>=0;i--){
+		ptr[i]='0'+(number%2);
+		number=number/2;
+	}
+}
+
+//representa number como um hexa de 2 algarismos
+void u8_to_hex(uint8_t number,uint8_t* hex){
+
+	for(int i=1;i>=0;i--){
+		hex[i]=dectohex(number%16);
+		number = number/16;
+	}
+	return;
+}
+
+//converte um uint8_t entre 0 e 9 para o char que o representa em hexadecimal
+uint8_t dectohex(uint8_t u){
+	uint8_t c;
+
+	if(u>=0 && u<=9){
+		c='0'+u;
+	}else{
+		if(u>=10 && u<=15){
+			c='a'+(u-10);
+		}else{
+			c=0;
+		}
+	}
+
+	return c;
 }
 
 /*void Delay( uint32_t nTime)

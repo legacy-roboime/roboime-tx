@@ -41,6 +41,7 @@ NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,
 	 */
 
 	//enables the SYSCFG clock
+/*
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG,ENABLE);
 
 	GPIO_Clock_Cmd(NRF_IRQ_GPIO,ENABLE);
@@ -69,6 +70,7 @@ NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,
 	NVIC_Init(&NVIC_cfg);
 
 	SYSCFG_EXTILineConfig(EXTI_PortSource(NRF_IRQ_GPIO),EXTI_PinSource(NRF_IRQ_Pin));
+*/
 
 	//MOSI, MISO, SCK GPIO configuration
 	GPIO_InitTypeDef GPIO_SPI_Pins_initstruct;
@@ -327,20 +329,24 @@ uint8_t NRF::DATA_READY(void){
 
 //retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
 uint8_t NRF::TRANSMITTED(void){
-	uint8_t tx_empty;
-	uint8_t tx_ds;
+	uint8_t fifo_status;
+	uint8_t status;
 
-	R_REGISTER(0x17,1,&tx_empty);
+	R_REGISTER(FIFO_STATUS_ADDRESS,1,&fifo_status);
 	for (int i=0;i<0x1dc4;i++);
-	tx_empty &= TX_EMPTY_MASK;
+	fifo_status &= TX_EMPTY_MASK;
 
-	R_REGISTER(0x07,1,&tx_ds);
+	R_REGISTER(STATUS_ADDRESS,1,&status);
 	for (int i=0;i<0x1dc4;i++);
-	tx_ds &= TX_DS_MASK;
 
-	//if(tx_ds || !tx_empty)
-	if(tx_ds)
+	//if((status & TX_DS_MASK) || !(fifo_status & TX_EMPTY_MASK))
+	if(status & TX_DS_MASK){
+		ASSERT_CE(RESET);//para evitar problemas (novas interrupções) e pq W_REGISTER() só pode ser chamada com CE=LOW
+		status |= TX_DS_MASK;//reseta a flag TX_DS
+		W_REGISTER(STATUS_ADDRESS,1,&status);
+		STD_ITER_DELAY
 		return 1;
+	}
 	else
 		return 0;
 }
@@ -388,26 +394,43 @@ void NRF::stop_listen(){
 	return;
 }
 
-//data: ponteiro para os bytes a serem transmitidos; size: número de bytes a enviar
-//retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
+/*
+ * Armazena em data a mensagem mais recente
+ * prende o programa aqui até receber algo
+ * data: ponteiro que armazenará os bytes recebidos;
+ * retorna 1 se o NRF24 recebeu alguma coisa, retorna 0 se ainda não conseguiu receber
+ */
 uint8_t NRF::RECEIVE(uint8_t* data){
 	//passa aqui
 
-	while(!DATA_READY());
-	//espera até receber algo
+	if(DATA_READY()){//verifica se recebeu algo
 
-	READ_RX_FIFO(data);
+		ASSERT_CE(RESET);//para evitar problemas (novas interrupções)
 
-	uint8_t status;
-	R_REGISTER(0x07,1,&status);
-	STD_ITER_DELAY
+		read_top_of_fifo:
+		READ_RX_FIFO(data);
 
-	//reseta a IRQ, conforme a product specification
-	status |= RX_DR_MASK;
-	W_REGISTER(0x07,1,&status);
-	STD_ITER_DELAY
+		uint8_t status,fifo_status;
+		R_REGISTER(STATUS_ADDRESS,1,&status);
+		STD_ITER_DELAY
 
-	return 1;
+		//com CE=LOW, reseta a IRQ, conforme a product specification
+		status |= RX_DR_MASK;
+		W_REGISTER(STATUS_ADDRESS,1,&status);
+		STD_ITER_DELAY
+
+		//verifica se há outros pacotes para ler, conforme a product specification
+		R_REGISTER(FIFO_STATUS_ADDRESS,1,&fifo_status);
+		STD_ITER_DELAY
+		if((fifo_status & RX_EMPTY_MASK)==0){
+			goto read_top_of_fifo;
+		}
+
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
 //lê a payload no topo da RX_FIFO
@@ -531,6 +554,7 @@ void NRF::TX_configure(){
 	configuration.RF_SETUP=RF_SETUP_Data_Rate_2Mbps;
 	configuration.channel=0x02;
 	configuration.TX_ADDR=ReceiverAddress;
+	configuration.payload_width_pipe_0=5;
 
 	#ifdef USE_AUTOACK
 		configuration.ENAA_Px=ENAA_P0;

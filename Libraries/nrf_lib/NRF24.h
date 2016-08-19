@@ -223,7 +223,6 @@ public:
 	void FLUSH_RX();
 	int W_REGISTER(uint8_t adress, uint8_t size,uint8_t* value) {return SPI::W_REGISTER(adress, size,value); };//WORKED! but SPI seems too much fast to NRF
 	int R_REGISTER(uint8_t adress, uint8_t size,uint8_t* pointer) {return SPI::R_REGISTER(adress, size, pointer); };//WORKED!
-	void READ_RX_FIFO(uint8_t* pointer);
 	void RX_configure(config_Struct* pointer);
 	void TX_configure(config_Struct* pointer);
 	void RX_configure();
@@ -250,6 +249,7 @@ private:
 	void DYNPD_setup(uint8_t DYNPD);
 	uint8_t DATA_READY(void);//WORKED!
 	uint8_t TRANSMITTED(void);
+	void READ_RX_FIFO(uint8_t* pointer);
 	uint8_t GET_PIPE_FOR_READING(void);
 };
 

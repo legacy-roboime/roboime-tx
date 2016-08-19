@@ -483,7 +483,7 @@ void NRF::RX_configure(){
 
 #ifdef USE_AUTOACK
 	configuration.ENAA_Px=ENAA_P0;//write 1 in some bit of EN_AA will force high on EN_CRC bit
-	configuration.FEATURE=FEATURE_EN_ACK_PAY|FEATURE_EN_DPL|FEATURE_EN_DYN_ACK;
+	configuration.FEATURE=FEATURE_EN_ACK_PAY|FEATURE_EN_DPL;
 	configuration.DYNPD  =DYNPD_DPL_P0;
 #else
 	configuration.ENAA_Px=ENAA_Disable_All_Pipes;
@@ -528,6 +528,8 @@ void NRF::RX_configure(config_Struct* pointer){
 		}
 		RX_ADDR_Px_pointer++;//passa a apontar para o próximo RX_ADDR_Px da struct
 	}
+
+	TX_ADDR_setup(pointer->TX_ADDR);
 
 	//tenta escrever no registrador FEATURE, se falhar, precisa ser ativado
 	uint8_t feat=0b111;

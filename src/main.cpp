@@ -1,25 +1,21 @@
-/*
- * NOVO:
- * Em vez de se basear em 3 funções diferentes, usa apenas um comando de SPI::CMD()
- * Foi resolvido o problema de esporadicamente repetir o 4º caracter no 5º
- * Para isso, foi alterada a verificação de SPI_I2S_FLAGS antes de setar CS em SPI::CMD()
- * RECENTE:
- * Nesse projeto mantém-se a configuração de SPI divida em duas partes:
- * 		uma parte fica no construtor da classe SPI e faz a inicialização do SCK,MOSI e MISO
- * 		a outra parte fica no construtor da classe NRF, e inicializa o CSN
- * o pino VDD do NRF fica ligado direto no VDD da discovery, como na versão USB+TX_sem_SPI_CONFIG_WORKED_3
- * a função NRF::begin() já é chamada dentro do construtor do nRF
- *
- * Author: Renan Pícoli
- */
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
+#include "usbd_usr.h"
+#include "usbd_desc.h"
+#include "usbd_cdc_vcp.h"
+#include "usb_dcd_int.h"
+#include "usbd_cdc_core.h"
+#include "usbd_core.h"
+#include "usbd_usr.h"
+#include "usbd_desc.h"
+#include "usbd_cdc_vcp.h"
+#include "usb_dcd_int.h"
+#include "NRF24.h"
 
-/* Includes */
-#include "main.h"
+static __IO uint32_t TimingDelay;
 
-uint32_t TimingDelay;
-
-//void Delay (uint32_t nTime);
-//void TimingDelay_Decrement(void);
+void TimingDelay_Decrement(void);
+void Delay_ms(uint32_t time_ms);
 
 extern "C" {
  void SysTick_Handler(void);
@@ -27,40 +23,60 @@ extern "C" {
  void OTG_FS_WKUP_IRQHandler(void);
 }
 
-
 __ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 
-
-int main(void)
-{
-	SysTick_Config(SystemCoreClock/1000);
-  /**
-  *  IMPORTANT NOTE!
-  *  The symbol VECT_TAB_SRAM needs to be defined when building the project
-  *  if code has been located to RAM and interrupts are used. 
-  *  Otherwise the interrupt table located in flash will be used.
-  *  See also the <system_*.c> file and how the SystemInit() function updates 
-  *  SCB->VTOR register.  
-  *  E.g.  SCB->VTOR = 0x20000000;  
-  */
-
-
+int main(void){
+  SysTick_Config(SystemCoreClock/1000);
   USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
-
-  /* Infinite loop */
+  STM_EVAL_LEDInit(LED5);
+  STM_EVAL_LEDInit(LED6);
+  NRF24 radio;
+  radio.is_rx=false;
+  radio.Config();
+  uint8_t buf[]={'g','u','s','t', 'a'};
+  radio.NRF_CE->Set();
   while (1)
   {
+    Delay_ms(1000);
+    radio.WritePayload(buf, 5);
+	if(radio.DataSent()){
+	  radio.CleanDataSent();
+	  STM_EVAL_LEDToggle(LED6);
+	}
+	if(radio.MaxRt()){
+	  radio.CleanMaxRt();
+	  radio.FlushTx();
+	  STM_EVAL_LEDToggle(LED5);
+	}
+    if(radio.DataReady()){
+      uint8_t data_in[5];
+      radio.ReadPayload(data_in, 5);
+      VCP_send_buffer(data_in, 5);
+      radio.CleanDataReady();
+    }
   }
 }
 
+extern "C"{
+  void SysTick_Handler(void){
+    TimingDelay_Decrement();
+  }
+}
 
-void OTG_FS_IRQHandler(void)
-{
+void TimingDelay_Decrement(void){
+  if(TimingDelay != 0x00){
+    TimingDelay--;
+  }
+}
+void Delay_ms(uint32_t time_ms){
+  TimingDelay = time_ms;
+  while(TimingDelay != 0);
+}
+void OTG_FS_IRQHandler(void){
   USBD_OTG_ISR_Handler (&USB_OTG_dev);
 }
 
-void OTG_FS_WKUP_IRQHandler(void)
-{
+void OTG_FS_WKUP_IRQHandler(void){
   if(USB_OTG_dev.cfg.low_power)
   {
     *(uint32_t *)(0xE000ED10) &= 0xFFFFFFF9 ;

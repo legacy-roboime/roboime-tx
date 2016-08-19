@@ -41,7 +41,6 @@ NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,
 	 */
 
 	//enables the SYSCFG clock
-/*
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG,ENABLE);
 
 	GPIO_Clock_Cmd(NRF_IRQ_GPIO,ENABLE);
@@ -70,7 +69,6 @@ NRF::NRF(GPIO_TypeDef* CE_GPIO,uint16_t CE_Pin,
 	NVIC_Init(&NVIC_cfg);
 
 	SYSCFG_EXTILineConfig(EXTI_PortSource(NRF_IRQ_GPIO),EXTI_PinSource(NRF_IRQ_Pin));
-*/
 
 	//MOSI, MISO, SCK GPIO configuration
 	GPIO_InitTypeDef GPIO_SPI_Pins_initstruct;
@@ -121,7 +119,7 @@ void NRF::begin(){
 
 	R_REGISTER(0x00,1, &config);
 
-	//faz PWR_UP=1
+	//faz PWR_UP=1, todas as interrupções são refletidas no pino de IRQ
 	config = 0b00000010;
 
 	//grava o novo valor de CONFIG
@@ -363,7 +361,7 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 	for (int i=0;i<0x1dc4;i++);//minimum pulse width = 10us, here we use 100us
 	ASSERT_CE(RESET);
 
-	return TRANSMITTED();
+	//return TRANSMITTED();
 }
 
 void NRF::W_ACK_PAYLOAD(uint8_t pipe,uint8_t* pointer,uint8_t number){
@@ -396,7 +394,7 @@ void NRF::stop_listen(){
 
 /*
  * Armazena em data a mensagem mais recente
- * prende o programa aqui até receber algo
+ * lê todos os  pacotes na RX_FIFO, apenas o mais recente é passado
  * data: ponteiro que armazenará os bytes recebidos;
  * retorna 1 se o NRF24 recebeu alguma coisa, retorna 0 se ainda não conseguiu receber
  */

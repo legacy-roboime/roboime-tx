@@ -30,6 +30,7 @@ extern "C" {
  void SysTick_Handler(void);
  void OTG_FS_IRQHandler(void);
  void OTG_FS_WKUP_IRQHandler(void);
+ void EXTI9_5_IRQHandler();
 }
 
 /*
@@ -62,7 +63,10 @@ void u8_to_binary(uint8_t number,uint8_t* ptr);	//representa number como um biná
 void u8_to_hex(uint8_t number,uint8_t* hex);	//representa number como um hexa de 2 algarismos
 uint8_t dectohex(uint8_t u);//converte um uint8_t entre 0 e 9 para o char que o representa em hexadecimal
 
-
+//variáveis globais
+uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+uint8_t payload_to_print=0;//flag que sinaliza a main() que há uma payload para ser lida
+uint64_t packets_sent=0;
 NRF* radio_ptr;
 
 int main(void)
@@ -105,12 +109,13 @@ int main(void)
   STM_EVAL_LEDOff(LED5);
   STM_EVAL_LEDOff(LED6);
 
-  uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-  uint64_t packets_sent=0;
+//  uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+  //uint64_t packets_sent=0;
   /* Infinite loop */
   while (1)
   {
-	  	  	reset_MAX_RT();//always resets MAX_RT;
+/*
+	  	  	//reset_MAX_RT();//always resets MAX_RT;
 			if(send(&radio)){
 					packets_sent++;
 					STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
@@ -126,17 +131,22 @@ int main(void)
 				if(radio_ptr->RECEIVE(ack_payload))//verifica se chegou algo na RX-fifo
 					VCP_send_buffer(ack_payload,5);
 #endif
-				print_nRF();
+*/
+//				print_nRF();
+				send(&radio);
+				if(payload_to_print){
+					VCP_send_buffer(ack_payload,5);
+					payload_to_print=0;
+				}
   }
 }
 
-/*
 void EXTI9_5_IRQHandler(){
 	STM_EVAL_LEDOn(LED4);//VERDE: indica IRQ=low
 
 	uint8_t status=0;
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (int i=0;i<0x1dc4;i++);
+	for (uint64_t i=0;i<0x1dc4;i++);
 
 	if(status & RX_DR_MASK){
 		RX_DR_Handler();
@@ -154,52 +164,45 @@ void EXTI9_5_IRQHandler(){
 }
 
 void RX_DR_Handler(){
-	uint8_t payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	uint8_t status=0;
 	uint8_t rx_fifo_not_empty=0;
+	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 
-	do{
-		radio_ptr->READ_RX_FIFO(payload);
-		VCP_send_buffer(payload,5);
+	//armazena o valor recebido e limpa a flag RX_DR
+	radio_ptr->RECEIVE(ack_payload);
+	payload_to_print=1;
 
-		radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-		for (int i=0;i<0x1dc4;i++);
-		status |= RX_DR_MASK;
-		radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag RX_DR
-		for (int i=0;i<0x1dc4;i++);
-
-		radio_ptr->R_REGISTER(FIFO_STATUS_ADDRESS,1,&rx_fifo_not_empty);
-		for (int i=0;i<0x1dc4;i++);
-		rx_fifo_not_empty &= RX_EMPTY_MASK;
-	}while(rx_fifo_not_empty);
+	//TODO:levar em conta a possibilidade de a payload ter mais de 5 bytes
+	//VCP_send_buffer(ack_payload,5);
 
 	return;
 }
 
 void TX_DS_Handler(){
 	uint8_t status=0;
-
+	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (int i=0;i<0x1dc4;i++);
+	for (uint64_t i=0;i<0x1dc4;i++);
 	status |= TX_DS_MASK;
 	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag TX_DS
-	for (int i=0;i<0x1dc4;i++);
+	for (uint64_t i=0;i<0x1dc4;i++);
 
+	STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
 	return;
 }
 
+//reseta a flag MAX_RT
 void MAX_RT_Handler(){
-	uint8_t status=0;
-
+	uint8_t status;
+	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (int i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
+
 	status |= MAX_RT_MASK;
 	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag MAX_RT
-	for (int i=0;i<0x1dc4;i++);
-
+	STD_ITER_DELAY
 	return;
 }
-*/
 
 uint8_t send(NRF* radio_ptr){
 	  uint8_t symbol;

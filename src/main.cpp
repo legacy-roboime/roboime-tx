@@ -96,7 +96,7 @@ int main(void)
   radio.REFRESH();//TODO remover após debug
 
   //inicialização do USB
-  USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+  /*USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);*/
 
   Delay_s(20);
   STM_EVAL_LEDOn(LED3);

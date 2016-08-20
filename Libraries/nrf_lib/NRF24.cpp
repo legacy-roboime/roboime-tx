@@ -446,15 +446,6 @@ void NRF::READ_RX_FIFO(uint8_t* pointer){
 	CMD(0x61,payload_length,0x00,pointer);//comando R_RX_PLD
 	STD_ITER_DELAY
 
-	//reseta a flag RX_DR para que IRQ possa subir de novo
-	uint8_t status;
-	R_REGISTER(0x07,1,&status);
-	STD_ITER_DELAY
-
-	status |= RX_DR_MASK;
-	W_REGISTER(0x07,1,&status);//Write 1 to clear RX_DR bit.
-
-	STD_ITER_DELAY
 	return;
 }
 

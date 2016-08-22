@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-ar qc libusb_lib_otg_libs.a  CMakeFiles/usb_lib_otg_libs.dir/lib/usb_lib/otg/usb_core.c.obj CMakeFiles/usb_lib_otg_libs.dir/lib/usb_lib/otg/usb_dcd.c.obj CMakeFiles/usb_lib_otg_libs.dir/lib/usb_lib/otg/usb_dcd_int.c.obj
-/usr/bin/arm-none-eabi-ranlib libusb_lib_otg_libs.a

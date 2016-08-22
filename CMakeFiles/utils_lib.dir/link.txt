@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-ar qc libutils_lib.a  CMakeFiles/utils_lib.dir/lib/utils/stm32f4xx/stm32f4xx_it.c.obj CMakeFiles/utils_lib.dir/lib/utils/stm32f4xx/system_stm32f4xx.c.obj CMakeFiles/utils_lib.dir/lib/utils/stm32f4xx/tiny_printf.c.obj CMakeFiles/utils_lib.dir/lib/utils/stm32f4_discovery/stm32f4_discovery.c.obj
-/usr/bin/arm-none-eabi-ranlib libutils_lib.a

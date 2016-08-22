@@ -1,5 +1,23 @@
 cmake_minimum_required(VERSION 3.0)
 
+project (roboime-firmware_v1.0)
+
+IF (NOT CMAKE_CROSSCOMPILING)
+  message (FATAL_ERROR "Cross compiling only. Please use -DCMAKE_TOOLCHAIN_FILE=/PATH/TO/TOOLCHAIN_FILE .")
+ENDIF (NOT CMAKE_CROSSCOMPILING)
+
+add_definitions (-DSTM32F4XX -DSTM32F40XX -DUSE_STDPERIPH_DRIVER -DUSE_AUTOACK -DUSE_STM32F4_DISCOVERY)
+set (STM32F4_FLAGS "-mfloat-abi=hard -mfpu=fpv4-sp-d16 -mthumb -mcpu=cortex-m4 -g -Wall")
+#                   -Wunused-variable -Wunused-but-set-variable -Wimplicit-function-declaration")
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${STM32F4_FLAGS}")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++98 ${STM32F4_FLAGS}")
+#set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/stm32f4-discovery.ld -nostartfiles --specs=rdimon.specs")
+set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/stm32f4_flash.ld -nostartfiles --specs=rdimon.specs")
+
+function (add_bin_from_elf bin elf)
+  add_custom_target (${bin} ALL ${CMAKE_OBJCOPY} -Obinary ${elf} ${bin} DEPENDS ${elf})
+endfunction (add_bin_from_elf)
+
 #
 # LIBS
 #

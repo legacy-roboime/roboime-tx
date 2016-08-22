@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-ar qc libnrf_lib.a  CMakeFiles/nrf_lib.dir/lib/nrf/CONFIG.cpp.obj CMakeFiles/nrf_lib.dir/lib/nrf/NRF24.cpp.obj CMakeFiles/nrf_lib.dir/lib/nrf/NRF_REGISTER_MAP.cpp.obj CMakeFiles/nrf_lib.dir/lib/nrf/REGISTER.cpp.obj CMakeFiles/nrf_lib.dir/lib/nrf/SPI_interface.cpp.obj
-/usr/bin/arm-none-eabi-ranlib libnrf_lib.a

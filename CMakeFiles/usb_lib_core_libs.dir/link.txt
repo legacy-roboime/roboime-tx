@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-ar qc libusb_lib_core_libs.a  CMakeFiles/usb_lib_core_libs.dir/lib/usb_lib/core/usbd_core.c.obj CMakeFiles/usb_lib_core_libs.dir/lib/usb_lib/core/usbd_ioreq.c.obj CMakeFiles/usb_lib_core_libs.dir/lib/usb_lib/core/usbd_req.c.obj
-/usr/bin/arm-none-eabi-ranlib libusb_lib_core_libs.a

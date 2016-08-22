@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/misc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c.obj"
+  "CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c.obj"
+  "libSTM32F4xx_StdPeriph_Driver_libs.pdb"
+  "libSTM32F4xx_StdPeriph_Driver_libs.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/STM32F4xx_StdPeriph_Driver_libs.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

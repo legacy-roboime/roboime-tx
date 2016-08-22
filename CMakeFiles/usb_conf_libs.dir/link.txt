@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-ar qc libusb_conf_libs.a  CMakeFiles/usb_conf_libs.dir/lib/usb_conf/usb_bsp.c.obj CMakeFiles/usb_conf_libs.dir/lib/usb_conf/usbd_desc.c.obj CMakeFiles/usb_conf_libs.dir/lib/usb_conf/usbd_usr.c.obj
+/usr/bin/arm-none-eabi-ranlib libusb_conf_libs.a

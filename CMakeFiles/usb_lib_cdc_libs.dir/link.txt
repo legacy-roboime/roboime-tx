@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-ar qc libusb_lib_cdc_libs.a  CMakeFiles/usb_lib_cdc_libs.dir/lib/usb_lib/cdc/usbd_cdc_core.c.obj CMakeFiles/usb_lib_cdc_libs.dir/lib/usb_lib/cdc/usbd_cdc_vcp.c.obj
+/usr/bin/arm-none-eabi-ranlib libusb_lib_cdc_libs.a

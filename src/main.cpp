@@ -28,8 +28,8 @@ uint32_t TimingDelay;
 
 extern "C" {
  void SysTick_Handler(void);
- void OTG_FS_IRQHandler(void);
- void OTG_FS_WKUP_IRQHandler(void);
+// void OTG_FS_IRQHandler(void);
+// void OTG_FS_WKUP_IRQHandler(void);
  void EXTI9_5_IRQHandler();
 }
 
@@ -39,7 +39,7 @@ extern "C" {
  * See: http://electronics.stackexchange.com/questions/134474/how-to-get-usart-and-usb-serial-working-on-the-stm32f4discovery-board
  * See also usb_conf.h
  */
-__ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
+//__ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
 
 /**
 **===========================================================================
@@ -58,7 +58,7 @@ void TX_DS_Handler();
 void MAX_RT_Handler();
 
 void reset_MAX_RT();//reseta a flag MAX_RT
-void print_nRF();	//imprime no terminal todos os registradores do nRF24
+//void print_nRF();	//imprime no terminal todos os registradores do nRF24
 void u8_to_binary(uint8_t number,uint8_t* ptr);	//representa number como um binário de 8 algarismos
 void u8_to_hex(uint8_t number,uint8_t* hex);	//representa number como um hexa de 2 algarismos
 uint8_t dectohex(uint8_t u);//converte um uint8_t entre 0 e 9 para o char que o representa em hexadecimal
@@ -67,7 +67,7 @@ uint8_t dectohex(uint8_t u);//converte um uint8_t entre 0 e 9 para o char que o 
 uint8_t  ack_payload[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t payload_to_print=0;//flag que sinaliza a main() que há uma payload para ser lida
 uint64_t packets_sent=0;
-NRF* radio_ptr;
+NRF* radio_ptr=0;
 
 int main(void)
 {
@@ -135,10 +135,11 @@ int main(void)
 //				print_nRF();
 				send(&radio);
 				if(payload_to_print){
-					VCP_send_buffer(ack_payload,5);
+					//VCP_send_buffer(ack_payload,5);
 					payload_to_print=0;
 				}
   }
+  return 0;
 }
 
 void EXTI9_5_IRQHandler(){
@@ -183,7 +184,8 @@ void TX_DS_Handler(){
 	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
 	for (uint64_t i=0;i<0x1dc4;i++);
-	status |= TX_DS_MASK;
+	//if write status in the register, we'd clear any flag, we only "write" 0 in the bits we don't want to change in order to protect they from being changed
+	status &= ~(RX_DR_MASK|MAX_RT_MASK);
 	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag TX_DS
 	for (uint64_t i=0;i<0x1dc4;i++);
 
@@ -193,12 +195,13 @@ void TX_DS_Handler(){
 
 //reseta a flag MAX_RT
 void MAX_RT_Handler(){
-	uint8_t status;
+	uint8_t status=0;
 	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
 	STD_ITER_DELAY
 
-	status |= MAX_RT_MASK;
+	//if write status in the register, we'd clear any flag, we only "write" 0 in the bits we don't want to change in order to protect they from being changed
+	status &= ~(RX_DR_MASK|TX_DS_MASK);
 	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag MAX_RT
 	STD_ITER_DELAY
 	return;
@@ -221,7 +224,7 @@ uint8_t send(NRF* radio_ptr){
 
 	  while (0)//TODO REMOVER o ZERO PARA VOLTAR A EXECUTAR O LOOP
 	  {
-		if(VCP_get_char(&symbol))//se RECEBE um char a partir do computador
+//		if(VCP_get_char(&symbol))//se RECEBE um char a partir do computador
 		{
 			//verifica se o símbolo recebido indica nova sequência de velocidades,
 			//caso afirmativo, os próximos 4 uint8_t são tratados como velocidades e são enviados
@@ -230,14 +233,15 @@ uint8_t send(NRF* radio_ptr){
 				i=0;
 				buffer[i]='a';//TODO: change to 0xff
 				while (i<4){
-					if(VCP_get_char(&symbol)){
+//					if(VCP_get_char(&symbol))
+					{
 						if(symbol == 'a')//TODO: change to 0xff
 							goto start_of_buffering;
 						buffer[i+1] = symbol;//preenche o buffer
 						i++;
 					}
 				}
-				VCP_send_buffer(buffer,5);//TODO remover após debug
+//				VCP_send_buffer(buffer,5);//TODO remover após debug
 				if(radio_ptr->SEND(buffer)){
 						return 1;//indicador de sucesso
 				}
@@ -265,7 +269,7 @@ void reset_MAX_RT(){
 void print_nRF(){
 	radio_ptr->REFRESH();//a partir de agora, ptr aponta para os valores atualizados dos registradores
 
-	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
+//	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
 
 	uint8_t i,j,reg_size=0;
 	REGISTER* current_register = &(radio_ptr->CONFIG);
@@ -273,28 +277,28 @@ void print_nRF(){
 	uint8_t binary_content[]={'0','0','0','0','0','0','0','0'};
 	for(i=0x00;i<=0x19;i++){
 		//R_REGISTER(current_register->get_address(), current_register->get_size(),current_register->content);
-		VCP_put_char('0');VCP_put_char('x');
+//		VCP_put_char('0');VCP_put_char('x');
 		u8_to_hex(current_register->get_address(),hex_addr);
-		VCP_send_buffer(hex_addr,2);//imprime o endereço
-		VCP_put_char('\t');
+//		VCP_send_buffer(hex_addr,2);//imprime o endereço
+//		VCP_put_char('\t');
 		u8_to_binary((current_register->content)[0],binary_content);
 		reg_size=current_register->get_size();
-		VCP_send_buffer(binary_content,8);
-		VCP_put_char('\n');VCP_put_char('\r');
+//		VCP_send_buffer(binary_content,8);
+//		VCP_put_char('\n');VCP_put_char('\r');
 
 		if(reg_size>1){//imprime os demais bytes de um registrador, caso eles tenham mais de 1 byte
 			for(j=1;j<reg_size;j++){
-				VCP_put_char('\t');
+//				VCP_put_char('\t');
 				u8_to_binary((current_register->content)[j],binary_content);
-				VCP_send_buffer(binary_content,8);
-				VCP_put_char('\n');VCP_put_char('\r');
+//				VCP_send_buffer(binary_content,8);
+//				VCP_put_char('\n');VCP_put_char('\r');
 			}
 		}
 
 		current_register++;
 	}
 
-	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
+//	VCP_put_char('\n');VCP_put_char('\n');VCP_put_char('\r');
 
 	return;
 }
@@ -357,12 +361,14 @@ void SysTick_Handler(void)
 }
 */
 
+/*
 void OTG_FS_IRQHandler(void)
 {
   USBD_OTG_ISR_Handler (&USB_OTG_dev);
 }
+*/
 
-void OTG_FS_WKUP_IRQHandler(void)
+/*void OTG_FS_WKUP_IRQHandler(void)
 {
   if(USB_OTG_dev.cfg.low_power)
   {
@@ -371,7 +377,7 @@ void OTG_FS_WKUP_IRQHandler(void)
     USB_OTG_UngateClock(&USB_OTG_dev);
   }
   EXTI_ClearITPendingBit(EXTI_Line18);
-}
+}*/
 
 /*
  * Callback used by stm32f4_discovery_audio_codec.c.

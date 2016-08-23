@@ -361,7 +361,8 @@ uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 	for (int i=0;i<0x1dc4;i++);//minimum pulse width = 10us, here we use 100us
 	ASSERT_CE(RESET);
 
-	//return TRANSMITTED();
+	//TODO consertar o valor de retorno de NRF::SEND
+	return TRANSMITTED();
 }
 
 void NRF::W_ACK_PAYLOAD(uint8_t pipe,uint8_t* pointer,uint8_t number){
@@ -412,8 +413,9 @@ uint8_t NRF::RECEIVE(uint8_t* data){
 		R_REGISTER(STATUS_ADDRESS,1,&status);
 		STD_ITER_DELAY
 
-		//com CE=LOW, reseta a IRQ, conforme a product specification
-		status |= RX_DR_MASK;
+		//com CE=LOW, reseta a flag RX_DR, conforme a product specification
+		//if write status in the register, we'd clear any flag, we only "write" 0 in the bits we don't want to change in order to protect they from being changed
+		status &= ~(TX_DS_MASK|MAX_RT_MASK);
 		W_REGISTER(STATUS_ADDRESS,1,&status);
 		STD_ITER_DELAY
 

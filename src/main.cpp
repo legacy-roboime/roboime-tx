@@ -147,7 +147,7 @@ void EXTI9_5_IRQHandler(){
 
 	uint8_t status=0;
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (uint64_t i=0;i<0x1dc4;i++);
+	//for (uint64_t i=0;i<0x1dc4;i++);
 
 	if(status & RX_DR_MASK){
 		RX_DR_Handler();
@@ -160,6 +160,8 @@ void EXTI9_5_IRQHandler(){
 		MAX_RT_Handler();
 	}
 
+	//"limpa" a interrupção
+	EXTI_ClearITPendingBit(EXTI_Line(radio_ptr->IRQ_Pin()));
 	STM_EVAL_LEDOff(LED4);
 	return;
 }

@@ -182,17 +182,21 @@ Discarded input sections
  .text          0x00000000        0x0 src\nrf24v02\NRF24.o
  .data          0x00000000        0x0 src\nrf24v02\NRF24.o
  .bss           0x00000000        0x0 src\nrf24v02\NRF24.o
+ .text._ZN5NRF2411ReadPayloadEPhi
+                0x00000000       0xf4 src\nrf24v02\NRF24.o
  .text._ZN5NRF2415WriteAckPayloadEPhi
                 0x00000000       0xf8 src\nrf24v02\NRF24.o
  .text._ZN5NRF2417CheckPayloadWidthEv
                 0x00000000       0x44 src\nrf24v02\NRF24.o
  .text._ZN5NRF244TestEv
                 0x00000000       0x44 src\nrf24v02\NRF24.o
+ .text._ZN5NRF249DataReadyEv
+                0x00000000       0x28 src\nrf24v02\NRF24.o
+ .text._ZN5NRF2414CleanDataReadyEv
+                0x00000000       0x28 src\nrf24v02\NRF24.o
  .text._ZN5NRF247RxEmptyEv
                 0x00000000       0x28 src\nrf24v02\NRF24.o
  .text._ZN5NRF246RxFullEv
-                0x00000000       0x28 src\nrf24v02\NRF24.o
- .text._ZN5NRF247TxEmptyEv
                 0x00000000       0x28 src\nrf24v02\NRF24.o
  .text._ZN5NRF246TxFullEv
                 0x00000000       0x28 src\nrf24v02\NRF24.o
@@ -202,6 +206,8 @@ Discarded input sections
  .text          0x00000000        0x0 src\main.o
  .data          0x00000000        0x0 src\main.o
  .bss           0x00000000        0x0 src\main.o
+ .text._Z8Delay_msm
+                0x00000000       0x30 src\main.o
  .text          0x00000000        0x0 Utilities\STM32F4-Discovery\stm32f4_discovery_lis302dl.o
  .data          0x00000000        0x0 Utilities\STM32F4-Discovery\stm32f4_discovery_lis302dl.o
  .bss           0x00000000        0x0 Utilities\STM32F4-Discovery\stm32f4_discovery_lis302dl.o
@@ -403,8 +409,6 @@ Discarded input sections
                 0x00000000       0x1c Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_send_str
                 0x00000000       0x30 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
- .text.VCP_get_char
-                0x00000000       0x58 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_get_string
                 0x00000000      0x120 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.EVAL_COM_IRQHandler
@@ -2475,7 +2479,7 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib
                 0x08000000                g_pfnVectors
                 0x08000188                . = ALIGN (0x4)
 
-.text           0x08000188     0xdf50
+.text           0x08000188     0xdeb8
                 0x08000188                . = ALIGN (0x4)
  *(.text)
  .text          0x08000188       0x40 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
@@ -2678,1104 +2682,1097 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib
  .text._ZN5NRF2412WritePayloadEPhi
                 0x080071d8       0xf8 src\nrf24v02\NRF24.o
                 0x080071d8                NRF24::WritePayload(unsigned char*, int)
- .text._ZN5NRF2411ReadPayloadEPhi
-                0x080072d0       0xf4 src\nrf24v02\NRF24.o
-                0x080072d0                NRF24::ReadPayload(unsigned char*, int)
  .text._ZN5NRF247FlushTxEv
-                0x080073c4       0x58 src\nrf24v02\NRF24.o
-                0x080073c4                NRF24::FlushTx()
+                0x080072d0       0x58 src\nrf24v02\NRF24.o
+                0x080072d0                NRF24::FlushTx()
  .text._ZN5NRF247FlushRxEv
-                0x0800741c       0x58 src\nrf24v02\NRF24.o
-                0x0800741c                NRF24::FlushRx()
+                0x08007328       0x58 src\nrf24v02\NRF24.o
+                0x08007328                NRF24::FlushRx()
  .text._ZN5NRF248DataSentEv
-                0x08007474       0x28 src\nrf24v02\NRF24.o
-                0x08007474                NRF24::DataSent()
- .text._ZN5NRF249DataReadyEv
-                0x0800749c       0x28 src\nrf24v02\NRF24.o
-                0x0800749c                NRF24::DataReady()
+                0x08007380       0x28 src\nrf24v02\NRF24.o
+                0x08007380                NRF24::DataSent()
  .text._ZN5NRF245MaxRtEv
-                0x080074c4       0x28 src\nrf24v02\NRF24.o
-                0x080074c4                NRF24::MaxRt()
+                0x080073a8       0x28 src\nrf24v02\NRF24.o
+                0x080073a8                NRF24::MaxRt()
  .text._ZN5NRF2413CleanDataSentEv
-                0x080074ec       0x28 src\nrf24v02\NRF24.o
-                0x080074ec                NRF24::CleanDataSent()
- .text._ZN5NRF2414CleanDataReadyEv
-                0x08007514       0x28 src\nrf24v02\NRF24.o
-                0x08007514                NRF24::CleanDataReady()
+                0x080073d0       0x28 src\nrf24v02\NRF24.o
+                0x080073d0                NRF24::CleanDataSent()
  .text._ZN5NRF2410CleanMaxRtEv
-                0x0800753c       0x28 src\nrf24v02\NRF24.o
-                0x0800753c                NRF24::CleanMaxRt()
+                0x080073f8       0x28 src\nrf24v02\NRF24.o
+                0x080073f8                NRF24::CleanMaxRt()
+ .text._ZN5NRF247TxEmptyEv
+                0x08007420       0x28 src\nrf24v02\NRF24.o
+                0x08007420                NRF24::TxEmpty()
  .text._ZN4GPIOC2EP12GPIO_TypeDeft
-                0x08007564       0xb4 src\nrf24v02\GPIO.o
-                0x08007564                GPIO::GPIO(GPIO_TypeDef*, unsigned short)
-                0x08007564                GPIO::GPIO(GPIO_TypeDef*, unsigned short)
+                0x08007448       0xb4 src\nrf24v02\GPIO.o
+                0x08007448                GPIO::GPIO(GPIO_TypeDef*, unsigned short)
+                0x08007448                GPIO::GPIO(GPIO_TypeDef*, unsigned short)
  .text._ZN4GPIO3SetEv
-                0x08007618       0x20 src\nrf24v02\GPIO.o
-                0x08007618                GPIO::Set()
+                0x080074fc       0x20 src\nrf24v02\GPIO.o
+                0x080074fc                GPIO::Set()
  .text._ZN4GPIO5ResetEv
-                0x08007638       0x20 src\nrf24v02\GPIO.o
-                0x08007638                GPIO::Reset()
+                0x0800751c       0x20 src\nrf24v02\GPIO.o
+                0x0800751c                GPIO::Reset()
  .text.NVIC_SetPriority
-                0x08007658       0x54 src\main.o
+                0x0800753c       0x54 src\main.o
  .text.SysTick_Config
-                0x080076ac       0x44 src\main.o
- .text.main     0x080076f0      0x138 src\main.o
-                0x080076f0                main
+                0x08007590       0x44 src\main.o
+ .text.main     0x080075d4      0x194 src\main.o
+                0x080075d4                main
  .text.SysTick_Handler
-                0x08007828        0xc src\main.o
-                0x08007828                SysTick_Handler
+                0x08007768        0xc src\main.o
+                0x08007768                SysTick_Handler
  .text._Z21TimingDelay_Decrementv
-                0x08007834       0x2c src\main.o
-                0x08007834                TimingDelay_Decrement()
- .text._Z8Delay_msm
-                0x08007860       0x30 src\main.o
-                0x08007860                Delay_ms(unsigned long)
+                0x08007774       0x2c src\main.o
+                0x08007774                TimingDelay_Decrement()
  .text.OTG_FS_IRQHandler
-                0x08007890       0x10 src\main.o
-                0x08007890                OTG_FS_IRQHandler
+                0x080077a0       0x10 src\main.o
+                0x080077a0                OTG_FS_IRQHandler
  .text.OTG_FS_WKUP_IRQHandler
-                0x080078a0       0x34 src\main.o
-                0x080078a0                OTG_FS_WKUP_IRQHandler
+                0x080077b0       0x34 src\main.o
+                0x080077b0                OTG_FS_WKUP_IRQHandler
  .text.EVAL_AUDIO_TransferComplete_CallBack
-                0x080078d4       0x18 src\main.o
-                0x080078d4                EVAL_AUDIO_TransferComplete_CallBack
+                0x080077e4       0x18 src\main.o
+                0x080077e4                EVAL_AUDIO_TransferComplete_CallBack
  .text.EVAL_AUDIO_GetSampleCallBack
-                0x080078ec       0x14 src\main.o
-                0x080078ec                EVAL_AUDIO_GetSampleCallBack
+                0x080077fc       0x14 src\main.o
+                0x080077fc                EVAL_AUDIO_GetSampleCallBack
  .text.Audio_MAL_IRQHandler
-                0x08007900       0xf8 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+                0x08007810       0xf8 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
  .text.DMA1_Stream7_IRQHandler
-                0x080079f8        0xc Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
-                0x080079f8                DMA1_Stream7_IRQHandler
+                0x08007908        0xc Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+                0x08007908                DMA1_Stream7_IRQHandler
  .text.DMA1_Stream0_IRQHandler
-                0x08007a04        0xc Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
-                0x08007a04                DMA1_Stream0_IRQHandler
+                0x08007914        0xc Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+                0x08007914                DMA1_Stream0_IRQHandler
  .text.SPI3_IRQHandler
-                0x08007a10       0x40 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
-                0x08007a10                SPI3_IRQHandler
+                0x08007920       0x40 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+                0x08007920                SPI3_IRQHandler
  .text.STM_EVAL_LEDInit
-                0x08007a50       0x5c Utilities\STM32F4-Discovery\stm32f4_discovery.o
-                0x08007a50                STM_EVAL_LEDInit
+                0x08007960       0x5c Utilities\STM32F4-Discovery\stm32f4_discovery.o
+                0x08007960                STM_EVAL_LEDInit
  .text.STM_EVAL_LEDToggle
-                0x08007aac       0x3c Utilities\STM32F4-Discovery\stm32f4_discovery.o
-                0x08007aac                STM_EVAL_LEDToggle
+                0x080079bc       0x3c Utilities\STM32F4-Discovery\stm32f4_discovery.o
+                0x080079bc                STM_EVAL_LEDToggle
  .text.USBD_OTG_ISR_Handler
-                0x08007ae8      0x15c Libraries\usb_lib\otg\usb_dcd_int.o
-                0x08007ae8                USBD_OTG_ISR_Handler
+                0x080079f8      0x15c Libraries\usb_lib\otg\usb_dcd_int.o
+                0x080079f8                USBD_OTG_ISR_Handler
  .text.DCD_HandleResume_ISR
-                0x08007c44       0x80 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08007b54       0x80 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleUSBSuspend_ISR
-                0x08007cc4       0x9c Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08007bd4       0x9c Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleInEP_ISR
-                0x08007d60      0x1ec Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08007c70      0x1ec Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleOutEP_ISR
-                0x08007f4c      0x178 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08007e5c      0x178 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleSof_ISR
-                0x080080c4       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08007fd4       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleRxStatusQueueLevel_ISR
-                0x080080f8      0x104 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08008008      0x104 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_WriteEmptyTxFifo
-                0x080081fc       0xe4 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x0800810c       0xe4 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleUsbReset_ISR
-                0x080082e0      0x144 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x080081f0      0x144 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_HandleEnumDone_ISR
-                0x08008424       0x78 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08008334       0x78 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_IsoINIncomplete_ISR
-                0x0800849c       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x080083ac       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_IsoOUTIncomplete_ISR
-                0x080084d0       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x080083e0       0x34 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_ReadDevInEP
-                0x08008504       0x50 Libraries\usb_lib\otg\usb_dcd_int.o
+                0x08008414       0x50 Libraries\usb_lib\otg\usb_dcd_int.o
  .text.DCD_Init
-                0x08008554      0x100 Libraries\usb_lib\otg\usb_dcd.o
-                0x08008554                DCD_Init
+                0x08008464      0x100 Libraries\usb_lib\otg\usb_dcd.o
+                0x08008464                DCD_Init
  .text.DCD_EP_Open
-                0x08008654       0x9c Libraries\usb_lib\otg\usb_dcd.o
-                0x08008654                DCD_EP_Open
+                0x08008564       0x9c Libraries\usb_lib\otg\usb_dcd.o
+                0x08008564                DCD_EP_Open
  .text.DCD_EP_Close
-                0x080086f0       0x70 Libraries\usb_lib\otg\usb_dcd.o
-                0x080086f0                DCD_EP_Close
+                0x08008600       0x70 Libraries\usb_lib\otg\usb_dcd.o
+                0x08008600                DCD_EP_Close
  .text.DCD_EP_PrepareRx
-                0x08008760       0x80 Libraries\usb_lib\otg\usb_dcd.o
-                0x08008760                DCD_EP_PrepareRx
+                0x08008670       0x80 Libraries\usb_lib\otg\usb_dcd.o
+                0x08008670                DCD_EP_PrepareRx
  .text.DCD_EP_Tx
-                0x080087e0       0x78 Libraries\usb_lib\otg\usb_dcd.o
-                0x080087e0                DCD_EP_Tx
+                0x080086f0       0x78 Libraries\usb_lib\otg\usb_dcd.o
+                0x080086f0                DCD_EP_Tx
  .text.DCD_EP_Stall
-                0x08008858       0x74 Libraries\usb_lib\otg\usb_dcd.o
-                0x08008858                DCD_EP_Stall
+                0x08008768       0x74 Libraries\usb_lib\otg\usb_dcd.o
+                0x08008768                DCD_EP_Stall
  .text.DCD_EP_ClrStall
-                0x080088cc       0x74 Libraries\usb_lib\otg\usb_dcd.o
-                0x080088cc                DCD_EP_ClrStall
+                0x080087dc       0x74 Libraries\usb_lib\otg\usb_dcd.o
+                0x080087dc                DCD_EP_ClrStall
  .text.DCD_EP_SetAddress
-                0x08008940       0x3c Libraries\usb_lib\otg\usb_dcd.o
-                0x08008940                DCD_EP_SetAddress
+                0x08008850       0x3c Libraries\usb_lib\otg\usb_dcd.o
+                0x08008850                DCD_EP_SetAddress
  .text.USB_OTG_EnableCommonInt
-                0x0800897c       0x44 Libraries\usb_lib\otg\usb_core.o
+                0x0800888c       0x44 Libraries\usb_lib\otg\usb_core.o
  .text.USB_OTG_CoreReset
-                0x080089c0       0x8c Libraries\usb_lib\otg\usb_core.o
+                0x080088d0       0x8c Libraries\usb_lib\otg\usb_core.o
  .text.USB_OTG_WritePacket
-                0x08008a4c       0x70 Libraries\usb_lib\otg\usb_core.o
-                0x08008a4c                USB_OTG_WritePacket
+                0x0800895c       0x70 Libraries\usb_lib\otg\usb_core.o
+                0x0800895c                USB_OTG_WritePacket
  .text.USB_OTG_ReadPacket
-                0x08008abc       0x58 Libraries\usb_lib\otg\usb_core.o
-                0x08008abc                USB_OTG_ReadPacket
+                0x080089cc       0x58 Libraries\usb_lib\otg\usb_core.o
+                0x080089cc                USB_OTG_ReadPacket
  .text.USB_OTG_SelectCore
-                0x08008b14      0x174 Libraries\usb_lib\otg\usb_core.o
-                0x08008b14                USB_OTG_SelectCore
+                0x08008a24      0x174 Libraries\usb_lib\otg\usb_core.o
+                0x08008a24                USB_OTG_SelectCore
  .text.USB_OTG_CoreInit
-                0x08008c88      0x1dc Libraries\usb_lib\otg\usb_core.o
-                0x08008c88                USB_OTG_CoreInit
+                0x08008b98      0x1dc Libraries\usb_lib\otg\usb_core.o
+                0x08008b98                USB_OTG_CoreInit
  .text.USB_OTG_EnableGlobalInt
-                0x08008e64       0x38 Libraries\usb_lib\otg\usb_core.o
-                0x08008e64                USB_OTG_EnableGlobalInt
+                0x08008d74       0x38 Libraries\usb_lib\otg\usb_core.o
+                0x08008d74                USB_OTG_EnableGlobalInt
  .text.USB_OTG_DisableGlobalInt
-                0x08008e9c       0x38 Libraries\usb_lib\otg\usb_core.o
-                0x08008e9c                USB_OTG_DisableGlobalInt
+                0x08008dac       0x38 Libraries\usb_lib\otg\usb_core.o
+                0x08008dac                USB_OTG_DisableGlobalInt
  .text.USB_OTG_FlushTxFifo
-                0x08008ed4       0x74 Libraries\usb_lib\otg\usb_core.o
-                0x08008ed4                USB_OTG_FlushTxFifo
+                0x08008de4       0x74 Libraries\usb_lib\otg\usb_core.o
+                0x08008de4                USB_OTG_FlushTxFifo
  .text.USB_OTG_FlushRxFifo
-                0x08008f48       0x60 Libraries\usb_lib\otg\usb_core.o
-                0x08008f48                USB_OTG_FlushRxFifo
+                0x08008e58       0x60 Libraries\usb_lib\otg\usb_core.o
+                0x08008e58                USB_OTG_FlushRxFifo
  .text.USB_OTG_SetCurrentMode
-                0x08008fa8       0x60 Libraries\usb_lib\otg\usb_core.o
-                0x08008fa8                USB_OTG_SetCurrentMode
+                0x08008eb8       0x60 Libraries\usb_lib\otg\usb_core.o
+                0x08008eb8                USB_OTG_SetCurrentMode
  .text.USB_OTG_GetMode
-                0x08009008       0x20 Libraries\usb_lib\otg\usb_core.o
-                0x08009008                USB_OTG_GetMode
+                0x08008f18       0x20 Libraries\usb_lib\otg\usb_core.o
+                0x08008f18                USB_OTG_GetMode
  .text.USB_OTG_IsDeviceMode
-                0x08009028       0x24 Libraries\usb_lib\otg\usb_core.o
-                0x08009028                USB_OTG_IsDeviceMode
+                0x08008f38       0x24 Libraries\usb_lib\otg\usb_core.o
+                0x08008f38                USB_OTG_IsDeviceMode
  .text.USB_OTG_ReadCoreItr
-                0x0800904c       0x30 Libraries\usb_lib\otg\usb_core.o
-                0x0800904c                USB_OTG_ReadCoreItr
+                0x08008f5c       0x30 Libraries\usb_lib\otg\usb_core.o
+                0x08008f5c                USB_OTG_ReadCoreItr
  .text.USB_OTG_InitDevSpeed
-                0x0800907c       0x38 Libraries\usb_lib\otg\usb_core.o
-                0x0800907c                USB_OTG_InitDevSpeed
+                0x08008f8c       0x38 Libraries\usb_lib\otg\usb_core.o
+                0x08008f8c                USB_OTG_InitDevSpeed
  .text.USB_OTG_CoreInitDev
-                0x080090b4      0x27c Libraries\usb_lib\otg\usb_core.o
-                0x080090b4                USB_OTG_CoreInitDev
+                0x08008fc4      0x27c Libraries\usb_lib\otg\usb_core.o
+                0x08008fc4                USB_OTG_CoreInitDev
  .text.USB_OTG_EnableDevInt
-                0x08009330       0x98 Libraries\usb_lib\otg\usb_core.o
-                0x08009330                USB_OTG_EnableDevInt
+                0x08009240       0x98 Libraries\usb_lib\otg\usb_core.o
+                0x08009240                USB_OTG_EnableDevInt
  .text.USB_OTG_GetDeviceSpeed
-                0x080093c8       0x48 Libraries\usb_lib\otg\usb_core.o
-                0x080093c8                USB_OTG_GetDeviceSpeed
+                0x080092d8       0x48 Libraries\usb_lib\otg\usb_core.o
+                0x080092d8                USB_OTG_GetDeviceSpeed
  .text.USB_OTG_EP0Activate
-                0x08009410       0x78 Libraries\usb_lib\otg\usb_core.o
-                0x08009410                USB_OTG_EP0Activate
+                0x08009320       0x78 Libraries\usb_lib\otg\usb_core.o
+                0x08009320                USB_OTG_EP0Activate
  .text.USB_OTG_EPActivate
-                0x08009488       0xdc Libraries\usb_lib\otg\usb_core.o
-                0x08009488                USB_OTG_EPActivate
+                0x08009398       0xdc Libraries\usb_lib\otg\usb_core.o
+                0x08009398                USB_OTG_EPActivate
  .text.USB_OTG_EPDeactivate
-                0x08009564       0x8c Libraries\usb_lib\otg\usb_core.o
-                0x08009564                USB_OTG_EPDeactivate
+                0x08009474       0x8c Libraries\usb_lib\otg\usb_core.o
+                0x08009474                USB_OTG_EPDeactivate
  .text.USB_OTG_EPStartXfer
-                0x080095f0      0x280 Libraries\usb_lib\otg\usb_core.o
-                0x080095f0                USB_OTG_EPStartXfer
+                0x08009500      0x280 Libraries\usb_lib\otg\usb_core.o
+                0x08009500                USB_OTG_EPStartXfer
  .text.USB_OTG_EP0StartXfer
-                0x08009870      0x1d4 Libraries\usb_lib\otg\usb_core.o
-                0x08009870                USB_OTG_EP0StartXfer
+                0x08009780      0x1d4 Libraries\usb_lib\otg\usb_core.o
+                0x08009780                USB_OTG_EP0StartXfer
  .text.USB_OTG_EPSetStall
-                0x08009a44       0x88 Libraries\usb_lib\otg\usb_core.o
-                0x08009a44                USB_OTG_EPSetStall
+                0x08009954       0x88 Libraries\usb_lib\otg\usb_core.o
+                0x08009954                USB_OTG_EPSetStall
  .text.USB_OTG_EPClearStall
-                0x08009acc       0x78 Libraries\usb_lib\otg\usb_core.o
-                0x08009acc                USB_OTG_EPClearStall
+                0x080099dc       0x78 Libraries\usb_lib\otg\usb_core.o
+                0x080099dc                USB_OTG_EPClearStall
  .text.USB_OTG_ReadDevAllOutEp_itr
-                0x08009b44       0x2c Libraries\usb_lib\otg\usb_core.o
-                0x08009b44                USB_OTG_ReadDevAllOutEp_itr
+                0x08009a54       0x2c Libraries\usb_lib\otg\usb_core.o
+                0x08009a54                USB_OTG_ReadDevAllOutEp_itr
  .text.USB_OTG_ReadDevOutEP_itr
-                0x08009b70       0x38 Libraries\usb_lib\otg\usb_core.o
-                0x08009b70                USB_OTG_ReadDevOutEP_itr
+                0x08009a80       0x38 Libraries\usb_lib\otg\usb_core.o
+                0x08009a80                USB_OTG_ReadDevOutEP_itr
  .text.USB_OTG_ReadDevAllInEPItr
-                0x08009ba8       0x2c Libraries\usb_lib\otg\usb_core.o
-                0x08009ba8                USB_OTG_ReadDevAllInEPItr
+                0x08009ab8       0x2c Libraries\usb_lib\otg\usb_core.o
+                0x08009ab8                USB_OTG_ReadDevAllInEPItr
  .text.USB_OTG_EP0_OutStart
-                0x08009bd4       0x70 Libraries\usb_lib\otg\usb_core.o
-                0x08009bd4                USB_OTG_EP0_OutStart
+                0x08009ae4       0x70 Libraries\usb_lib\otg\usb_core.o
+                0x08009ae4                USB_OTG_EP0_OutStart
  .text.USB_OTG_UngateClock
-                0x08009c44       0x54 Libraries\usb_lib\otg\usb_core.o
-                0x08009c44                USB_OTG_UngateClock
+                0x08009b54       0x54 Libraries\usb_lib\otg\usb_core.o
+                0x08009b54                USB_OTG_UngateClock
  .text.USBD_StdDevReq
-                0x08009c98       0xa0 Libraries\usb_lib\core\usbd_req.o
-                0x08009c98                USBD_StdDevReq
+                0x08009ba8       0xa0 Libraries\usb_lib\core\usbd_req.o
+                0x08009ba8                USBD_StdDevReq
  .text.USBD_StdItfReq
-                0x08009d38       0x68 Libraries\usb_lib\core\usbd_req.o
-                0x08009d38                USBD_StdItfReq
+                0x08009c48       0x68 Libraries\usb_lib\core\usbd_req.o
+                0x08009c48                USBD_StdItfReq
  .text.USBD_StdEPReq
-                0x08009da0      0x1b0 Libraries\usb_lib\core\usbd_req.o
-                0x08009da0                USBD_StdEPReq
+                0x08009cb0      0x1b0 Libraries\usb_lib\core\usbd_req.o
+                0x08009cb0                USBD_StdEPReq
  .text.USBD_GetDescriptor
-                0x08009f50      0x1b8 Libraries\usb_lib\core\usbd_req.o
+                0x08009e60      0x1b8 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_SetAddress
-                0x0800a108       0x7c Libraries\usb_lib\core\usbd_req.o
+                0x0800a018       0x7c Libraries\usb_lib\core\usbd_req.o
  .text.USBD_SetConfig
-                0x0800a184       0xf4 Libraries\usb_lib\core\usbd_req.o
+                0x0800a094       0xf4 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_GetConfig
-                0x0800a278       0x60 Libraries\usb_lib\core\usbd_req.o
+                0x0800a188       0x60 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_GetStatus
-                0x0800a2d8       0x50 Libraries\usb_lib\core\usbd_req.o
+                0x0800a1e8       0x50 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_SetFeature
-                0x0800a328       0xcc Libraries\usb_lib\core\usbd_req.o
+                0x0800a238       0xcc Libraries\usb_lib\core\usbd_req.o
  .text.USBD_ClrFeature
-                0x0800a3f4       0x50 Libraries\usb_lib\core\usbd_req.o
+                0x0800a304       0x50 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_ParseSetupRequest
-                0x0800a444       0x8c Libraries\usb_lib\core\usbd_req.o
-                0x0800a444                USBD_ParseSetupRequest
+                0x0800a354       0x8c Libraries\usb_lib\core\usbd_req.o
+                0x0800a354                USBD_ParseSetupRequest
  .text.USBD_CtlError
-                0x0800a4d0       0x48 Libraries\usb_lib\core\usbd_req.o
-                0x0800a4d0                USBD_CtlError
+                0x0800a3e0       0x48 Libraries\usb_lib\core\usbd_req.o
+                0x0800a3e0                USBD_CtlError
  .text.USBD_GetString
-                0x0800a518       0x7c Libraries\usb_lib\core\usbd_req.o
-                0x0800a518                USBD_GetString
+                0x0800a428       0x7c Libraries\usb_lib\core\usbd_req.o
+                0x0800a428                USBD_GetString
  .text.USBD_GetLen
-                0x0800a594       0x30 Libraries\usb_lib\core\usbd_req.o
+                0x0800a4a4       0x30 Libraries\usb_lib\core\usbd_req.o
  .text.USBD_CtlSendData
-                0x0800a5c4       0x40 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a5c4                USBD_CtlSendData
+                0x0800a4d4       0x40 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a4d4                USBD_CtlSendData
  .text.USBD_CtlContinueSendData
-                0x0800a604       0x28 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a604                USBD_CtlContinueSendData
+                0x0800a514       0x28 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a514                USBD_CtlContinueSendData
  .text.USBD_CtlPrepareRx
-                0x0800a62c       0x40 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a62c                USBD_CtlPrepareRx
+                0x0800a53c       0x40 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a53c                USBD_CtlPrepareRx
  .text.USBD_CtlContinueRx
-                0x0800a66c       0x28 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a66c                USBD_CtlContinueRx
+                0x0800a57c       0x28 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a57c                USBD_CtlContinueRx
  .text.USBD_CtlSendStatus
-                0x0800a694       0x30 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a694                USBD_CtlSendStatus
+                0x0800a5a4       0x30 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a5a4                USBD_CtlSendStatus
  .text.USBD_CtlReceiveStatus
-                0x0800a6c4       0x30 Libraries\usb_lib\core\usbd_ioreq.o
-                0x0800a6c4                USBD_CtlReceiveStatus
+                0x0800a5d4       0x30 Libraries\usb_lib\core\usbd_ioreq.o
+                0x0800a5d4                USBD_CtlReceiveStatus
  .text.USBD_Init
-                0x0800a6f4       0x54 Libraries\usb_lib\core\usbd_core.o
-                0x0800a6f4                USBD_Init
+                0x0800a604       0x54 Libraries\usb_lib\core\usbd_core.o
+                0x0800a604                USBD_Init
  .text.USBD_DeInit
-                0x0800a748       0x18 Libraries\usb_lib\core\usbd_core.o
-                0x0800a748                USBD_DeInit
+                0x0800a658       0x18 Libraries\usb_lib\core\usbd_core.o
+                0x0800a658                USBD_DeInit
  .text.USBD_SetupStage
-                0x0800a760       0x6c Libraries\usb_lib\core\usbd_core.o
+                0x0800a670       0x6c Libraries\usb_lib\core\usbd_core.o
  .text.USBD_DataOutStage
-                0x0800a7cc       0xd0 Libraries\usb_lib\core\usbd_core.o
+                0x0800a6dc       0xd0 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_DataInStage
-                0x0800a89c      0x104 Libraries\usb_lib\core\usbd_core.o
+                0x0800a7ac      0x104 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_Reset
-                0x0800a9a0       0x44 Libraries\usb_lib\core\usbd_core.o
+                0x0800a8b0       0x44 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_Resume
-                0x0800a9e4       0x24 Libraries\usb_lib\core\usbd_core.o
+                0x0800a8f4       0x24 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_Suspend
-                0x0800aa08       0x24 Libraries\usb_lib\core\usbd_core.o
+                0x0800a918       0x24 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_SOF
-                0x0800aa2c       0x2c Libraries\usb_lib\core\usbd_core.o
+                0x0800a93c       0x2c Libraries\usb_lib\core\usbd_core.o
  .text.USBD_SetCfg
-                0x0800aa58       0x30 Libraries\usb_lib\core\usbd_core.o
-                0x0800aa58                USBD_SetCfg
+                0x0800a968       0x30 Libraries\usb_lib\core\usbd_core.o
+                0x0800a968                USBD_SetCfg
  .text.USBD_ClrCfg
-                0x0800aa88       0x28 Libraries\usb_lib\core\usbd_core.o
-                0x0800aa88                USBD_ClrCfg
+                0x0800a998       0x28 Libraries\usb_lib\core\usbd_core.o
+                0x0800a998                USBD_ClrCfg
  .text.USBD_IsoINIncomplete
-                0x0800aab0       0x20 Libraries\usb_lib\core\usbd_core.o
+                0x0800a9c0       0x20 Libraries\usb_lib\core\usbd_core.o
  .text.USBD_IsoOUTIncomplete
-                0x0800aad0       0x20 Libraries\usb_lib\core\usbd_core.o
+                0x0800a9e0       0x20 Libraries\usb_lib\core\usbd_core.o
  .text.VCP_Init
-                0x0800aaf0       0x10 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800aa00       0x10 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_DeInit
-                0x0800ab00       0x10 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800aa10       0x10 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_Ctrl
-                0x0800ab10      0x110 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800aa20      0x110 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_send_buffer
-                0x0800ac20       0x1c Libraries\usb_lib\cdc\usbd_cdc_vcp.o
-                0x0800ac20                VCP_send_buffer
+                0x0800ab30       0x1c Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800ab30                VCP_send_buffer
  .text.VCP_DataTx
-                0x0800ac3c       0x60 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800ab4c       0x60 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
  .text.VCP_DataRx
-                0x0800ac9c       0x70 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800abac       0x70 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+ .text.VCP_get_char
+                0x0800ac1c       0x58 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                0x0800ac1c                VCP_get_char
  .text.usbd_cdc_Init
-                0x0800ad0c       0x88 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800ac74       0x88 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_DeInit
-                0x0800ad94       0x38 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800acfc       0x38 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_Setup
-                0x0800adcc      0x120 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800ad34      0x120 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_EP0_RxReady
-                0x0800aeec       0x44 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800ae54       0x44 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_DataIn
-                0x0800af30       0xc0 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800ae98       0xc0 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_DataOut
-                0x0800aff0       0x54 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800af58       0x54 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.usbd_cdc_SOF
-                0x0800b044       0x30 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800afac       0x30 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.Handle_USBAsynchXfer
-                0x0800b074      0x100 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800afdc      0x100 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.USBD_cdc_GetCfgDesc
-                0x0800b174       0x24 Libraries\usb_lib\cdc\usbd_cdc_core.o
+                0x0800b0dc       0x24 Libraries\usb_lib\cdc\usbd_cdc_core.o
  .text.USBD_USR_Init
-                0x0800b198        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b198                USBD_USR_Init
+                0x0800b100        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b100                USBD_USR_Init
  .text.USBD_USR_DeviceReset
-                0x0800b1a4       0x28 Libraries\usb_conf\usbd_usr.o
-                0x0800b1a4                USBD_USR_DeviceReset
+                0x0800b10c       0x28 Libraries\usb_conf\usbd_usr.o
+                0x0800b10c                USBD_USR_DeviceReset
  .text.USBD_USR_DeviceConfigured
-                0x0800b1cc        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b1cc                USBD_USR_DeviceConfigured
+                0x0800b134        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b134                USBD_USR_DeviceConfigured
  .text.USBD_USR_DeviceConnected
-                0x0800b1d8        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b1d8                USBD_USR_DeviceConnected
+                0x0800b140        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b140                USBD_USR_DeviceConnected
  .text.USBD_USR_DeviceDisconnected
-                0x0800b1e4        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b1e4                USBD_USR_DeviceDisconnected
+                0x0800b14c        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b14c                USBD_USR_DeviceDisconnected
  .text.USBD_USR_DeviceSuspended
-                0x0800b1f0        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b1f0                USBD_USR_DeviceSuspended
+                0x0800b158        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b158                USBD_USR_DeviceSuspended
  .text.USBD_USR_DeviceResumed
-                0x0800b1fc        0xc Libraries\usb_conf\usbd_usr.o
-                0x0800b1fc                USBD_USR_DeviceResumed
+                0x0800b164        0xc Libraries\usb_conf\usbd_usr.o
+                0x0800b164                USBD_USR_DeviceResumed
  .text.USBD_USR_DeviceDescriptor
-                0x0800b208       0x24 Libraries\usb_conf\usbd_desc.o
-                0x0800b208                USBD_USR_DeviceDescriptor
+                0x0800b170       0x24 Libraries\usb_conf\usbd_desc.o
+                0x0800b170                USBD_USR_DeviceDescriptor
  .text.USBD_USR_LangIDStrDescriptor
-                0x0800b22c       0x24 Libraries\usb_conf\usbd_desc.o
-                0x0800b22c                USBD_USR_LangIDStrDescriptor
+                0x0800b194       0x24 Libraries\usb_conf\usbd_desc.o
+                0x0800b194                USBD_USR_LangIDStrDescriptor
  .text.USBD_USR_ProductStrDescriptor
-                0x0800b250       0x40 Libraries\usb_conf\usbd_desc.o
-                0x0800b250                USBD_USR_ProductStrDescriptor
+                0x0800b1b8       0x40 Libraries\usb_conf\usbd_desc.o
+                0x0800b1b8                USBD_USR_ProductStrDescriptor
  .text.USBD_USR_ManufacturerStrDescriptor
-                0x0800b290       0x28 Libraries\usb_conf\usbd_desc.o
-                0x0800b290                USBD_USR_ManufacturerStrDescriptor
+                0x0800b1f8       0x28 Libraries\usb_conf\usbd_desc.o
+                0x0800b1f8                USBD_USR_ManufacturerStrDescriptor
  .text.USBD_USR_SerialStrDescriptor
-                0x0800b2b8       0x40 Libraries\usb_conf\usbd_desc.o
-                0x0800b2b8                USBD_USR_SerialStrDescriptor
+                0x0800b220       0x40 Libraries\usb_conf\usbd_desc.o
+                0x0800b220                USBD_USR_SerialStrDescriptor
  .text.USBD_USR_ConfigStrDescriptor
-                0x0800b2f8       0x3c Libraries\usb_conf\usbd_desc.o
-                0x0800b2f8                USBD_USR_ConfigStrDescriptor
+                0x0800b260       0x3c Libraries\usb_conf\usbd_desc.o
+                0x0800b260                USBD_USR_ConfigStrDescriptor
  .text.USBD_USR_InterfaceStrDescriptor
-                0x0800b334       0x3c Libraries\usb_conf\usbd_desc.o
-                0x0800b334                USBD_USR_InterfaceStrDescriptor
+                0x0800b29c       0x3c Libraries\usb_conf\usbd_desc.o
+                0x0800b29c                USBD_USR_InterfaceStrDescriptor
  .text.USB_OTG_BSP_Init
-                0x0800b370       0xb0 Libraries\usb_conf\usb_bsp.o
-                0x0800b370                USB_OTG_BSP_Init
+                0x0800b2d8       0xb0 Libraries\usb_conf\usb_bsp.o
+                0x0800b2d8                USB_OTG_BSP_Init
  .text.USB_OTG_BSP_EnableInterrupt
-                0x0800b420       0x30 Libraries\usb_conf\usb_bsp.o
-                0x0800b420                USB_OTG_BSP_EnableInterrupt
+                0x0800b388       0x30 Libraries\usb_conf\usb_bsp.o
+                0x0800b388                USB_OTG_BSP_EnableInterrupt
  .text.USB_OTG_BSP_uDelay
-                0x0800b450       0x48 Libraries\usb_conf\usb_bsp.o
-                0x0800b450                USB_OTG_BSP_uDelay
+                0x0800b3b8       0x48 Libraries\usb_conf\usb_bsp.o
+                0x0800b3b8                USB_OTG_BSP_uDelay
  .text.USB_OTG_BSP_mDelay
-                0x0800b498       0x20 Libraries\usb_conf\usb_bsp.o
-                0x0800b498                USB_OTG_BSP_mDelay
+                0x0800b400       0x20 Libraries\usb_conf\usb_bsp.o
+                0x0800b400                USB_OTG_BSP_mDelay
  .text.SPI_Init
-                0x0800b4b8       0x88 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800b4b8                SPI_Init
- .text.SPI_Cmd  0x0800b540       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800b540                SPI_Cmd
+                0x0800b420       0x88 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x0800b420                SPI_Init
+ .text.SPI_Cmd  0x0800b4a8       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x0800b4a8                SPI_Cmd
  .text.SPI_I2S_ReceiveData
-                0x0800b580       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800b580                SPI_I2S_ReceiveData
+                0x0800b4e8       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x0800b4e8                SPI_I2S_ReceiveData
  .text.SPI_I2S_SendData
-                0x0800b59c       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800b59c                SPI_I2S_SendData
+                0x0800b504       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x0800b504                SPI_I2S_SendData
  .text.SPI_I2S_GetFlagStatus
-                0x0800b5b8       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800b5b8                SPI_I2S_GetFlagStatus
+                0x0800b520       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x0800b520                SPI_I2S_GetFlagStatus
  .text.RCC_AHB1PeriphClockCmd
-                0x0800b5f0       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x0800b5f0                RCC_AHB1PeriphClockCmd
+                0x0800b558       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800b558                RCC_AHB1PeriphClockCmd
  .text.RCC_AHB2PeriphClockCmd
-                0x0800b62c       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x0800b62c                RCC_AHB2PeriphClockCmd
+                0x0800b594       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800b594                RCC_AHB2PeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x0800b668       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x0800b668                RCC_APB2PeriphClockCmd
+                0x0800b5d0       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800b5d0                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphResetCmd
-                0x0800b6a4       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x0800b6a4                RCC_APB1PeriphResetCmd
+                0x0800b60c       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800b60c                RCC_APB1PeriphResetCmd
  .text.GPIO_Init
-                0x0800b6e0      0x11c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x0800b6e0                GPIO_Init
+                0x0800b648      0x11c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x0800b648                GPIO_Init
  .text.GPIO_SetBits
-                0x0800b7fc       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x0800b7fc                GPIO_SetBits
+                0x0800b764       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x0800b764                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x0800b818       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x0800b818                GPIO_ResetBits
+                0x0800b780       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x0800b780                GPIO_ResetBits
  .text.GPIO_PinAFConfig
-                0x0800b834       0x8c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x0800b834                GPIO_PinAFConfig
+                0x0800b79c       0x8c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x0800b79c                GPIO_PinAFConfig
  .text.EXTI_ClearITPendingBit
-                0x0800b8c0       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
-                0x0800b8c0                EXTI_ClearITPendingBit
+                0x0800b828       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+                0x0800b828                EXTI_ClearITPendingBit
  .text.DMA_Init
-                0x0800b8dc       0xac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800b8dc                DMA_Init
- .text.DMA_Cmd  0x0800b988       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800b988                DMA_Cmd
+                0x0800b844       0xac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x0800b844                DMA_Init
+ .text.DMA_Cmd  0x0800b8f0       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x0800b8f0                DMA_Cmd
  .text.DMA_GetCmdStatus
-                0x0800b9c0       0x30 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800b9c0                DMA_GetCmdStatus
+                0x0800b928       0x30 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x0800b928                DMA_GetCmdStatus
  .text.DMA_GetFlagStatus
-                0x0800b9f0       0x78 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800b9f0                DMA_GetFlagStatus
+                0x0800b958       0x78 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x0800b958                DMA_GetFlagStatus
  .text.DMA_ClearFlag
-                0x0800ba68       0x5c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800ba68                DMA_ClearFlag
+                0x0800b9d0       0x5c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x0800b9d0                DMA_ClearFlag
  .text.DAC_SetChannel1Data
-                0x0800bac4       0x34 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
-                0x0800bac4                DAC_SetChannel1Data
+                0x0800ba2c       0x34 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+                0x0800ba2c                DAC_SetChannel1Data
  .text.NVIC_PriorityGroupConfig
-                0x0800baf8       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
-                0x0800baf8                NVIC_PriorityGroupConfig
+                0x0800ba60       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+                0x0800ba60                NVIC_PriorityGroupConfig
  .text.NVIC_Init
-                0x0800bb1c       0xbc Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
-                0x0800bb1c                NVIC_Init
- .text._Znwj    0x0800bbd8       0x58 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
-                0x0800bbd8                operator new(unsigned int)
+                0x0800ba84       0xbc Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+                0x0800ba84                NVIC_Init
+ .text._Znwj    0x0800bb40       0x58 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
+                0x0800bb40                operator new(unsigned int)
  .text.__cxa_end_cleanup
-                0x0800bc30        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
-                0x0800bc30                __cxa_end_cleanup
+                0x0800bb98        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800bb98                __cxa_end_cleanup
  .text.__cxa_type_match
-                0x0800bc3c       0xac c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
-                0x0800bc3c                __cxa_type_match
+                0x0800bba4       0xac c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800bba4                __cxa_type_match
  .text.__cxa_begin_cleanup
-                0x0800bce8       0x64 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
-                0x0800bce8                __cxa_begin_cleanup
+                0x0800bc50       0x64 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800bc50                __cxa_begin_cleanup
  .text.__gnu_end_cleanup
-                0x0800bd4c       0x70 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
-                0x0800bd4c                __gnu_end_cleanup
+                0x0800bcb4       0x70 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800bcb4                __gnu_end_cleanup
  .text._ZNKSt9bad_alloc4whatEv
-                0x0800bdbc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800bdbc                std::bad_alloc::what() const
+                0x0800bd24        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800bd24                std::bad_alloc::what() const
  .text._ZNSt9bad_allocD2Ev
-                0x0800bdc4       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800bdc4                std::bad_alloc::~bad_alloc()
-                0x0800bdc4                std::bad_alloc::~bad_alloc()
+                0x0800bd2c       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800bd2c                std::bad_alloc::~bad_alloc()
+                0x0800bd2c                std::bad_alloc::~bad_alloc()
  .text._ZNSt9bad_allocD0Ev
-                0x0800bdd8       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800bdd8                std::bad_alloc::~bad_alloc()
+                0x0800bd40       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800bd40                std::bad_alloc::~bad_alloc()
  .text._ZN10__cxxabiv1L24__is_gxx_exception_classEPc
-                0x0800bdf4       0x3c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800bd5c       0x3c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
  .text.__cxa_call_terminate
-                0x0800be30       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
-                0x0800be30                __cxa_call_terminate
+                0x0800bd98       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800bd98                __cxa_call_terminate
  .text.__cxa_call_unexpected
-                0x0800be50       0xd4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
-                0x0800be50                __cxa_call_unexpected
+                0x0800bdb8       0xd4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800bdb8                __cxa_call_unexpected
  .text.__cxa_allocate_exception
-                0x0800bf24       0x58 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
-                0x0800bf24                __cxa_allocate_exception
+                0x0800be8c       0x58 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
+                0x0800be8c                __cxa_allocate_exception
  .text.__cxa_free_exception
-                0x0800bf7c       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
-                0x0800bf7c                __cxa_free_exception
+                0x0800bee4       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
+                0x0800bee4                __cxa_free_exception
  .text._ZL23__gxx_exception_cleanup19_Unwind_Reason_CodeP21_Unwind_Control_Block
-                0x0800bfb0       0x44 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800bf18       0x44 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
  .text.__cxa_throw
-                0x0800bff4       0x90 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
-                0x0800bff4                __cxa_throw
+                0x0800bf5c       0x90 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800bf5c                __cxa_throw
  .text.__cxa_rethrow
-                0x0800c084       0x70 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
-                0x0800c084                __cxa_rethrow
+                0x0800bfec       0x70 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800bfec                __cxa_rethrow
  .text._ZL12read_sleb128PKhPl
-                0x0800c0f4       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800c05c       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .text._ZL28read_encoded_value_with_basehjPKhPj
-                0x0800c128       0xb0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800c090       0xb0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .text._ZL21base_of_encoded_valuehP15_Unwind_Context
-                0x0800c1d8       0x4c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800c140       0x4c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .text._ZL17parse_lsda_headerP15_Unwind_ContextPKhP16lsda_header_info
-                0x0800c224       0x98 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800c18c       0x98 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .text.__gxx_personality_v0
-                0x0800c2bc      0x408 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
-                0x0800c2bc                __gxx_personality_v0
+                0x0800c224      0x408 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800c224                __gxx_personality_v0
  .text._ZNSt9exceptionD2Ev
-                0x0800c6c4        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c6c4                std::exception::~exception()
-                0x0800c6c4                std::exception::~exception()
+                0x0800c62c        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c62c                std::exception::~exception()
+                0x0800c62c                std::exception::~exception()
  .text._ZNSt13bad_exceptionD2Ev
-                0x0800c6d0        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c6d0                std::bad_exception::~bad_exception()
-                0x0800c6d0                std::bad_exception::~bad_exception()
+                0x0800c638        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c638                std::bad_exception::~bad_exception()
+                0x0800c638                std::bad_exception::~bad_exception()
  .text._ZNKSt9exception4whatEv
-                0x0800c6dc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c6dc                std::exception::what() const
+                0x0800c644        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c644                std::exception::what() const
  .text._ZNKSt13bad_exception4whatEv
-                0x0800c6e4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c6e4                std::bad_exception::what() const
+                0x0800c64c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c64c                std::bad_exception::what() const
  .text._ZNSt9exceptionD0Ev
-                0x0800c6ec       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c6ec                std::exception::~exception()
+                0x0800c654       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c654                std::exception::~exception()
  .text._ZNSt13bad_exceptionD0Ev
-                0x0800c700       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800c700                std::bad_exception::~bad_exception()
+                0x0800c668       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800c668                std::bad_exception::~bad_exception()
  .text.__cxa_get_globals_fast
-                0x0800c714        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
-                0x0800c714                __cxa_get_globals_fast
+                0x0800c67c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
+                0x0800c67c                __cxa_get_globals_fast
  .text.__cxa_get_globals
-                0x0800c71c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
-                0x0800c71c                __cxa_get_globals
+                0x0800c684        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
+                0x0800c684                __cxa_get_globals
  .text.__cxa_begin_catch
-                0x0800c724       0x8c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
-                0x0800c724                __cxa_begin_catch
+                0x0800c68c       0x8c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
+                0x0800c68c                __cxa_begin_catch
  .text.__cxa_end_catch
-                0x0800c7b0       0x8c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
-                0x0800c7b0                __cxa_end_catch
+                0x0800c718       0x8c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
+                0x0800c718                __cxa_end_catch
  .text._ZN10__cxxabiv111__terminateEPFvvE
-                0x0800c83c       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
-                0x0800c83c                __cxxabiv1::__terminate(void (*)())
+                0x0800c7a4       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800c7a4                __cxxabiv1::__terminate(void (*)())
  .text._ZSt9terminatev
-                0x0800c864       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
-                0x0800c864                std::terminate()
+                0x0800c7cc       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800c7cc                std::terminate()
  .text._ZN10__cxxabiv112__unexpectedEPFvvE
-                0x0800c874        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
-                0x0800c874                __cxxabiv1::__unexpected(void (*)())
+                0x0800c7dc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800c7dc                __cxxabiv1::__unexpected(void (*)())
  .text._ZSt10unexpectedv
-                0x0800c87c       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
-                0x0800c87c                std::unexpected()
+                0x0800c7e4       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800c7e4                std::unexpected()
  .text._ZN10__cxxabiv120__si_class_type_infoD2Ev
-                0x0800c88c       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800c88c                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
-                0x0800c88c                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
+                0x0800c7f4       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800c7f4                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
+                0x0800c7f4                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
  .text._ZN10__cxxabiv120__si_class_type_infoD0Ev
-                0x0800c8a0       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800c8a0                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
+                0x0800c808       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800c808                __cxxabiv1::__si_class_type_info::~__si_class_type_info()
  .text._ZNK10__cxxabiv120__si_class_type_info20__do_find_public_srcEiPKvPKNS_17__class_type_infoES2_
-                0x0800c8bc       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800c8bc                __cxxabiv1::__si_class_type_info::__do_find_public_src(int, void const*, __cxxabiv1::__class_type_info const*, void const*) const
+                0x0800c824       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800c824                __cxxabiv1::__si_class_type_info::__do_find_public_src(int, void const*, __cxxabiv1::__class_type_info const*, void const*) const
  .text._ZNK10__cxxabiv120__si_class_type_info12__do_dyncastEiNS_17__class_type_info10__sub_kindEPKS1_PKvS4_S6_RNS1_16__dyncast_resultE
-                0x0800c8f0       0x98 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800c8f0                __cxxabiv1::__si_class_type_info::__do_dyncast(int, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+                0x0800c858       0x98 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800c858                __cxxabiv1::__si_class_type_info::__do_dyncast(int, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
  .text._ZNK10__cxxabiv120__si_class_type_info11__do_upcastEPKNS_17__class_type_infoEPKvRNS1_15__upcast_resultE
-                0x0800c988       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800c988                __cxxabiv1::__si_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const
- .text._ZdlPv   0x0800c9a8        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(del_op.o)
-                0x0800c9a8                operator delete(void*)
+                0x0800c8f0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800c8f0                __cxxabiv1::__si_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const
+ .text._ZdlPv   0x0800c910        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(del_op.o)
+                0x0800c910                operator delete(void*)
  .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv
-                0x0800c9b0      0x114 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
-                0x0800c9b0                __gnu_cxx::__verbose_terminate_handler()
+                0x0800c918      0x114 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
+                0x0800c918                __gnu_cxx::__verbose_terminate_handler()
  .text._ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PPv
-                0x0800cac4       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cac4                __cxxabiv1::__class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void**) const
+                0x0800ca2c       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ca2c                __cxxabiv1::__class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void**) const
  .text._ZNK10__cxxabiv117__class_type_info20__do_find_public_srcEiPKvPKS0_S2_
-                0x0800cafc        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cafc                __cxxabiv1::__class_type_info::__do_find_public_src(int, void const*, __cxxabiv1::__class_type_info const*, void const*) const
+                0x0800ca64        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ca64                __cxxabiv1::__class_type_info::__do_find_public_src(int, void const*, __cxxabiv1::__class_type_info const*, void const*) const
  .text._ZN10__cxxabiv117__class_type_infoD2Ev
-                0x0800cb08       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cb08                __cxxabiv1::__class_type_info::~__class_type_info()
-                0x0800cb08                __cxxabiv1::__class_type_info::~__class_type_info()
+                0x0800ca70       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ca70                __cxxabiv1::__class_type_info::~__class_type_info()
+                0x0800ca70                __cxxabiv1::__class_type_info::~__class_type_info()
  .text._ZN10__cxxabiv117__class_type_infoD0Ev
-                0x0800cb1c       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cb1c                __cxxabiv1::__class_type_info::~__class_type_info()
+                0x0800ca84       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ca84                __cxxabiv1::__class_type_info::~__class_type_info()
  .text._ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
-                0x0800cb38       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cb38                __cxxabiv1::__class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const
+                0x0800caa0       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800caa0                __cxxabiv1::__class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const
  .text._ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
-                0x0800cb50       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cb50                __cxxabiv1::__class_type_info::__do_catch(std::type_info const*, void**, unsigned int) const
+                0x0800cab8       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800cab8                __cxxabiv1::__class_type_info::__do_catch(std::type_info const*, void**, unsigned int) const
  .text._ZNK10__cxxabiv117__class_type_info12__do_dyncastEiNS0_10__sub_kindEPKS0_PKvS3_S5_RNS0_16__dyncast_resultE
-                0x0800cb74       0x40 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800cb74                __cxxabiv1::__class_type_info::__do_dyncast(int, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+                0x0800cadc       0x40 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800cadc                __cxxabiv1::__class_type_info::__do_dyncast(int, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
  .text._ZNSt9type_infoD2Ev
-                0x0800cbb4        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbb4                std::type_info::~type_info()
-                0x0800cbb4                std::type_info::~type_info()
+                0x0800cb1c        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb1c                std::type_info::~type_info()
+                0x0800cb1c                std::type_info::~type_info()
  .text._ZNKSt9type_info14__is_pointer_pEv
-                0x0800cbc0        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbc0                std::type_info::__is_pointer_p() const
+                0x0800cb28        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb28                std::type_info::__is_pointer_p() const
  .text._ZNKSt9type_info15__is_function_pEv
-                0x0800cbc4        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbc4                std::type_info::__is_function_p() const
+                0x0800cb2c        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb2c                std::type_info::__is_function_p() const
  .text._ZNKSt9type_info11__do_upcastEPKN10__cxxabiv117__class_type_infoEPPv
-                0x0800cbc8        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbc8                std::type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void**) const
+                0x0800cb30        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb30                std::type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void**) const
  .text._ZNSt9type_infoD0Ev
-                0x0800cbcc       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbcc                std::type_info::~type_info()
+                0x0800cb34       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb34                std::type_info::~type_info()
  .text._ZNKSt9type_infoeqERKS_
-                0x0800cbe0       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cbe0                std::type_info::operator==(std::type_info const&) const
+                0x0800cb48       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb48                std::type_info::operator==(std::type_info const&) const
  .text._ZNKSt9type_info10__do_catchEPKS_PPvj
-                0x0800cc10        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800cc10                std::type_info::__do_catch(std::type_info const*, void**, unsigned int) const
+                0x0800cb78        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800cb78                std::type_info::__do_catch(std::type_info const*, void**, unsigned int) const
  .text.__cxa_current_exception_type
-                0x0800cc14       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_type.o)
-                0x0800cc14                __cxa_current_exception_type
- .text.abort    0x0800cc30        0xe c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-abort.o)
-                0x0800cc30                abort
- *fill*         0x0800cc3e        0x2 
+                0x0800cb7c       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_type.o)
+                0x0800cb7c                __cxa_current_exception_type
+ .text.abort    0x0800cb98        0xe c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-abort.o)
+                0x0800cb98                abort
+ *fill*         0x0800cba6        0x2 
  .text._fputc_r
-                0x0800cc40       0x48 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fputc.o)
-                0x0800cc40                _fputc_r
- .text.fputc    0x0800cc88       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fputc.o)
-                0x0800cc88                fputc
+                0x0800cba8       0x48 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fputc.o)
+                0x0800cba8                _fputc_r
+ .text.fputc    0x0800cbf0       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fputc.o)
+                0x0800cbf0                fputc
  .text.__libc_init_array
-                0x0800cc9c       0x4c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-init.o)
-                0x0800cc9c                __libc_init_array
- .text.malloc   0x0800cce8       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-malloc.o)
-                0x0800cce8                malloc
- .text.free     0x0800ccf8       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-malloc.o)
-                0x0800ccf8                free
+                0x0800cc04       0x4c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-init.o)
+                0x0800cc04                __libc_init_array
+ .text.malloc   0x0800cc50       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-malloc.o)
+                0x0800cc50                malloc
+ .text.free     0x0800cc60       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-malloc.o)
+                0x0800cc60                free
  .text._malloc_r
-                0x0800cd08      0x424 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mallocr.o)
-                0x0800cd08                _malloc_r
- .text.memcmp   0x0800d12c       0x1e c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memcmp.o)
-                0x0800d12c                memcmp
- .text.memcpy   0x0800d14a       0x12 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memcpy-stub.o)
-                0x0800d14a                memcpy
- .text.memset   0x0800d15c       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memset.o)
-                0x0800d15c                memset
+                0x0800cc70      0x424 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mallocr.o)
+                0x0800cc70                _malloc_r
+ .text.memcmp   0x0800d094       0x1e c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memcmp.o)
+                0x0800d094                memcmp
+ .text.memcpy   0x0800d0b2       0x12 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memcpy-stub.o)
+                0x0800d0b2                memcpy
+ .text.memset   0x0800d0c4       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memset.o)
+                0x0800d0c4                memset
  .text.__malloc_lock
-                0x0800d16c        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mlock.o)
-                0x0800d16c                __malloc_lock
+                0x0800d0d4        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mlock.o)
+                0x0800d0d4                __malloc_lock
  .text.__malloc_unlock
-                0x0800d16e        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mlock.o)
-                0x0800d16e                __malloc_unlock
- .text._putc_r  0x0800d170       0x78 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-putc.o)
-                0x0800d170                _putc_r
- .text.realloc  0x0800d1e8       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-realloc.o)
-                0x0800d1e8                realloc
+                0x0800d0d6        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-mlock.o)
+                0x0800d0d6                __malloc_unlock
+ .text._putc_r  0x0800d0d8       0x78 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-putc.o)
+                0x0800d0d8                _putc_r
+ .text.realloc  0x0800d150       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-realloc.o)
+                0x0800d150                realloc
  .text._realloc_r
-                0x0800d1fc      0x350 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-reallocr.o)
-                0x0800d1fc                _realloc_r
- .text._sbrk_r  0x0800d54c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-sbrkr.o)
-                0x0800d54c                _sbrk_r
+                0x0800d164      0x350 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-reallocr.o)
+                0x0800d164                _realloc_r
+ .text._sbrk_r  0x0800d4b4       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-sbrkr.o)
+                0x0800d4b4                _sbrk_r
  .text._raise_r
-                0x0800d56c       0x50 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signal.o)
-                0x0800d56c                _raise_r
- .text.raise    0x0800d5bc       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signal.o)
-                0x0800d5bc                raise
- .text._kill_r  0x0800d5cc       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signalr.o)
-                0x0800d5cc                _kill_r
+                0x0800d4d4       0x50 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signal.o)
+                0x0800d4d4                _raise_r
+ .text.raise    0x0800d524       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signal.o)
+                0x0800d524                raise
+ .text._kill_r  0x0800d534       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signalr.o)
+                0x0800d534                _kill_r
  .text._getpid_r
-                0x0800d5f0        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signalr.o)
-                0x0800d5f0                _getpid_r
- .text.strlen   0x0800d5f4       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-strlen.o)
-                0x0800d5f4                strlen
- .text.strncmp  0x0800d604       0x2e c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-strncmp.o)
-                0x0800d604                strncmp
- .text._getpid  0x0800d632        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d632                _getpid
- *fill*         0x0800d636        0x2 
- .text._kill    0x0800d638       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d638                _kill
- .text._exit    0x0800d648        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d648                _exit
- .text._write   0x0800d654        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d654                _write
- .text._sbrk    0x0800d658       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d658                _sbrk
- .text._close   0x0800d68c        0x6 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d68c                _close
- .text._fstat   0x0800d692        0xa c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d692                _fstat
- .text._isatty  0x0800d69c        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d69c                _isatty
- .text._lseek   0x0800d6a0        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d6a0                _lseek
- .text._read    0x0800d6a4        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
-                0x0800d6a4                _read
+                0x0800d558        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-signalr.o)
+                0x0800d558                _getpid_r
+ .text.strlen   0x0800d55c       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-strlen.o)
+                0x0800d55c                strlen
+ .text.strncmp  0x0800d56c       0x2e c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-strncmp.o)
+                0x0800d56c                strncmp
+ .text._getpid  0x0800d59a        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d59a                _getpid
+ *fill*         0x0800d59e        0x2 
+ .text._kill    0x0800d5a0       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5a0                _kill
+ .text._exit    0x0800d5b0        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5b0                _exit
+ .text._write   0x0800d5bc        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5bc                _write
+ .text._sbrk    0x0800d5c0       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5c0                _sbrk
+ .text._close   0x0800d5f4        0x6 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5f4                _close
+ .text._fstat   0x0800d5fa        0xa c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d5fa                _fstat
+ .text._isatty  0x0800d604        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d604                _isatty
+ .text._lseek   0x0800d608        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d608                _lseek
+ .text._read    0x0800d60c        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-syscalls.o)
+                0x0800d60c                _read
  .text.__swbuf_r
-                0x0800d6a8       0xbc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-wbuf.o)
-                0x0800d6a8                __swbuf_r
+                0x0800d610       0xbc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-wbuf.o)
+                0x0800d610                __swbuf_r
  .text._write_r
-                0x0800d764       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-writer.o)
-                0x0800d764                _write_r
+                0x0800d6cc       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-writer.o)
+                0x0800d6cc                _write_r
  .text.__swsetup_r
-                0x0800d788       0xdc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-wsetup.o)
-                0x0800d788                __swsetup_r
+                0x0800d6f0       0xdc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-wsetup.o)
+                0x0800d6f0                __swsetup_r
  .text.__sflush_r
-                0x0800d864      0x118 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fflush.o)
-                0x0800d864                __sflush_r
+                0x0800d7cc      0x118 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fflush.o)
+                0x0800d7cc                __sflush_r
  .text._fflush_r
-                0x0800d97c       0x54 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fflush.o)
-                0x0800d97c                _fflush_r
+                0x0800d8e4       0x54 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fflush.o)
+                0x0800d8e4                _fflush_r
  .text._cleanup_r
-                0x0800d9d0        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800d9d0                _cleanup_r
+                0x0800d938        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800d938                _cleanup_r
  .text.__sfmoreglue
-                0x0800d9dc       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800d9dc                __sfmoreglue
- .text.__sinit  0x0800da08      0x10c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800da08                __sinit
- .text.__sfp    0x0800db14       0x74 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800db14                __sfp
+                0x0800d944       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800d944                __sfmoreglue
+ .text.__sinit  0x0800d970      0x10c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800d970                __sinit
+ .text.__sfp    0x0800da7c       0x74 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800da7c                __sfp
  .text.__sfp_lock_acquire
-                0x0800db88        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800db88                __sfp_lock_acquire
+                0x0800daf0        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800daf0                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x0800db8a        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800db8a                __sfp_lock_release
+                0x0800daf2        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800daf2                __sfp_lock_release
  .text._malloc_trim_r
-                0x0800db8c       0xa8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-freer.o)
-                0x0800db8c                _malloc_trim_r
- .text._free_r  0x0800dc34      0x170 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-freer.o)
-                0x0800dc34                _free_r
- .text._fwalk   0x0800dda4       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fwalk.o)
-                0x0800dda4                _fwalk
+                0x0800daf4       0xa8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-freer.o)
+                0x0800daf4                _malloc_trim_r
+ .text._free_r  0x0800db9c      0x170 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-freer.o)
+                0x0800db9c                _free_r
+ .text._fwalk   0x0800dd0c       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fwalk.o)
+                0x0800dd0c                _fwalk
  .text.__smakebuf_r
-                0x0800dddc       0xc8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-makebuf.o)
-                0x0800dddc                __smakebuf_r
- .text.memmove  0x0800dea4       0x36 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memmove.o)
-                0x0800dea4                memmove
- .text.__sread  0x0800deda       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
-                0x0800deda                __sread
+                0x0800dd44       0xc8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-makebuf.o)
+                0x0800dd44                __smakebuf_r
+ .text.memmove  0x0800de0c       0x36 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-memmove.o)
+                0x0800de0c                memmove
+ .text.__sread  0x0800de42       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
+                0x0800de42                __sread
  .text.__swrite
-                0x0800defc       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
-                0x0800defc                __swrite
- .text.__sseek  0x0800df34       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
-                0x0800df34                __sseek
+                0x0800de64       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
+                0x0800de64                __swrite
+ .text.__sseek  0x0800de9c       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
+                0x0800de9c                __sseek
  .text.__sclose
-                0x0800df58        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
-                0x0800df58                __sclose
+                0x0800dec0        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-stdio.o)
+                0x0800dec0                __sclose
  .text._close_r
-                0x0800df60       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-closer.o)
-                0x0800df60                _close_r
+                0x0800dec8       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-closer.o)
+                0x0800dec8                _close_r
  .text._fclose_r
-                0x0800df80       0xa4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fclose.o)
-                0x0800df80                _fclose_r
- .text.fclose   0x0800e024       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fclose.o)
-                0x0800e024                fclose
+                0x0800dee8       0xa4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fclose.o)
+                0x0800dee8                _fclose_r
+ .text.fclose   0x0800df8c       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fclose.o)
+                0x0800df8c                fclose
  .text._fstat_r
-                0x0800e034       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fstatr.o)
-                0x0800e034                _fstat_r
+                0x0800df9c       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-fstatr.o)
+                0x0800df9c                _fstat_r
  .text._isatty_r
-                0x0800e058       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-isattyr.o)
-                0x0800e058                _isatty_r
+                0x0800dfc0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-isattyr.o)
+                0x0800dfc0                _isatty_r
  .text._lseek_r
-                0x0800e078       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-lseekr.o)
-                0x0800e078                _lseek_r
- .text._read_r  0x0800e09c       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-readr.o)
-                0x0800e09c                _read_r
+                0x0800dfe0       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-lseekr.o)
+                0x0800dfe0                _lseek_r
+ .text._read_r  0x0800e004       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-readr.o)
+                0x0800e004                _read_r
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800e0c0        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x0800e028        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
  *(.init)
- .init          0x0800e0c0        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
-                0x0800e0c0                _init
- .init          0x0800e0c4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+ .init          0x0800e028        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x0800e028                _init
+ .init          0x0800e02c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x0800e0cc        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
-                0x0800e0cc                _fini
- .fini          0x0800e0d0        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
-                0x0800e0d8                . = ALIGN (0x4)
-                0x0800e0d8                _etext = .
+ .fini          0x0800e034        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x0800e034                _fini
+ .fini          0x0800e038        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+                0x0800e040                . = ALIGN (0x4)
+                0x0800e040                _etext = .
 
-.vfp11_veneer   0x0800e0d8        0x0
+.vfp11_veneer   0x0800e040        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x0800e0d8        0x0
+.v4_bx          0x0800e040        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x0800e0d8        0x0
+.iplt           0x0800e040        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x0800e0d8     0x1314
-                0x0800e0d8                . = ALIGN (0x4)
+.rodata         0x0800e040     0x130c
+                0x0800e040                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0800e0d8        0x4 src\tiny_printf.o
- .rodata        0x0800e0dc        0x8 src\main.o
- .rodata        0x0800e0e4       0x98 Libraries\usb_conf\usbd_desc.o
- .rodata        0x0800e17c      0x738 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(cp-demangle.o)
+ .rodata        0x0800e040        0x4 src\tiny_printf.o
+ .rodata        0x0800e044       0x98 Libraries\usb_conf\usbd_desc.o
+ .rodata        0x0800e0dc      0x738 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(cp-demangle.o)
  *(.rodata*)
  .rodata.GPIO_PIN
-                0x0800e8b4        0x8 Utilities\STM32F4-Discovery\stm32f4_discovery.o
-                0x0800e8b4                GPIO_PIN
+                0x0800e814        0x8 Utilities\STM32F4-Discovery\stm32f4_discovery.o
+                0x0800e814                GPIO_PIN
  .rodata.GPIO_CLK
-                0x0800e8bc       0x10 Utilities\STM32F4-Discovery\stm32f4_discovery.o
-                0x0800e8bc                GPIO_CLK
- *fill*         0x0800e8cc        0x4 
+                0x0800e81c       0x10 Utilities\STM32F4-Discovery\stm32f4_discovery.o
+                0x0800e81c                GPIO_CLK
+ *fill*         0x0800e82c        0x4 
  .rodata._ZTVSt9bad_alloc
-                0x0800e8d0       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800e8d0                vtable for std::bad_alloc
+                0x0800e830       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800e830                vtable for std::bad_alloc
  .rodata._ZTISt9bad_alloc
-                0x0800e8e8        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800e8e8                typeinfo for std::bad_alloc
+                0x0800e848        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800e848                typeinfo for std::bad_alloc
  .rodata.str1.4
-                0x0800e8f4        0xf c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800e854        0xf c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
                                  0x10 (size before relaxing)
- *fill*         0x0800e903        0x1 
+ *fill*         0x0800e863        0x1 
  .rodata._ZTSSt9bad_alloc
-                0x0800e904       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
-                0x0800e904                typeinfo name for std::bad_alloc
- *fill*         0x0800e914        0x4 
+                0x0800e864       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800e864                typeinfo name for std::bad_alloc
+ *fill*         0x0800e874        0x4 
  .rodata._ZTVSt9exception
-                0x0800e918       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e918                vtable for std::exception
+                0x0800e878       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e878                vtable for std::exception
  .rodata._ZTIN10__cxxabiv115__forced_unwindE
-                0x0800e930        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e930                typeinfo for __cxxabiv1::__forced_unwind
+                0x0800e890        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e890                typeinfo for __cxxabiv1::__forced_unwind
  .rodata._ZTISt9exception
-                0x0800e938        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e938                typeinfo for std::exception
+                0x0800e898        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e898                typeinfo for std::exception
  .rodata._ZTSSt13bad_exception
-                0x0800e940       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e940                typeinfo name for std::bad_exception
+                0x0800e8a0       0x14 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e8a0                typeinfo name for std::bad_exception
  .rodata.str1.4
-                0x0800e954       0x23 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e8b4       0x23 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                  0x24 (size before relaxing)
- *fill*         0x0800e977        0x1 
+ *fill*         0x0800e8d7        0x1 
  .rodata._ZTSN10__cxxabiv119__foreign_exceptionE
-                0x0800e978       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e978                typeinfo name for __cxxabiv1::__foreign_exception
+                0x0800e8d8       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e8d8                typeinfo name for __cxxabiv1::__foreign_exception
  .rodata._ZTIN10__cxxabiv119__foreign_exceptionE
-                0x0800e99c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e99c                typeinfo for __cxxabiv1::__foreign_exception
- *fill*         0x0800e9a4        0x4 
+                0x0800e8fc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e8fc                typeinfo for __cxxabiv1::__foreign_exception
+ *fill*         0x0800e904        0x4 
  .rodata._ZTVSt13bad_exception
-                0x0800e9a8       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e9a8                vtable for std::bad_exception
+                0x0800e908       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e908                vtable for std::bad_exception
  .rodata._ZTSSt9exception
-                0x0800e9c0       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e9c0                typeinfo name for std::exception
+                0x0800e920       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e920                typeinfo name for std::exception
  .rodata._ZTSN10__cxxabiv115__forced_unwindE
-                0x0800e9d0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e9d0                typeinfo name for __cxxabiv1::__forced_unwind
+                0x0800e930       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e930                typeinfo name for __cxxabiv1::__forced_unwind
  .rodata._ZTISt13bad_exception
-                0x0800e9f0        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
-                0x0800e9f0                typeinfo for std::bad_exception
- *fill*         0x0800e9fc        0x4 
+                0x0800e950        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800e950                typeinfo for std::bad_exception
+ *fill*         0x0800e95c        0x4 
  .rodata._ZTVN10__cxxabiv120__si_class_type_infoE
-                0x0800ea00       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800ea00                vtable for __cxxabiv1::__si_class_type_info
+                0x0800e960       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800e960                vtable for __cxxabiv1::__si_class_type_info
  .rodata._ZTIN10__cxxabiv120__si_class_type_infoE
-                0x0800ea30        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800ea30                typeinfo for __cxxabiv1::__si_class_type_info
+                0x0800e990        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800e990                typeinfo for __cxxabiv1::__si_class_type_info
  .rodata._ZTSN10__cxxabiv120__si_class_type_infoE
-                0x0800ea3c       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
-                0x0800ea3c                typeinfo name for __cxxabiv1::__si_class_type_info
+                0x0800e99c       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800e99c                typeinfo name for __cxxabiv1::__si_class_type_info
  .rodata.str1.4
-                0x0800ea64       0x94 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
+                0x0800e9c4       0x94 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
  .rodata._ZTVN10__cxxabiv117__class_type_infoE
-                0x0800eaf8       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800eaf8                vtable for __cxxabiv1::__class_type_info
+                0x0800ea58       0x30 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ea58                vtable for __cxxabiv1::__class_type_info
  .rodata._ZTIN10__cxxabiv117__class_type_infoE
-                0x0800eb28        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800eb28                typeinfo for __cxxabiv1::__class_type_info
+                0x0800ea88        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ea88                typeinfo for __cxxabiv1::__class_type_info
  .rodata._ZTSN10__cxxabiv117__class_type_infoE
-                0x0800eb34       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
-                0x0800eb34                typeinfo name for __cxxabiv1::__class_type_info
+                0x0800ea94       0x24 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800ea94                typeinfo name for __cxxabiv1::__class_type_info
  .rodata._ZTISt9type_info
-                0x0800eb58        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800eb58                typeinfo for std::type_info
+                0x0800eab8        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800eab8                typeinfo for std::type_info
  .rodata._ZTSSt9type_info
-                0x0800eb60       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800eb60                typeinfo name for std::type_info
+                0x0800eac0       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800eac0                typeinfo name for std::type_info
  .rodata._ZTVSt9type_info
-                0x0800eb70       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
-                0x0800eb70                vtable for std::type_info
+                0x0800ead0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800ead0                vtable for std::type_info
  .rodata.str1.4
-                0x0800eb90      0x7f4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(cp-demangle.o)
+                0x0800eaf0      0x7f4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(cp-demangle.o)
                                 0x840 (size before relaxing)
  .rodata.str1.1
-                0x0800f384        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-impure.o)
- *fill*         0x0800f386        0x2 
+                0x0800f2e4        0x2 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-impure.o)
+ *fill*         0x0800f2e6        0x2 
  .rodata._global_impure_ptr
-                0x0800f388        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-impure.o)
-                0x0800f388                _global_impure_ptr
+                0x0800f2e8        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-impure.o)
+                0x0800f2e8                _global_impure_ptr
  .rodata.__sf_fake_stdin
-                0x0800f38c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800f38c                __sf_fake_stdin
+                0x0800f2ec       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800f2ec                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x0800f3ac       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800f3ac                __sf_fake_stdout
+                0x0800f30c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800f30c                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x0800f3cc       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
-                0x0800f3cc                __sf_fake_stderr
-                0x0800f3ec                . = ALIGN (0x4)
+                0x0800f32c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc.a(lib_a-findfp.o)
+                0x0800f32c                __sf_fake_stderr
+                0x0800f34c                . = ALIGN (0x4)
 
-.ARM.extab      0x0800f3ec      0x130
+.ARM.extab      0x0800f34c      0x130
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  .ARM.extab.text._Znwj
-                0x0800f3ec       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
+                0x0800f34c       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
  .ARM.extab.text.__cxa_call_unexpected
-                0x0800f40c       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800f36c       0x28 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
  .ARM.extab.text._ZL21base_of_encoded_valuehP15_Unwind_Context
-                0x0800f434        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f394        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.extab.text.__gxx_personality_v0
-                0x0800f440       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f3a0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.extab.text.__cxa_begin_catch
-                0x0800f460       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
+                0x0800f3c0       0x20 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
  .ARM.extab.text._ZN10__cxxabiv111__terminateEPFvvE
-                0x0800f480       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f3e0       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.extab.text._ZN10__cxxabiv112__unexpectedEPFvvE
-                0x0800f4ac        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f40c        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.extab.text._ZSt10unexpectedv
-                0x0800f4b8        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f418        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.extab.text._ZN9__gnu_cxx27__verbose_terminate_handlerEv
-                0x0800f4c4       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
- .ARM.extab     0x0800f4f8        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(unwind-arm.o)
- .ARM.extab     0x0800f504       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(pr-support.o)
+                0x0800f424       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
+ .ARM.extab     0x0800f458        0xc c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(unwind-arm.o)
+ .ARM.extab     0x0800f464       0x18 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(pr-support.o)
 
-.ARM            0x0800f51c      0x1d8
-                0x0800f51c                __exidx_start = .
+.ARM            0x0800f47c      0x1d8
+                0x0800f47c                __exidx_start = .
  *(.ARM.exidx*)
  .ARM.exidx.text._Znwj
-                0x0800f5e4       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
+                0x0800f544       0x10 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(new_op.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_type_match
-                0x0800f5f4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800f554        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
  .ARM.exidx.text.__cxa_begin_cleanup
-                0x0800f5fc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800f55c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
  .ARM.exidx.text.__gnu_end_cleanup
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_arm.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9bad_alloc4whatEv
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt9bad_allocD2Ev
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt9bad_allocD0Ev
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(bad_alloc.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZN10__cxxabiv1L24__is_gxx_exception_classEPc
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_call_terminate
-                0x0800f604        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800f564        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_call_unexpected
-                0x0800f604        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
+                0x0800f564        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_call.o)
  .ARM.exidx.text.__cxa_allocate_exception
-                0x0800f60c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
+                0x0800f56c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
  .ARM.exidx.text.__cxa_free_exception
-                0x0800f614        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
+                0x0800f574        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_alloc.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZL23__gxx_exception_cleanup19_Unwind_Reason_CodeP21_Unwind_Control_Block
-                0x0800f614        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800f574        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
  .ARM.exidx.text.__cxa_throw
-                0x0800f61c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800f57c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
  .ARM.exidx.text.__cxa_rethrow
-                0x0800f624        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
+                0x0800f584        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_throw.o)
  .ARM.exidx.text._ZL12read_sleb128PKhPl
-                0x0800f62c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f58c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.exidx.text._ZL28read_encoded_value_with_basehjPKhPj
-                0x0800f634        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f594        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.exidx.text._ZL21base_of_encoded_valuehP15_Unwind_Context
-                0x0800f63c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f59c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.exidx.text._ZL17parse_lsda_headerP15_Unwind_ContextPKhP16lsda_header_info
-                0x0800f644        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f5a4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.exidx.text.__gxx_personality_v0
-                0x0800f64c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
+                0x0800f5ac        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_personality.o)
  .ARM.exidx.text._ZNSt9exceptionD2Ev
-                0x0800f654        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5b4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
  .ARM.exidx.text._ZNSt13bad_exceptionD2Ev
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9exception4whatEv
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt13bad_exception4whatEv
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt9exceptionD0Ev
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt13bad_exceptionD0Ev
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_exception.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_get_globals_fast
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_get_globals
-                0x0800f65c        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
+                0x0800f5bc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_globals.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_begin_catch
-                0x0800f65c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
+                0x0800f5bc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
  .ARM.exidx.text.__cxa_end_catch
-                0x0800f664        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
+                0x0800f5c4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_catch.o)
  .ARM.exidx.text._ZN10__cxxabiv111__terminateEPFvvE
-                0x0800f66c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f5cc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.exidx.text._ZSt9terminatev
-                0x0800f674        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f5d4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.exidx.text._ZN10__cxxabiv112__unexpectedEPFvvE
-                0x0800f67c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f5dc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.exidx.text._ZSt10unexpectedv
-                0x0800f684        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
+                0x0800f5e4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_terminate.o)
  .ARM.exidx.text._ZN10__cxxabiv120__si_class_type_infoD2Ev
-                0x0800f68c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800f5ec        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
  .ARM.exidx.text._ZN10__cxxabiv120__si_class_type_infoD0Ev
-                0x0800f694        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800f5f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info20__do_find_public_srcEiPKvPKNS_17__class_type_infoES2_
-                0x0800f694        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800f5f4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
  .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info12__do_dyncastEiNS_17__class_type_info10__sub_kindEPKS1_PKvS4_S6_RNS1_16__dyncast_resultE
-                0x0800f69c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800f5fc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
  .ARM.exidx.text._ZNK10__cxxabiv120__si_class_type_info11__do_upcastEPKNS_17__class_type_infoEPKvRNS1_15__upcast_resultE
-                0x0800f6a4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
+                0x0800f604        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(si_class_type_info.o)
  .ARM.exidx.text._ZdlPv
-                0x0800f6ac        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(del_op.o)
+                0x0800f60c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(del_op.o)
  .ARM.exidx.text._ZN9__gnu_cxx27__verbose_terminate_handlerEv
-                0x0800f6b4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
+                0x0800f614        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(vterminate.o)
  .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PPv
-                0x0800f6bc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f61c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info20__do_find_public_srcEiPKvPKS0_S2_
-                0x0800f6c4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f624        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZN10__cxxabiv117__class_type_infoD2Ev
-                0x0800f6cc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f62c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZN10__cxxabiv117__class_type_infoD0Ev
-                0x0800f6d4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f634        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
-                0x0800f6d4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f634        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
-                0x0800f6dc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f63c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZNK10__cxxabiv117__class_type_info12__do_dyncastEiNS0_10__sub_kindEPKS0_PKvS3_S5_RNS0_16__dyncast_resultE
-                0x0800f6e4        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
+                0x0800f644        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(class_type_info.o)
  .ARM.exidx.text._ZNSt9type_infoD2Ev
-                0x0800f6ec        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f64c        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
  .ARM.exidx.text._ZNKSt9type_info14__is_pointer_pEv
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9type_info15__is_function_pEv
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9type_info11__do_upcastEPKN10__cxxabiv117__class_type_infoEPPv
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNSt9type_infoD0Ev
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9type_infoeqERKS_
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text._ZNKSt9type_info10__do_catchEPKS_PPvj
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(tinfo.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__cxa_current_exception_type
-                0x0800f6f4        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_type.o)
+                0x0800f654        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++.a(eh_type.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0800f51c       0x90 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(unwind-arm.o)
+ .ARM.exidx     0x0800f47c       0x90 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(unwind-arm.o)
                                  0xd8 (size before relaxing)
- .ARM.exidx     0x0800f5ac       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(pr-support.o)
+ .ARM.exidx     0x0800f50c       0x38 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(pr-support.o)
                                  0x48 (size before relaxing)
-                0x0800f6f4                __exidx_end = .
+                0x0800f654                __exidx_end = .
 
-.rel.dyn        0x0800f6f4        0x0
+.rel.dyn        0x0800f654        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
-.preinit_array  0x0800f6f4        0x0
-                0x0800f6f4                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0800f654        0x0
+                0x0800f654                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0800f6f4                PROVIDE (__preinit_array_end, .)
+                0x0800f654                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0800f6f4        0x4
-                0x0800f6f4                PROVIDE (__init_array_start, .)
+.init_array     0x0800f654        0x4
+                0x0800f654                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x0800f6f4        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
-                0x0800f6f8                PROVIDE (__init_array_end, .)
+ .init_array    0x0800f654        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x0800f658                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0800f6f8        0x4
-                0x0800f6f8                PROVIDE (__fini_array_start, .)
+.fini_array     0x0800f658        0x4
+                0x0800f658                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800f6f8        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
-                0x0800f6fc                PROVIDE (__fini_array_end, .)
-                0x0800f6fc                _sidata = LOADADDR (.data)
+ .fini_array    0x0800f658        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x0800f65c                PROVIDE (__fini_array_end, .)
+                0x0800f65c                _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x640 load address 0x0800f6fc
+.data           0x20000000      0x640 load address 0x0800f65c
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -3850,12 +3847,12 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib
                 0x2000063c                __malloc_sbrk_base
                 0x20000640                . = ALIGN (0x4)
                 0x20000640                _edata = .
-                0x0800fd3c                _siccmram = LOADADDR (.ccmram)
+                0x0800fc9c                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000640        0x0 load address 0x0800fd3c
+.igot.plt       0x20000640        0x0 load address 0x0800fc9c
  .igot.plt      0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x0800fd3c
+.ccmram         0x10000000        0x0 load address 0x0800fc9c
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sccmram = .
  *(.ccmram)
@@ -4164,7 +4161,7 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib
                 0x00001284       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
 OUTPUT(usb_pure04.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x134e2
+.debug_info     0x00000000    0x134fc
  .debug_info    0x00000000      0xbc2 src\tiny_printf.o
  .debug_info    0x00000bc2      0x5a3 src\system_stm32f4xx.o
  .debug_info    0x00001165      0x122 src\stm32f4xx_it.o
@@ -4172,27 +4169,27 @@ OUTPUT(usb_pure04.elf elf32-littlearm)
  .debug_info    0x0000130f      0x619 src\nrf24v02\my_spi.o
  .debug_info    0x00001928      0xd7e src\nrf24v02\NRF24.o
  .debug_info    0x000026a6      0x3dc src\nrf24v02\GPIO.o
- .debug_info    0x00002a82     0x170a src\main.o
- .debug_info    0x0000418c     0x1090 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
- .debug_info    0x0000521c      0x88d Utilities\STM32F4-Discovery\stm32f4_discovery.o
- .debug_info    0x00005aa9     0x1d74 Libraries\usb_lib\otg\usb_dcd_int.o
- .debug_info    0x0000781d     0x1026 Libraries\usb_lib\otg\usb_dcd.o
- .debug_info    0x00008843     0x2522 Libraries\usb_lib\otg\usb_core.o
- .debug_info    0x0000ad65      0xfa2 Libraries\usb_lib\core\usbd_req.o
- .debug_info    0x0000bd07      0xcbe Libraries\usb_lib\core\usbd_ioreq.o
- .debug_info    0x0000c9c5      0xe9c Libraries\usb_lib\core\usbd_core.o
- .debug_info    0x0000d861      0x4b2 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
- .debug_info    0x0000dd13      0xef9 Libraries\usb_lib\cdc\usbd_cdc_core.o
- .debug_info    0x0000ec0c      0x1cf Libraries\usb_conf\usbd_usr.o
- .debug_info    0x0000eddb      0x367 Libraries\usb_conf\usbd_desc.o
- .debug_info    0x0000f142     0x100b Libraries\usb_conf\usb_bsp.o
- .debug_info    0x0001014d      0xb0b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_info    0x00010c58      0xc77 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_info    0x000118cf      0x609 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_info    0x00011ed8      0x34b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
- .debug_info    0x00012223      0x73d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_info    0x00012960      0x641 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
- .debug_info    0x00012fa1      0x541 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_info    0x00002a82     0x1724 src\main.o
+ .debug_info    0x000041a6     0x1090 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+ .debug_info    0x00005236      0x88d Utilities\STM32F4-Discovery\stm32f4_discovery.o
+ .debug_info    0x00005ac3     0x1d74 Libraries\usb_lib\otg\usb_dcd_int.o
+ .debug_info    0x00007837     0x1026 Libraries\usb_lib\otg\usb_dcd.o
+ .debug_info    0x0000885d     0x2522 Libraries\usb_lib\otg\usb_core.o
+ .debug_info    0x0000ad7f      0xfa2 Libraries\usb_lib\core\usbd_req.o
+ .debug_info    0x0000bd21      0xcbe Libraries\usb_lib\core\usbd_ioreq.o
+ .debug_info    0x0000c9df      0xe9c Libraries\usb_lib\core\usbd_core.o
+ .debug_info    0x0000d87b      0x4b2 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+ .debug_info    0x0000dd2d      0xef9 Libraries\usb_lib\cdc\usbd_cdc_core.o
+ .debug_info    0x0000ec26      0x1cf Libraries\usb_conf\usbd_usr.o
+ .debug_info    0x0000edf5      0x367 Libraries\usb_conf\usbd_desc.o
+ .debug_info    0x0000f15c     0x100b Libraries\usb_conf\usb_bsp.o
+ .debug_info    0x00010167      0xb0b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_info    0x00010c72      0xc77 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_info    0x000118e9      0x609 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_info    0x00011ef2      0x34b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_info    0x0001223d      0x73d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_info    0x0001297a      0x641 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_info    0x00012fbb      0x541 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
 .debug_abbrev   0x00000000     0x31da
  .debug_abbrev  0x00000000      0x248 src\tiny_printf.o
@@ -4312,7 +4309,7 @@ OUTPUT(usb_pure04.elf elf32-littlearm)
  .debug_ranges  0x00000ba8       0x90 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
  .debug_ranges  0x00000c38       0x30 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_line     0x00000000     0x5b87
+.debug_line     0x00000000     0x5ba7
  .debug_line    0x00000000      0x2cf src\tiny_printf.o
  .debug_line    0x000002cf      0x1f4 src\system_stm32f4xx.o
  .debug_line    0x000004c3      0x1d1 src\stm32f4xx_it.o
@@ -4320,29 +4317,29 @@ OUTPUT(usb_pure04.elf elf32-littlearm)
  .debug_line    0x0000070e      0x257 src\nrf24v02\my_spi.o
  .debug_line    0x00000965      0x42d src\nrf24v02\NRF24.o
  .debug_line    0x00000d92      0x22a src\nrf24v02\GPIO.o
- .debug_line    0x00000fbc      0x4d3 src\main.o
- .debug_line    0x0000148f      0x6e2 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
- .debug_line    0x00001b71      0x285 Utilities\STM32F4-Discovery\stm32f4_discovery.o
- .debug_line    0x00001df6      0x398 Libraries\usb_lib\otg\usb_dcd_int.o
- .debug_line    0x0000218e      0x320 Libraries\usb_lib\otg\usb_dcd.o
- .debug_line    0x000024ae      0x6b5 Libraries\usb_lib\otg\usb_core.o
- .debug_line    0x00002b63      0x3ff Libraries\usb_lib\core\usbd_req.o
- .debug_line    0x00002f62      0x263 Libraries\usb_lib\core\usbd_ioreq.o
- .debug_line    0x000031c5      0x34f Libraries\usb_lib\core\usbd_core.o
- .debug_line    0x00003514      0x341 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
- .debug_line    0x00003855      0x334 Libraries\usb_lib\cdc\usbd_cdc_core.o
- .debug_line    0x00003b89      0x225 Libraries\usb_conf\usbd_usr.o
- .debug_line    0x00003dae      0x249 Libraries\usb_conf\usbd_desc.o
- .debug_line    0x00003ff7      0x2c5 Libraries\usb_conf\usb_bsp.o
- .debug_line    0x000042bc      0x445 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_line    0x00004701      0x597 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_line    0x00004c98      0x329 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_line    0x00004fc1      0x28f Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
- .debug_line    0x00005250      0x3c6 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_line    0x00005616      0x342 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
- .debug_line    0x00005958      0x22f Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_line    0x00000fbc      0x4f3 src\main.o
+ .debug_line    0x000014af      0x6e2 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+ .debug_line    0x00001b91      0x285 Utilities\STM32F4-Discovery\stm32f4_discovery.o
+ .debug_line    0x00001e16      0x398 Libraries\usb_lib\otg\usb_dcd_int.o
+ .debug_line    0x000021ae      0x320 Libraries\usb_lib\otg\usb_dcd.o
+ .debug_line    0x000024ce      0x6b5 Libraries\usb_lib\otg\usb_core.o
+ .debug_line    0x00002b83      0x3ff Libraries\usb_lib\core\usbd_req.o
+ .debug_line    0x00002f82      0x263 Libraries\usb_lib\core\usbd_ioreq.o
+ .debug_line    0x000031e5      0x34f Libraries\usb_lib\core\usbd_core.o
+ .debug_line    0x00003534      0x341 Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+ .debug_line    0x00003875      0x334 Libraries\usb_lib\cdc\usbd_cdc_core.o
+ .debug_line    0x00003ba9      0x225 Libraries\usb_conf\usbd_usr.o
+ .debug_line    0x00003dce      0x249 Libraries\usb_conf\usbd_desc.o
+ .debug_line    0x00004017      0x2c5 Libraries\usb_conf\usb_bsp.o
+ .debug_line    0x000042dc      0x445 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_line    0x00004721      0x597 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_line    0x00004cb8      0x329 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_line    0x00004fe1      0x28f Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_line    0x00005270      0x3c6 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_line    0x00005636      0x342 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_line    0x00005978      0x22f Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_str      0x00000000     0x4f9d
+.debug_str      0x00000000     0x4f9c
  .debug_str     0x00000000      0x59c src\tiny_printf.o
                                 0x613 (size before relaxing)
  .debug_str     0x0000059c      0x233 src\system_stm32f4xx.o
@@ -4355,47 +4352,47 @@ OUTPUT(usb_pure04.elf elf32-littlearm)
                                 0x617 (size before relaxing)
  .debug_str     0x00000f68       0x48 src\nrf24v02\GPIO.o
                                 0x488 (size before relaxing)
- .debug_str     0x00000fb0      0xd67 src\main.o
-                               0x156a (size before relaxing)
- .debug_str     0x00001d17      0x770 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
+ .debug_str     0x00000fb0      0xd66 src\main.o
+                               0x1571 (size before relaxing)
+ .debug_str     0x00001d16      0x770 Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.o
                                0x10ec (size before relaxing)
- .debug_str     0x00002487      0x25d Utilities\STM32F4-Discovery\stm32f4_discovery.o
+ .debug_str     0x00002486      0x25d Utilities\STM32F4-Discovery\stm32f4_discovery.o
                                 0xba2 (size before relaxing)
- .debug_str     0x000026e4      0x7d9 Libraries\usb_lib\otg\usb_dcd_int.o
+ .debug_str     0x000026e3      0x7d9 Libraries\usb_lib\otg\usb_dcd_int.o
                                0x12f4 (size before relaxing)
- .debug_str     0x00002ebd      0x101 Libraries\usb_lib\otg\usb_dcd.o
+ .debug_str     0x00002ebc      0x101 Libraries\usb_lib\otg\usb_dcd.o
                                 0xb96 (size before relaxing)
- .debug_str     0x00002fbe      0x693 Libraries\usb_lib\otg\usb_core.o
+ .debug_str     0x00002fbd      0x693 Libraries\usb_lib\otg\usb_core.o
                                0x16f6 (size before relaxing)
- .debug_str     0x00003651      0x188 Libraries\usb_lib\core\usbd_req.o
+ .debug_str     0x00003650      0x188 Libraries\usb_lib\core\usbd_req.o
                                 0xb67 (size before relaxing)
- .debug_str     0x000037d9       0xaf Libraries\usb_lib\core\usbd_ioreq.o
+ .debug_str     0x000037d8       0xaf Libraries\usb_lib\core\usbd_ioreq.o
                                 0xa26 (size before relaxing)
- .debug_str     0x00003888       0xef Libraries\usb_lib\core\usbd_core.o
+ .debug_str     0x00003887       0xef Libraries\usb_lib\core\usbd_core.o
                                 0xb3c (size before relaxing)
- .debug_str     0x00003977      0x21d Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+ .debug_str     0x00003976      0x21d Libraries\usb_lib\cdc\usbd_cdc_vcp.o
                                 0x421 (size before relaxing)
- .debug_str     0x00003b94      0x186 Libraries\usb_lib\cdc\usbd_cdc_core.o
+ .debug_str     0x00003b93      0x186 Libraries\usb_lib\cdc\usbd_cdc_core.o
                                 0xb84 (size before relaxing)
- .debug_str     0x00003d1a       0xc3 Libraries\usb_conf\usbd_usr.o
+ .debug_str     0x00003d19       0xc3 Libraries\usb_conf\usbd_usr.o
                                 0x316 (size before relaxing)
- .debug_str     0x00003ddd      0x11d Libraries\usb_conf\usbd_desc.o
+ .debug_str     0x00003ddc      0x11d Libraries\usb_conf\usbd_desc.o
                                 0x3ef (size before relaxing)
- .debug_str     0x00003efa       0xb0 Libraries\usb_conf\usb_bsp.o
+ .debug_str     0x00003ef9       0xb0 Libraries\usb_conf\usb_bsp.o
                                0x113d (size before relaxing)
- .debug_str     0x00003faa      0x2ad Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_str     0x00003fa9      0x2ad Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
                                 0x703 (size before relaxing)
- .debug_str     0x00004257      0x56b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_str     0x00004256      0x56b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
                                 0x8f2 (size before relaxing)
- .debug_str     0x000047c2      0x16e Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_str     0x000047c1      0x16e Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
                                 0x51c (size before relaxing)
- .debug_str     0x00004930       0xf3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
+ .debug_str     0x0000492f       0xf3 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.o
                                 0x3d2 (size before relaxing)
- .debug_str     0x00004a23      0x254 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_str     0x00004a22      0x254 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
                                 0x5bb (size before relaxing)
- .debug_str     0x00004c77      0x220 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
+ .debug_str     0x00004c76      0x220 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.o
                                 0x4cc (size before relaxing)
- .debug_str     0x00004e97      0x106 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_str     0x00004e96      0x106 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
                                 0x447 (size before relaxing)
 
 .comment        0x00000000       0x82
@@ -4896,6 +4893,7 @@ GPIO::GPIO(GPIO_TypeDef*, unsigned short)         src\nrf24v02\GPIO.o
                                                   src\nrf24v02\NRF24.o
                                                   src\nrf24v02\my_spi.o
 GPIO::Reset()                                     src\nrf24v02\GPIO.o
+                                                  src\main.o
                                                   src\nrf24v02\NRF24.o
                                                   src\nrf24v02\my_spi.o
 GPIO::Set()                                       src\nrf24v02\GPIO.o
@@ -5058,7 +5056,6 @@ MySpi::Transfer(unsigned char*, unsigned char*, int) src\nrf24v02\my_spi.o
 NMI_Handler                                       src\stm32f4xx_it.o
 NRF24::CheckPayloadWidth()                        src\nrf24v02\NRF24.o
 NRF24::CleanDataReady()                           src\nrf24v02\NRF24.o
-                                                  src\main.o
 NRF24::CleanDataSent()                            src\nrf24v02\NRF24.o
                                                   src\main.o
 NRF24::CleanMaxRt()                               src\nrf24v02\NRF24.o
@@ -5066,7 +5063,6 @@ NRF24::CleanMaxRt()                               src\nrf24v02\NRF24.o
 NRF24::Config()                                   src\nrf24v02\NRF24.o
                                                   src\main.o
 NRF24::DataReady()                                src\nrf24v02\NRF24.o
-                                                  src\main.o
 NRF24::DataSent()                                 src\nrf24v02\NRF24.o
                                                   src\main.o
 NRF24::FlushRx()                                  src\nrf24v02\NRF24.o
@@ -5078,12 +5074,12 @@ NRF24::NRF24()                                    src\nrf24v02\NRF24.o
                                                   src\main.o
 NRF24::NRF24()                                    src\nrf24v02\NRF24.o
 NRF24::ReadPayload(unsigned char*, int)           src\nrf24v02\NRF24.o
-                                                  src\main.o
 NRF24::ReadRegister(unsigned char, unsigned char*, int) src\nrf24v02\NRF24.o
 NRF24::RxEmpty()                                  src\nrf24v02\NRF24.o
 NRF24::RxFull()                                   src\nrf24v02\NRF24.o
 NRF24::Test()                                     src\nrf24v02\NRF24.o
 NRF24::TxEmpty()                                  src\nrf24v02\NRF24.o
+                                                  src\main.o
 NRF24::TxFull()                                   src\nrf24v02\NRF24.o
 NRF24::WriteAckPayload(unsigned char*, int)       src\nrf24v02\NRF24.o
 NRF24::WritePayload(unsigned char*, int)          src\nrf24v02\NRF24.o
@@ -5653,6 +5649,7 @@ UsageFault_Handler                                src\stm32f4xx_it.o
 VCP_fops                                          Libraries\usb_lib\cdc\usbd_cdc_vcp.o
                                                   Libraries\usb_lib\cdc\usbd_cdc_core.o
 VCP_get_char                                      Libraries\usb_lib\cdc\usbd_cdc_vcp.o
+                                                  src\main.o
 VCP_get_string                                    Libraries\usb_lib\cdc\usbd_cdc_vcp.o
 VCP_put_char                                      Libraries\usb_lib\cdc\usbd_cdc_vcp.o
 VCP_send_buffer                                   Libraries\usb_lib\cdc\usbd_cdc_vcp.o

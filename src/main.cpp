@@ -33,13 +33,33 @@ int main(void){
   NRF24 radio;
   radio.is_rx=false;
   radio.Config();
-  uint8_t buf[]={'g','u','s','t', 'a'};
   radio.NRF_CE->Set();
   while (1)
   {
-    Delay_ms(1000);
+	int i=0;
+	uint8_t buf[] = {0,0,0,0,0};
+	uint8_t symbol;
+	while(i<6){
+	  if(VCP_get_char(&symbol)){
+		if((symbol=='a')&&(i==0)){
+	      i=1;
+		}
+		else if(i>0){
+		  buf[i-1]=symbol;
+		  i=i+1;
+		}
+	  }
+	}
+	VCP_send_buffer(buf, 5);
+	radio.NRF_CE->Set();
     radio.WritePayload(buf, 5);
-	if(radio.DataSent()){
+    int counter;
+    while(radio.TxEmpty()!=0){
+      counter++;
+      if(counter==0xeeee2)
+    	radio.FlushTx();
+    }
+    if(radio.DataSent()){
 	  radio.CleanDataSent();
 	  STM_EVAL_LEDToggle(LED6);
 	}
@@ -48,12 +68,7 @@ int main(void){
 	  radio.FlushTx();
 	  STM_EVAL_LEDToggle(LED5);
 	}
-    if(radio.DataReady()){
-      uint8_t data_in[5];
-      radio.ReadPayload(data_in, 5);
-      VCP_send_buffer(data_in, 5);
-      radio.CleanDataReady();
-    }
+	radio.NRF_CE->Reset();
   }
 }
 

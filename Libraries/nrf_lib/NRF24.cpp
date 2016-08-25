@@ -331,11 +331,11 @@ uint8_t NRF::TRANSMITTED(void){
 	uint8_t status;
 
 	R_REGISTER(FIFO_STATUS_ADDRESS,1,&fifo_status);
-	for (int i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 	fifo_status &= TX_EMPTY_MASK;
 
 	R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (int i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 
 	//if((status & TX_DS_MASK) || !(fifo_status & TX_EMPTY_MASK))
 	if(status & TX_DS_MASK){
@@ -354,11 +354,11 @@ uint8_t NRF::TRANSMITTED(void){
 //retorna 1 se o NRF24 enviou alguma coisa(recebeu o ACK, caso esteja habilitado), retorna 0 se ainda não conseguiu enviar(ou não recebeu o ACK, caso esteja habilitado)
 uint8_t NRF::SEND(uint8_t* data, uint8_t size){
 	W_TX_PAYLOAD(data,size);
-	for (int i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 
 	//pulse on CE to start transmission
 	ASSERT_CE(SET);
-	for (int i=0;i<0x1dc4;i++);//minimum pulse width = 10us, here we use 100us
+	STD_ITER_DELAY//minimum pulse width = 10us, here we use 100us
 	ASSERT_CE(RESET);
 
 	//TODO consertar o valor de retorno de NRF::SEND

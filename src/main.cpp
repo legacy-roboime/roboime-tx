@@ -98,7 +98,7 @@ int main(void)
   //inicialização do USB
   /*USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);*/
 
-  Delay_s(20);
+  Delay_s(15);
   STM_EVAL_LEDOn(LED3);
   STM_EVAL_LEDOn(LED4);
   STM_EVAL_LEDOn(LED5);
@@ -147,7 +147,7 @@ void EXTI9_5_IRQHandler(){
 
 	uint8_t status=0;
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	//for (uint64_t i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 
 	if(status & RX_DR_MASK){
 		RX_DR_Handler();
@@ -185,11 +185,11 @@ void TX_DS_Handler(){
 	uint8_t status=0;
 	radio_ptr->stop_listen();//reseta o CE para evitar problemas durante a escrita do registrador
 	radio_ptr->R_REGISTER(STATUS_ADDRESS,1,&status);
-	for (uint64_t i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 	//if write status in the register, we'd clear any flag, we only "write" 0 in the bits we don't want to change in order to protect they from being changed
 	status &= ~(RX_DR_MASK|MAX_RT_MASK);
 	radio_ptr->W_REGISTER(STATUS_ADDRESS,1,&status);//limpa a flag TX_DS
-	for (uint64_t i=0;i<0x1dc4;i++);
+	STD_ITER_DELAY
 
 	STM_EVAL_LEDToggle(LED6);//AZUL:indicador de sucesso
 	return;

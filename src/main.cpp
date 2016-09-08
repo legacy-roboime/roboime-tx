@@ -37,7 +37,7 @@ int main(void){
   while (1)
   {
 	int i=0;
-	uint8_t buf[] = {0,0,0,0,0};
+	uint8_t buf[] = {0,0,0,0,0,0};
 	uint8_t symbol;
 	while(i<6){
 	  if(VCP_get_char(&symbol)){
@@ -45,19 +45,22 @@ int main(void){
 	      i=1;
 		}
 		else if(i>0){
-		  buf[i-1]=symbol;
+		  buf[i]=symbol;
 		  i=i+1;
 		}
 	  }
 	}
+	buf[0]='a';
 	VCP_send_buffer(buf, 5);
+    radio.WritePayload(buf, 6);
 	radio.NRF_CE->Set();
-    radio.WritePayload(buf, 5);
     int counter;
+	STM_EVAL_LEDToggle(LED5);
     while(radio.TxEmpty()!=0){
       counter++;
-      if(counter==0xeeee2)
+      if(counter==0xeeee2){
     	radio.FlushTx();
+      }
     }
     if(radio.DataSent()){
 	  radio.CleanDataSent();

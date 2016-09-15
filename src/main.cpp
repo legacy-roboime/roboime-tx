@@ -37,31 +37,36 @@ int main(void){
   while (1)
   {
 	int i=0;
-	uint8_t buf[] = {0,0,0,0,0,0};
+	uint8_t bufOut[28];
+	uint8_t roboId;
 	uint8_t symbol;
-	while(i<6){
+	while(i<29){
 	  if(VCP_get_char(&symbol)){
 		if((symbol=='a')&&(i==0)){
 	      i=1;
 		}
-		else if(i>0){
-		  buf[i]=symbol;
+		else if(i==1){
+	      roboId=symbol;
+		  i=i+1;
+		}
+		else if(i>1){
+		  bufOut[i-1]=symbol;
 		  i=i+1;
 		}
 	  }
 	}
-	buf[0]='a';
-	VCP_send_buffer(buf, 5);
-    radio.WritePayload(buf, 6);
+	bufOut[0]='a';
+	radio.SetId(roboId);
+    radio.WritePayload(bufOut, 28);
 	radio.NRF_CE->Set();
     int counter;
-	STM_EVAL_LEDToggle(LED5);
     while(radio.TxEmpty()!=0){
       counter++;
       if(counter==0xeeee2){
     	radio.FlushTx();
       }
     }
+	radio.NRF_CE->Reset();
     if(radio.DataSent()){
 	  radio.CleanDataSent();
 	  STM_EVAL_LEDToggle(LED6);
@@ -71,7 +76,12 @@ int main(void){
 	  radio.FlushTx();
 	  STM_EVAL_LEDToggle(LED5);
 	}
-	radio.NRF_CE->Reset();
+	if(radio.DataReady()){
+	  uint8_t bufIn[17];
+	  radio.CleanDataReady();
+	  radio.ReadPayload(bufIn, 17);
+	  VCP_send_buffer(bufIn, 17);
+	}
   }
 }
 

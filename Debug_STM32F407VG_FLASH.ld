@@ -1,10 +1,9 @@
 /*
 *****************************************************************************
 **
-
 **  File        : stm32_flash.ld
 **
-**  Abstract    : Linker script for STM32F407IG Device with
+**  Abstract    : Linker script for STM32F407VG Device with
 **                1024KByte FLASH, 128KByte RAM
 **
 **                Set heap size, stack size and stack location according
@@ -16,7 +15,7 @@
 **
 **  Environment : Atollic TrueSTUDIO(R)
 **
-**  Distribution: The file is distributed as is, without any warranty
+**  Distribution: The file is distributed "as is", without any warranty
 **                of any kind.
 **
 **  (c)Copyright Atollic AB.
@@ -32,17 +31,19 @@
 ENTRY(Reset_Handler)
 
 /* Highest address of the user mode stack */
-_estack = 0x20020000;    /* end of RAM */
+_estack = 0x20020000;    /* end of 128K RAM */
+
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size = 0x200;      /* required amount of heap  */
+_Min_Heap_Size = 0;      /* required amount of heap  */
 _Min_Stack_Size = 0x400; /* required amount of stack */
 
 /* Specify the memory areas */
 MEMORY
 {
-RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
-CCMRAM (rw)      : ORIGIN = 0x10000000, LENGTH = 64K
-FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 1024K
+  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 1024K
+  RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 128K
+  MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K
+  CCMRAM (rw)     : ORIGIN = 0x10000000, LENGTH = 64K
 }
 
 /* Define output sections */
@@ -124,13 +125,13 @@ SECTIONS
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
   } >RAM AT> FLASH
-
+  
   _siccmram = LOADADDR(.ccmram);
 
   /* CCM-RAM section 
   * 
   * IMPORTANT NOTE! 
-  * If initialized variables will be placed in this section,
+  * If initialized variables will be placed in this section, 
   * the startup code needs to be modified to copy the init-values.  
   */
   .ccmram :
@@ -144,7 +145,6 @@ SECTIONS
     _eccmram = .;       /* create a global symbol at ccmram end */
   } >CCMRAM AT> FLASH
 
-  
   /* Uninitialized data section */
   . = ALIGN(4);
   .bss :
@@ -172,7 +172,15 @@ SECTIONS
     . = ALIGN(4);
   } >RAM
 
-  
+  /* MEMORY_bank1 section, code must be located here explicitly            */
+  /* Example: extern int foo(void) __attribute__ ((section (".mb1text"))); */
+  .memory_b1_text :
+  {
+    *(.mb1text)        /* .mb1text sections (code) */
+    *(.mb1text*)       /* .mb1text* sections (code)  */
+    *(.mb1rodata)      /* read-only data (constants) */
+    *(.mb1rodata*)
+  } >MEMORY_B1
 
   /* Remove information from the standard libraries */
   /DISCARD/ :
@@ -184,5 +192,3 @@ SECTIONS
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
 }
-
-

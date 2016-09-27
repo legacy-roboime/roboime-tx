@@ -79,10 +79,10 @@ int main(void)
 	}
 	bufOut[0]='a';
 	Nrf24_SetId(&radio, roboId);
-	for(i=1; i<28; i++){
-	  bufOut[i]=0;
-	}
-	Nrf24_WritePayload(&radio, bufOut, 28);
+	//for(i=1; i<28; i++){
+	//  bufOut[i]=0;
+	//}
+	Nrf24_WritePayload(&radio, bufOut, 27);
 	GPIO_Set(&radio.NRF_CE);
     int counter=0;
     while(Nrf24_TxEmpty(&radio)!=0){

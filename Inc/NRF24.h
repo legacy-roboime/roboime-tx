@@ -4,6 +4,9 @@
  *  Created on: Aug 17, 2016
  *      Author: lenovoi7
  */
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 #ifndef NRF24_H_
 #define NRF24_H_
@@ -18,28 +21,28 @@ typedef struct Nrf24{
 	int id;
 	MySpi NRF_Spi;
 }Nrf24;
-void Nrf24_Init(Nrf24 *this);
-int Nrf24_Config(Nrf24 *this);
-int Nrf24_WriteRegister(Nrf24 *this, uint8_t adress, uint8_t *new_value, int size);
-int Nrf24_ReadRegister(Nrf24 *this, uint8_t adress, uint8_t *value, int size);
-int Nrf24_WritePayload(Nrf24 *this, uint8_t *data, int size);
-int Nrf24_ReadPayload(Nrf24 *this, uint8_t *data, int size);
-int Nrf24_FlushTx(Nrf24 *this);
-int Nrf24_FlushRx(Nrf24 *this);
-int Nrf24_WriteAckPayload(Nrf24 *this, uint8_t *data, int size);
-int Nrf24_CheckPayloadWidth(Nrf24 *this);
-int Nrf24_Test(Nrf24 *this);
-int Nrf24_SetId(Nrf24 *this, uint8_t roboId);
-int Nrf24_DataSent(Nrf24 *this);
-int Nrf24_DataReady(Nrf24 *this);
-int Nrf24_MaxRt(Nrf24 *this);
-int Nrf24_CleanDataSent(Nrf24 *this);
-int Nrf24_CleanDataReady(Nrf24 *this);
-int Nrf24_CleanMaxRt(Nrf24 *this);
-int Nrf24_RxEmpty(Nrf24 *this);
-int Nrf24_RxFull(Nrf24 *this);
-int Nrf24_TxEmpty(Nrf24 *this);
-int Nrf24_TxFull(Nrf24 *this);
+void Nrf24_Init(Nrf24 *these);
+int Nrf24_Config(Nrf24 *these);
+int Nrf24_WriteRegister(Nrf24 *these, uint8_t adress, uint8_t *new_value, int size);
+int Nrf24_ReadRegister(Nrf24 *these, uint8_t adress, uint8_t *value, int size);
+int Nrf24_WritePayload(Nrf24 *these, uint8_t *data, int size);
+int Nrf24_ReadPayload(Nrf24 *these, uint8_t *data, int size);
+int Nrf24_FlushTx(Nrf24 *these);
+int Nrf24_FlushRx(Nrf24 *these);
+int Nrf24_WriteAckPayload(Nrf24 *these, uint8_t *data, int size);
+int Nrf24_CheckPayloadWidth(Nrf24 *these);
+int Nrf24_Test(Nrf24 *these);
+int Nrf24_SetId(Nrf24 *these, uint8_t roboId);
+int Nrf24_DataSent(Nrf24 *these);
+int Nrf24_DataReady(Nrf24 *these);
+int Nrf24_MaxRt(Nrf24 *these);
+int Nrf24_CleanDataSent(Nrf24 *these);
+int Nrf24_CleanDataReady(Nrf24 *these);
+int Nrf24_CleanMaxRt(Nrf24 *these);
+int Nrf24_RxEmpty(Nrf24 *these);
+int Nrf24_RxFull(Nrf24 *these);
+int Nrf24_TxEmpty(Nrf24 *these);
+int Nrf24_TxFull(Nrf24 *these);
 
 #define REG_CONFIG 		0x00
 #define REG_EN_AA 		0x01
@@ -63,3 +66,6 @@ int Nrf24_TxFull(Nrf24 *this);
 #define REG_FEATURE		0x1D
 
 #endif /* NRF24_H_ */
+#ifdef __cplusplus
+  }
+#endif

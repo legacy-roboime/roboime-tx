@@ -8,7 +8,7 @@
 #include "stm32f4xx_hal.h"
 #include "GPIO.h"
 
-void GPIO_Init(GPIO *this, GPIO_TypeDef* Port, uint16_t Pin) {
+void GPIO_Init(GPIO *thisee, GPIO_TypeDef* Port, uint16_t Pin) {
 	if(Port == GPIOA)
 		__HAL_RCC_GPIOA_CLK_ENABLE();
 	if(Port == GPIOB)
@@ -27,29 +27,29 @@ void GPIO_Init(GPIO *this, GPIO_TypeDef* Port, uint16_t Pin) {
 	HAL_GPIO_Init(Port,&GPIO_InitStructure);
 
 	HAL_GPIO_WritePin(Port, Pin, GPIO_PIN_RESET);
-	this->GPIO_Port = Port;
-	this->GPIO_Pin = Pin;
+	thisee->GPIO_Port = Port;
+	thisee->GPIO_Pin = Pin;
 }
-uint8_t GPIO_Status(GPIO *this){
-  uint8_t status_bit = HAL_GPIO_ReadPin(this->GPIO_Port, this->GPIO_Pin);
+uint8_t GPIO_Status(GPIO *thisee){
+  uint8_t status_bit = HAL_GPIO_ReadPin(thisee->GPIO_Port, thisee->GPIO_Pin);
   if(status_bit==GPIO_PIN_SET)
     return 1;
   return 0;
 }
-void GPIO_Set(GPIO *this){
-	HAL_GPIO_WritePin(this->GPIO_Port, this->GPIO_Pin, GPIO_PIN_SET);
+void GPIO_Set(GPIO *thise){
+	HAL_GPIO_WritePin(thise->GPIO_Port, thise->GPIO_Pin, GPIO_PIN_SET);
 	return;
 }
-void GPIO_Reset(GPIO *this){
-	HAL_GPIO_WritePin(this->GPIO_Port, this->GPIO_Pin, GPIO_PIN_RESET);
+void GPIO_Reset(GPIO *thise){
+	HAL_GPIO_WritePin(thise->GPIO_Port, thise->GPIO_Pin, GPIO_PIN_RESET);
 	return;
 }
-void GPIO_Toggle(GPIO *this){
-	if(GPIO_Status(this)){
-	  GPIO_Reset(this);
+void GPIO_Toggle(GPIO *thise){
+	if(GPIO_Status(thise)){
+	  GPIO_Reset(thise);
 	}
 	else{
-	  GPIO_Set(this);
+	  GPIO_Set(thise);
 	}
 }
 

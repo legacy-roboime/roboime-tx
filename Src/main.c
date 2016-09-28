@@ -35,9 +35,23 @@
 #include "usb_device.h"
 #include "usbd_cdc_if.h"
 #include "NRF24.h"
+#include "grSim_Commands.pb.h"
+#include "pb_encode.h"
+#include "pb_decode.h"
 
 void SystemClock_Config(void);
 void Error_Handler(void);
+
+// do buffer recebido, constrói um grSim_Robot_Command
+bool decodifica_pacote(uint8_t *buffer, size_t size, grSim_Robot_Command *robotcommand){
+	pb_istream_t istream = pb_istream_from_buffer(buffer, size);
+	bool status=pb_decode(&istream, grSim_Robot_Command_fields, robotcommand);
+	return status;
+}
+
+void set_speeds(float vel_x, float vel_y, float vel_theta){
+
+}
 
 int main(void)
 {
@@ -56,6 +70,13 @@ int main(void)
   if(Nrf24_Test(&radio)){
 	GPIO_Toggle(&LED6);
   }
+
+  	//Pícoli
+	grSim_Robot_Command robotcommand;
+	uint8_t buffer[128]={8, 0, 21, 0, 0, 0, 0, 29, 0, 0, 0, 0, 37, 0, 0, 128, 63, 45, 0, 0, 0, 64, 53, 0, 0, 64, 64, 56, 0, 64, 0 , 0};
+	int i = 0;
+	grSim_Robot_Command gr=grSim_Robot_Command_init_zero;
+
   while (1)
   {
 	int i=0;
@@ -68,7 +89,7 @@ int main(void)
 	      i=1;
 		}
 		else if(i==1){
-	      roboId=symbol;
+	      roboId=symbol;//id do robô para o qual vai enviar
 		  i=i+1;
 		}
 		else if(i>1){
@@ -78,29 +99,40 @@ int main(void)
 	  }
 	}
 	bufOut[0]='a';
-	Nrf24_SetId(&radio, roboId);
-	for(i=1; i<28; i++){
-	  bufOut[i]=0;
+
+	//extrai  o conteúdo de bufOut para gr
+	if(decodifica_pacote(bufOut, 31, &gr)){
+
+		Nrf24_SetId(&radio, gr.id);//configuration of TX_ADDR register (and RX_ADDR_P0)
+
+/*
+		for(i=1; i<28; i++){
+		  bufOut[i]=0;
+		}
+*/
+
+		Nrf24_WritePayload(&radio, bufOut, 28);
+		GPIO_Set(&radio.NRF_CE);
+	    int counter=0;
+	    while(Nrf24_TxEmpty(&radio)!=0){
+	      counter++;
+	      if(counter>0xeeee2){
+	    	Nrf24_FlushTx(&radio);
+	      }
+	    }
+		GPIO_Reset(&radio.NRF_CE);
+	    if(Nrf24_DataSent(&radio)){
+	      Nrf24_CleanDataSent(&radio);
+		  GPIO_Toggle(&LED6);
+		}
+		if(Nrf24_MaxRt(&radio)){
+		  Nrf24_CleanMaxRt(&radio);
+		  Nrf24_FlushTx(&radio);
+		  GPIO_Toggle(&LED5);
+		}
+
 	}
-	Nrf24_WritePayload(&radio, bufOut, 28);
-	GPIO_Set(&radio.NRF_CE);
-    int counter=0;
-    while(Nrf24_TxEmpty(&radio)!=0){
-      counter++;
-      if(counter>0xeeee2){
-    	Nrf24_FlushTx(&radio);
-      }
-    }
-	GPIO_Reset(&radio.NRF_CE);
-    if(Nrf24_DataSent(&radio)){
-      Nrf24_CleanDataSent(&radio);
-	  GPIO_Toggle(&LED6);
-	}
-	if(Nrf24_MaxRt(&radio)){
-	  Nrf24_CleanMaxRt(&radio);
-	  Nrf24_FlushTx(&radio);
-	  GPIO_Toggle(&LED5);
-	}
+
 	if(Nrf24_DataReady(&radio)){
 	  uint8_t bufIn[17];
 	  Nrf24_CleanDataReady(&radio);

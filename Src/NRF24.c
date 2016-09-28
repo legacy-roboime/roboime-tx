@@ -134,15 +134,15 @@ int Nrf24_SetId(Nrf24 *this, uint8_t roboId){
   for(i=0; i<5; i++){
     roboAddress[i]=addressRoboList[roboId];
   }
-  Nrf24_WriteRegister(this, 0x0A, roboAddress, 5);
-  Nrf24_WriteRegister(this, 0x10, roboAddress, 5);
+  Nrf24_WriteRegister(this, 0x0A, roboAddress, 5);//RX_ADDR_P0 configuration
+  Nrf24_WriteRegister(this, 0x10, roboAddress, 5);//TX_ADDR configuration
   return 0;
 }
 
 int Nrf24_Test(Nrf24 *this){
   uint8_t new_value=0x57;
   uint8_t value=0;
-  Nrf24_WriteRegister(this, 0x0F, &new_value, 1);
+  Nrf24_WriteRegister(this, 0x0F, &new_value, 1);//try to write 0x57 to RX_ADDR_P5
   Nrf24_ReadRegister(this, 0x0F, &value, 1);
   return (value==new_value);
 }
